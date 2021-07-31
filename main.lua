@@ -16,7 +16,7 @@ states = {
     game = require "game.states.game",
 }
 
-fonts = {}
+fonts = require "data.fonts.fonts"
 
 local pixelCanvas = require "engine.render.global_pixel_canvas" (Vector(64, 64), 4)
 
@@ -28,6 +28,7 @@ end
 function love.draw()
     pixelCanvas:renderTo( function()
         love.graphics.clear({0,0,0,1})
+        love.graphics.setFont(fonts.thin.font)
         StateManager.draw()
         if Debug and Debug.showFps == 1 then
             love.graphics.print(""..tostring(love.timer.getFPS( )), 2, 2)
