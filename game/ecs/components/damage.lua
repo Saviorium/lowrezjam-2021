@@ -1,0 +1,5 @@
+local damage = {
+    
+}
+
+return damage
