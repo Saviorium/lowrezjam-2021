@@ -1,5 +1,0 @@
-local damage = {
-    
-}
-
-return damage

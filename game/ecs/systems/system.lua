@@ -5,12 +5,21 @@ local System = Class {
     end
 }
 
+function System:tryAdd(entity)
+    for _, condition in pairs(self.conditions) do
+        if not entity:getComponent(condition) then
+            return
+        end
+    end
+    self.pool[entity.id] = entity
+end
+
 function System:update(dt)
-    -- Просто действия которые предпринимает система со всеми объектами из своего пула
+    -- do nothing
 end
 
 function System:draw()
-    -- Просто алгоритм отрисовки всех объектов из своего пула
+    -- do nothing
 end
 
 return System

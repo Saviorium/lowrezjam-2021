@@ -1,34 +1,50 @@
-
+local Entity = require "game.ecs.entity"
+local Components = require "game.ecs.components"
 local System = require "game.ecs.systems.system"
+
+local DrawSystem = require "game.ecs.systems.draw_system"
 
 local GlobalSystem = Class {
     init = function(self)
         self.systems = {
+            --UserControlsSystem = System{{'UserControlled', 'Controlled'}},
+            --AiSystem = System{{'AiComponent', 'Controlled'}},
 
-            MovingByControlsSystem   = System{{'InputConsumer', 'Position', 'Movable'}},
-            MovingInTrajectorySystem = System{{'Trajectory', 'Position', 'Movable'}},
+            --WalkingSystem = System{{'Controlled', 'Walking', 'Velocity', 'Position'}},
 
-            InputSystem       = System{{'InputGenerator','InputConsumer'}},
-
-            DamageSystem      = System{{'DamageCollider',  'Health' }},
-            PhysicsSystem     = System{{'PhysicsCollider', 'Movable' }},
-            InteractionSystem = System{{'InteractionCollider'}},
-
-            DeathSystem       = System{{'DamageCollider', 'Inputs'}},
-
-            DrawSystem        = System{{'Position', 'Drawable'}},
-
+            drawSystem = DrawSystem({'Position', 'Drawable'}),
         }
         self.objects = {}
+        self.newEntityId = 1
     end
 }
 
+function GlobalSystem:newEntity()
+    local newEntity = Entity(self.newEntityId, self)
+    self.objects[self.newEntityId] = newEntity
+    self.newEntityId = self.newEntityId + 1
+    return newEntity
+end
+
+function GlobalSystem:registerComponent(entity, componentName, args)
+    local newComponent = Components[componentName]
+    assert(newComponent, "No such component " .. componentName)
+    entity:__doAddComponent(newComponent(args))
+    for systemName, system in pairs(self.systems) do
+        system:tryAdd(entity)
+    end
+end
+
 function GlobalSystem:update(dt)
-    -- Просто действия которые предпринимает система со всеми объектами из своего пула
+    for systemName, system in pairs(self.systems) do
+        system:update(dt)
+    end
 end
 
 function GlobalSystem:draw()
-    -- Просто алгоритм отрисовки всех объектов из своего пула
+    for systemName, system in pairs(self.systems) do
+        system:draw()
+    end
 end
 
 return GlobalSystem
