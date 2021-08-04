@@ -17,12 +17,22 @@ function Entity:__doAddComponent(component)
     self.components[component.name] = component
 end
 
-function Entity:getComponent(componentName)
+function Entity:getComponentByName(componentName)
     return self.components[componentName]
 end
 
+function Entity:getComponentByType(componentType)
+    local result = {}
+    for  ind, comp in pairs(self.components) do
+        if (comp.type or ind) == componentType then
+            table.insert(result, comp)
+        end
+    end
+    return result
+end
+
 function Entity:setVariable(componentName, variable, value)
-    self:getComponent(componentName)[variable] = value
+    self:getComponentByName(componentName)[variable] = value
     return self
 end
 

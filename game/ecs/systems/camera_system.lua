@@ -1,0 +1,36 @@
+local System = require "game.ecs.systems.system"
+
+local CameraSystem = Class {
+    __includes = System,
+    init = function(self, conditions)
+        System.init(self, conditions)
+    end
+}
+
+function CameraSystem:update(dt)
+    local newMain, oldMain = nil, nil
+    for entityId, entity in pairs(self.pool) do
+        local target = entity:getComponentByName("CameraTarget")
+        oldMain = target.isMain and entityId or nil
+        if target.inGoingToBeMain then
+            entity:getComponentByName("CameraTarget").isMain = true
+            entity:getComponentByName("CameraTarget").inGoingToBeMain = false
+            newMain = entityId
+        end
+    end
+    if newMain and oldMain then
+        self.pool[oldMain]:getComponentByName("CameraTarget").isMain = false
+    end
+end
+
+function CameraSystem:draw()
+    for entityId, entity in pairs(self.pool) do
+        if entity:getComponentByName("CameraTarget").isMain then
+            local pos = entity:getComponentByName("Position").position
+            love.graphics.translate(pos.x, pos.y)
+
+        end
+    end
+end
+
+return CameraSystem

@@ -6,8 +6,11 @@ local state = {}
 
 function state:enter(prev_state, args)
     self.world = GlobalSystem()
-    local player = CharacterPrefab(self.world, Vector(10, 10)):addComponent("UserControlled")
-    local enemy = CharacterPrefab(self.world, Vector(30, 20)):addComponent("AiComponent", { type = "randomWanderingAi" })
+    local player = CharacterPrefab(self.world, Vector(10, 10))
+                        :addComponent("UserControlled")
+                        :addComponent("DrawDebug")
+                        :addComponent("CameraTarget", {inGoingToBeMain = true})
+    local enemy = CharacterPrefab(self.world, Vector(30, 20)):addComponent('AiControlled')
     enemy:setVariable("DrawRectangle", "color", {1,0,0,1})
 end
 

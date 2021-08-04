@@ -6,6 +6,7 @@ local Component = Class {
         end
     end,
     name = "Component",
+    type = nil,
     defaultParams = {}
 }
 

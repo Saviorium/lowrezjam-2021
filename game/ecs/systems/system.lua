@@ -6,8 +6,8 @@ local System = Class {
 }
 
 function System:tryAdd(entity)
-    for _, condition in pairs(self.conditions) do
-        if not entity:getComponent(condition) then
+    for ind, condition in pairs(self.conditions) do
+        if table.getn(entity:getComponentByType(condition)) == 0 then
             return
         end
     end
