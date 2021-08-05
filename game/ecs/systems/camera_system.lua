@@ -26,8 +26,11 @@ end
 function CameraSystem:draw()
     for entityId, entity in pairs(self.pool) do
         if entity:getComponentByName("CameraTarget").isMain then
+            love.graphics.push()
             local pos = entity:getComponentByName("Position").position
-            love.graphics.translate(pos.x, pos.y)
+            love.graphics.translate(-pos.x, -pos.y)
+            local screenWidth, screenHeight = love.graphics.getCanvas():getWidth(), love.graphics.getCanvas():getHeight()
+            love.graphics.translate(screenWidth/2, screenHeight/2)
 
         end
     end

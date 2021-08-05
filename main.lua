@@ -27,7 +27,7 @@ end
 
 function love.draw()
     pixelCanvas:renderTo( function()
-        love.graphics.clear({0,0,0,1})
+        love.graphics.clear({0,0.2,.7,1})
         love.graphics.setFont(fonts.thin.font)
         StateManager.draw()
         if Debug and Debug.showFps == 1 then

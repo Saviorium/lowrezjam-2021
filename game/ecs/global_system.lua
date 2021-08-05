@@ -49,8 +49,12 @@ function GlobalSystem:update(dt)
 end
 
 function GlobalSystem:draw()
+    local stackDepthBefore = love.graphics.getStackDepth()
     for systemName, system in pairs(self.systems) do
         system:draw()
+    end
+    while love.graphics.getStackDepth() > stackDepthBefore do
+        love.graphics.pop()
     end
 end
 
