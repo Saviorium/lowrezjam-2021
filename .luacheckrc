@@ -32,4 +32,5 @@ globals = {
 
   -- game
   "fonts",
+  "EventManager",
 }

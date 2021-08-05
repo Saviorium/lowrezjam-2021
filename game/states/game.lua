@@ -1,10 +1,11 @@
+local EventManagerClass = require "engine.events.event_manager"
 local GlobalSystem = require "game.ecs.global_system"
 
 local CharacterPrefab = require "game.ecs.prefabs.character"
-
 local state = {}
 
 function state:enter(prev_state, args)
+    EventManager = EventManagerClass() -- yes, Global
     self.world = GlobalSystem()
     local player = CharacterPrefab(self.world, Vector(10, 10))
                         :addComponent("UserControlled")
