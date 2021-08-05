@@ -1,10 +1,8 @@
 return {
     name = "DrawRectangle",
     type = "Drawable",
-    defaultParams = {
-        color = { 1, 0, 1, 1 },
-        size = {x = 5, y = 5}
-    },
+    color = { 1, 0, 1, 1 },
+    size = {x = 5, y = 5},
 
     draw = function (self)
         local rect = self

@@ -12,6 +12,8 @@ function state:enter(prev_state, args)
                         :addComponent("DrawDebug")
                         :addComponent("CameraTarget", {inGoingToBeMain = true})
                         :setVariable("Walking", "maxSpeed", 15)
+                        :addComponent("TargetAtMouse")
+                        :addComponent("MouseControlled")
     local enemy = CharacterPrefab(self.world, Vector(30, 20)):addComponent('AiControlled')
     enemy:setVariable("DrawRectangle", "color", {1,0,0,1})
 end

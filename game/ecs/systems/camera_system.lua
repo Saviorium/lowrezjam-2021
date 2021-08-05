@@ -31,7 +31,6 @@ function CameraSystem:draw()
             love.graphics.translate(-pos.x, -pos.y)
             local screenWidth, screenHeight = love.graphics.getCanvas():getWidth(), love.graphics.getCanvas():getHeight()
             love.graphics.translate(screenWidth/2, screenHeight/2)
-
         end
     end
 end

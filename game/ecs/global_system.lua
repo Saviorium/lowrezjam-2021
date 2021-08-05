@@ -6,18 +6,23 @@ local DrawSystem = require "game.ecs.systems.draw_system"
 local MovingSystem = require "game.ecs.systems.moving_system"
 local ControlSystem = require "game.ecs.systems.control_system"
 local CameraSystem = require "game.ecs.systems.camera_system"
+local MouseSystem = require "game.ecs.systems.mouse_system"
+local RotateSystem = require "game.ecs.systems.rotate_system"
 
 local GlobalSystem = Class {
     init = function(self)
         self.systems = {
             --UserControlsSystem = System{{'UserControlled', 'Controlled'}},
             --AiSystem = System{{'AiComponent', 'Controlled'}},
+            mouseSystem = MouseSystem({'MouseControlled'}),
 
             cameraSystem = CameraSystem({'CameraTarget', 'Position'}),
 
             movingSystem = MovingSystem({'Velocity', 'Position'}),
 
-            controllSystem = ControlSystem({'MovingManager', 'Controlled', 'Velocity', 'Position'}),
+            rotateSystem = RotateSystem({'Targeting', 'Position', 'Rotation'}),
+
+            controllSystem = ControllSystem({'MovingManager', 'Controlled', 'Velocity', 'Position'}),
 
             drawSystem = DrawSystem({'Position', 'Drawable'}),
         }

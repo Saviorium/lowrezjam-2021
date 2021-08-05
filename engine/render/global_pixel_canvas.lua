@@ -29,6 +29,10 @@ function MainPixelCanvas:getCanvas()
     return self.canvas
 end
 
+function MainPixelCanvas:getScale()
+    return self.scale
+end
+
 function MainPixelCanvas:renderTo(func)
     local prevCanvas = love.graphics.getCanvas()
     love.graphics.setCanvas(self.canvas)

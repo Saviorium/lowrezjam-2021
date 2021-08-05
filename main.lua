@@ -20,6 +20,10 @@ fonts = require "data.fonts.fonts"
 
 local pixelCanvas = require "engine.render.global_pixel_canvas" (Vector(64, 64), 4)
 
+function getScale()
+    return pixelCanvas:getScale()
+end
+
 function love.load()
     AssetManager:load("data")
     StateManager.switch(states.game)
