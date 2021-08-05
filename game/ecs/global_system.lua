@@ -22,7 +22,7 @@ local GlobalSystem = Class {
 
             rotateSystem = RotateSystem({'Targeting', 'Position', 'Rotation'}),
 
-            controllSystem = ControllSystem({'MovingManager', 'Controlled', 'Velocity', 'Position'}),
+            controlSystem = ControlSystem({'MovingManager', 'Controlled', 'Velocity', 'Position'}),
 
             drawSystem = DrawSystem({'Position', 'Drawable'}),
         }
