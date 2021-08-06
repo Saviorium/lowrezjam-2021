@@ -6,6 +6,7 @@ Class = require "lib.hump.class"
 StateManager = require "lib.hump.gamestate"
 
 AssetManager = require "engine.utils.asset_manager"
+AssetManager:load("data")
 
 UserInputManager = require "engine.controls.user_input_manager" (config.inputs)
 
@@ -25,7 +26,6 @@ function getScale()
 end
 
 function love.load()
-    AssetManager:load("data")
     StateManager.switch(states.game)
 end
 

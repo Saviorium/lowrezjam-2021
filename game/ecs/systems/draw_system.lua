@@ -2,8 +2,8 @@ local System = require "game.ecs.systems.system"
 
 local DrawSystem = Class {
     __includes = System,
-    init = function(self, conditions)
-        System.init(self, conditions)
+    init = function(self, globalSystem)
+        System.init(self, {'Position', 'Drawable'})
     end
 }
 
@@ -18,7 +18,9 @@ function DrawSystem:draw()
         local pos = entity:getComponentByName("Position").position
         love.graphics.translate(pos.x, pos.y)
         for _, drawable in pairs(entity:getComponentByType("Drawable")) do
-            drawable:draw(entity)
+            if not drawable.hidden then
+                drawable:draw(entity)
+            end
         end
         love.graphics.pop()
     end

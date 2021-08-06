@@ -6,5 +6,6 @@ return function(globalSystem, position)
         --:addComponent('UserControlled')
         :addComponent('Velocity', {velocity = Vector(0,0)})
         --:addComponent('Drawable', {type = 'rect'})
-        :addComponent('DrawRectangle', { size = {x = 8, y = 14} })
+        --:addComponent('DrawRectangle', { size = {x = 8, y = 14} })
+        :addComponent('Body', { parts = {} })
 end

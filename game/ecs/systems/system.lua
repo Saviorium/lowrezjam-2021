@@ -7,7 +7,7 @@ local System = Class {
 
 function System:tryAdd(entity)
     for ind, condition in pairs(self.conditions) do
-        if table.getn(entity:getComponentByType(condition)) == 0 then
+        if table.getn(entity:getComponentByType(condition)) == 0 and not entity:getComponentByName(condition) then
             return
         end
     end

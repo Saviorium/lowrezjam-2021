@@ -2,8 +2,8 @@ local System = require "game.ecs.systems.system"
 
 local ControlSystem = Class {
     __includes = System,
-    init = function(self, conditions)
-        System.init(self, conditions)
+    init = function(self, globalSystem)
+        System.init(self, {'MovingManager', 'Controlled', 'Velocity', 'Position'})
     end
 }
 
