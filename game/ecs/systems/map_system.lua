@@ -2,6 +2,7 @@ local System = require "game.ecs.systems.system"
 local sti     = require "lib/sti"
 local PlayerSpawner = require "game.ecs.prefabs.player_spawner"
 local EnemySpawner     = require "game.ecs.prefabs.character_spawner"
+local Tree     = require "game.ecs.prefabs.environment.tree"
 
 local clipper = require "lib.clipper.clipper"
 
@@ -45,6 +46,9 @@ function MapSystem:loadMap(mapName)
         end
         if obj.type == "enemy" then
             EnemySpawner(self.globalSystem, Vector(obj.x, obj.y))
+        end
+        if obj.type == "tree" then
+            Tree(self.globalSystem, Vector(obj.x, obj.y))
         end
     end
 

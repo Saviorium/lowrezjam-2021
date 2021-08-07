@@ -4,8 +4,6 @@ return function(globalSystem, position, rotation, damage)
     damagingCollider.type = 'Damaging'
 
     damagingCollider.damage = damage or 1
-    bullets_number = bullets_number + 1
-    print(bullets_number)
     local entity = globalSystem:newEntity()
         :addComponent('Flying')
         :addComponent('Position', {position = position})
