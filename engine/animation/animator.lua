@@ -1,29 +1,22 @@
 local Class = require "lib.hump.class"
-local Peachy = require "lib.peachy.peachy"
 local AnimationState = require "engine.animation.animation_state"
 
 local Animator = Class {
-    init = function(self, animation)
-        self.animation = animation
+    init = function(self)
         self.states = {}
         self.transitions = {} -- self.transitions[from][to] = condition
-        self.state = nil
-        self.variables = {
-            flipH = false,
-            flipV = false
-        }
-        self._isLooped = false
-        self.animation:onLoop(function() self._isLooped = true end)
     end
 }
 
-function Animator:play(tag)
-    self.animation:setTag(tag)
-    self.animation:play()
+local AnimatorInstance
+
+function Animator:newInstance(animation)
+    return AnimatorInstance(self, animation)
 end
 
 function Animator:addState(state)
     self.states[state.name] = state
+    return self
 end
 
 function Animator:createSimpleTagState(stateName, tagName)
@@ -34,7 +27,7 @@ function Animator:createSimpleTagState(stateName, tagName)
         stateName,
         self,
         nil,
-        function(self) self.animator:play(tagName) end,
+        function(state) state.animator:play(tagName) end,
         nil
     )
 end
@@ -42,11 +35,12 @@ end
 function Animator:addSimpleTagState(stateName, tagName)
     local state = self:createSimpleTagState(stateName, tagName)
     self:addState(state)
-    return state
+    return self
 end
 
 function Animator:addInstantTransition(from, to)
     self:addTransition(from, to, function() return true end)
+    return self
 end
 
 function Animator:addTransitionOnAnimationEnd(from, to, condition)
@@ -55,6 +49,7 @@ function Animator:addTransitionOnAnimationEnd(from, to, condition)
     else
         self:addTransition(from, to, function() return condition and self:isLooped() end)
     end
+    return self
 end
 
 -- from - string or { string, string, ... }
@@ -73,24 +68,49 @@ function Animator:addTransition(from, to, condition)
         end
         self.transitions[fromState][to] = condition
     end
+    return self
 end
 
+AnimatorInstance = Class {
+    init = function(self, animator, animation)
+        self.animation = animation
+        self.animator = animator
+        self.state = nil
+        self.variables = {
+            flipH = false,
+            flipV = false
+        }
+        self.animationSpeed = 1
+        self._isLooped = false
+        self.animation:onLoop(function() self._isLooped = true end)
+    end
+}
 
-function Animator:isLooped()
+
+function AnimatorInstance:play(tag)
+    self.animation:setTag(tag)
+    self.animation:play()
+end
+
+function AnimatorInstance:setSpeed(speed)
+    self.animationSpeed = speed
+end
+
+function AnimatorInstance:isLooped()
     return self._isLooped
 end
 
 
-function Animator:setVariable(key, value)
+function AnimatorInstance:setVariable(key, value)
     self.variables[key] = value
 end
 
-function Animator:getVariable(key)
+function AnimatorInstance:getVariable(key)
     return self.variables[key]
 end
 
 
-function Animator:draw(x, y, rot, sx, sy, ox, oy)
+function AnimatorInstance:draw(x, y, rot, sx, sy, ox, oy)
     sx = sx or 1
     sy = sy or 1
     ox = ox or 0
@@ -106,31 +126,31 @@ function Animator:draw(x, y, rot, sx, sy, ox, oy)
     self.animation:draw(x, y, rot, sx, sy, ox, oy)
 end
 
-function Animator:update(dt)
+function AnimatorInstance:update(dt)
     local currentState = self.state
-    self.animation:update(dt)
-    if currentState and self.states[currentState] and self.states[currentState].update then
-        self.states[currentState]:update(dt)
+    self.animation:update(dt*self.animationSpeed)
+    if currentState and self.animator.states[currentState] and self.animator.states[currentState].update then
+        self.animator.states[currentState].update(self, dt)
     end
 
     local transitionTo
     if currentState then
-        transitionTo = self:_checkTransitions(self.transitions["*"])
+        transitionTo = self:_checkTransitions(self.animator.transitions["*"])
         if currentState == transitionTo then
             transitionTo = nil
         end
         if not transitionTo then
-            transitionTo = self:_checkTransitions(self.transitions[currentState])
+            transitionTo = self:_checkTransitions(self.animator.transitions[currentState])
         end
     else
-        transitionTo = self:_checkTransitions(self.transitions["_start"])
+        transitionTo = self:_checkTransitions(self.animator.transitions["_start"])
     end
     if transitionTo then
         self:switchToState(transitionTo)
     end
 end
 
-function Animator:_checkTransitions(from)
+function AnimatorInstance:_checkTransitions(from)
     if not from then
         return nil
     end
@@ -143,17 +163,17 @@ function Animator:_checkTransitions(from)
     return nil
 end
 
-function Animator:switchToState(state)
-    if self.states[self.state] and self.states[self.state].onExit then
-        self.states[self.state]:onExit()
+function AnimatorInstance:switchToState(state)
+    if self.animator.states[self.state] and self.animator.states[self.state].onExit then
+        self.animator.states[self.state].onExit(self)
     end
     self.state = state
     self._isLooped = false
     if Debug and Debug.PrintAnimationEvents then
         print("Switched to animation state: " .. state)
     end
-    if self.states[self.state] and self.states[self.state].onEnter then
-        self.states[self.state]:onEnter()
+    if self.animator.states[self.state] and self.animator.states[self.state].onEnter then
+        self.animator.states[self.state].onEnter(self)
     end
 end
 

@@ -9,23 +9,23 @@ local function getRotating4SideAnimation(tagPrefix, directionVariableName, also)
         [4] = "up",
     }
 
-    return function(animationState, dt)
-        local direction = animationState.animator:getVariable(directionVariableName)
-        local prevDirection = animationState.animator:getVariable(tagPrefix .. "-prevDirection")
+    return function(animatorInstance, dt)
+        local direction = animatorInstance:getVariable(directionVariableName)
+        local prevDirection = animatorInstance:getVariable(tagPrefix .. "-prevDirection")
         direction = math.ceil((direction + 45) % 360 / 90)
         if prevDirection ~= direction then
             local tagSuffix = dirToTagSuffix[direction]
             if not tagSuffix then tagSuffix = dirToTagSuffix[1] end
-            animationState.animator:setVariable(tagPrefix .. "-prevDirection", direction)
+            animatorInstance:setVariable(tagPrefix .. "-prevDirection", direction)
             if tagSuffix == "left" then
                 tagSuffix = "right"
-                animationState.animator:setVariable("flipH", true)
+                animatorInstance:setVariable("flipH", true)
             else
-                animationState.animator:setVariable("flipH", false)
+                animatorInstance:setVariable("flipH", false)
             end
-            animationState.animator:play(tagPrefix .. "-" .. tagSuffix)
+            animatorInstance:play(tagPrefix .. "-" .. tagSuffix)
         end
-        if also then also(animationState, dt) end
+        if also then also(animatorInstance, dt) end
     end
 end
 
@@ -41,24 +41,24 @@ local function getRotating8SideAnimation(tagPrefix, directionVariableName, also)
         [8] = { h = "right",  v = "down" },
     }
 
-    return function(animationState, dt)
-        local direction = animationState.animator:getVariable(directionVariableName)
-        local prevDirection = animationState.animator:getVariable(tagPrefix .. "-prevDirection")
+    return function(animatorInstance, dt)
+        local direction = animatorInstance:getVariable(directionVariableName)
+        local prevDirection = animatorInstance:getVariable(tagPrefix .. "-prevDirection")
         direction = math.ceil((-direction + 22.5) % 360 / 45)
         if prevDirection ~= direction then
             local tagSuffix = dirToTagSuffix[direction]
             if not tagSuffix then tagSuffix = dirToTagSuffix[2] end
             local h, v = tagSuffix.h, tagSuffix.v
-            animationState.animator:setVariable(tagPrefix .. "-prevDirection", direction)
+            animatorInstance:setVariable(tagPrefix .. "-prevDirection", direction)
             if h == "left" then
                 h = "right"
-                animationState.animator:setVariable("flipH", true)
+                animatorInstance:setVariable("flipH", true)
             else
-                animationState.animator:setVariable("flipH", false)
+                animatorInstance:setVariable("flipH", false)
             end
-            animationState.animator:play(tagPrefix .. (v ~= "center" and "-"..v or "") .. (h ~= "center" and "-"..h or ""))
+            animatorInstance:play(tagPrefix .. (v ~= "center" and "-"..v or "") .. (h ~= "center" and "-"..h or ""))
         end
-        if also then also(animationState, dt) end
+        if also then also(animatorInstance, dt) end
     end
 end
 
@@ -70,7 +70,7 @@ local AnimationStates = {
             getRotating4SideAnimation(state, "lookDirection"),
             nil,
             function (self)
-                self.animator:setVariable(state .. "-prevDirection", nil)
+                self:setVariable(state .. "-prevDirection", nil)
             end
         )
     end,
@@ -81,7 +81,7 @@ local AnimationStates = {
             getRotating4SideAnimation(state, "moveDirection"),
             nil,
             function (self)
-                self.animator:setVariable(state .. "-prevDirection", nil)
+                self:setVariable(state .. "-prevDirection", nil)
             end
         )
     end,
@@ -92,7 +92,7 @@ local AnimationStates = {
             getRotating8SideAnimation("shoot", "lookDirection"),
             nil,
             function (self)
-                self.animator:setVariable("shoot" .. "-prevDirection", nil)
+                self:setVariable("shoot" .. "-prevDirection", nil)
             end
         )
     end,
@@ -100,12 +100,12 @@ local AnimationStates = {
         return AnimationState(
             "shoot-cooldown",
             animator,
-            getRotating8SideAnimation("aim", "lookDirection", function (animationState, dt)
-                animationState.animator:setVariable("lastShoot",  animationState.animator:getVariable("lastShoot") + dt)
+            getRotating8SideAnimation("aim", "lookDirection", function (animatorInstance, dt)
+                animatorInstance:setVariable("lastShoot",  animatorInstance:getVariable("lastShoot") + dt)
             end),
-            function (self) self.animator:setVariable("lastShoot", 0) end,
+            function (self) self:setVariable("lastShoot", 0) end,
             function (self)
-                self.animator:setVariable("aim" .. "-prevDirection", nil)
+                self:setVariable("aim" .. "-prevDirection", nil)
             end
         )
     end,
@@ -125,64 +125,59 @@ local variablesUpdater = function(component, entity)
     component.animator:setVariable("shoot", shoot)
 end
 
-local ArmsAnimator = function(element)
-    local animator = Animator(AssetManager:getAnimation('body-'.. element ..'-arms'))
-    animator:addState(AnimationStates.byLook(animator, "idle"))
-    animator:addState(AnimationStates.byMove(animator, "run"))
-    animator:addState(AnimationStates.shoot(animator))
-    animator:addState(AnimationStates.shootCooldown(animator))
+local armsAnimator = Animator()
+armsAnimator
+    :addState(AnimationStates.byLook(armsAnimator, "idle"))
+    :addState(AnimationStates.byMove(armsAnimator, "run"))
+    :addState(AnimationStates.shoot(armsAnimator))
+    :addState(AnimationStates.shootCooldown(armsAnimator))
+    :addInstantTransition("_start", "idle")
+    :addTransition("idle", "run", function(self) return self:getVariable("speed")>0.2 end)
+    :addTransition("run", "idle", function(self) return self:getVariable("speed")<0.1 end)
+    :addTransition("*", "shoot", function(self) return self:getVariable("shoot") == true end)
+    :addTransition("shoot", "shoot-cooldown", function(self) return self:getVariable("shoot") == false end)
+    :addTransition("shoot-cooldown", "idle", function(self) return self:getVariable("lastShoot") > 2 end)
 
-    animator:addInstantTransition("_start", "idle")
-    animator:addTransition("idle", "run", function(self) return self:getVariable("speed")>0.2 end)
-    animator:addTransition("run", "idle", function(self) return self:getVariable("speed")<0.1 end)
-    animator:addTransition("*", "shoot", function(self) return self:getVariable("shoot") == true end)
-    animator:addTransition("shoot", "shoot-cooldown", function(self) return self:getVariable("shoot") == false end)
-    animator:addTransition("shoot-cooldown", "idle", function(self) return self:getVariable("lastShoot") > 2 end)
-    return animator
-end
+local headAnimator = Animator()
+headAnimator
+    :addState(AnimationStates.byLook(headAnimator, "idle"))
+    :addState(AnimationStates.byLook(headAnimator, "run"))
+    :addInstantTransition("_start", "idle")
+    :addTransition("idle", "run", function(self) return self:getVariable("speed")>0.2 end)
+    :addTransition("run", "idle", function(self) return self:getVariable("speed")<0.1 end)
 
-local HeadAnimator = function(element)
-    local animator = Animator(AssetManager:getAnimation('body-'.. element ..'-head'))
-    animator:addState(AnimationStates.byLook(animator, "idle"))
-    animator:addState(AnimationStates.byLook(animator, "run"))
+local torsoAnimator = Animator()
+torsoAnimator
+    :addState(AnimationStates.byLook(torsoAnimator, "idle"))
+    :addState(AnimationStates.byMove(torsoAnimator, "run"))
+    :addInstantTransition("_start", "idle")
+    :addTransition("idle", "run", function(self) return self:getVariable("speed")>0.2 end)
+    :addTransition("run", "idle", function(self) return self:getVariable("speed")<0.1 end)
 
-    animator:addInstantTransition("_start", "idle")
-    animator:addTransition("idle", "run", function(self) return self:getVariable("speed")>0.2 end)
-    animator:addTransition("run", "idle", function(self) return self:getVariable("speed")<0.1 end)
-    return animator
-end
+local legsAnimator = Animator()
+legsAnimator
+    :addState(AnimationStates.byLook(legsAnimator, "idle"))
+    :addState(AnimationStates.byMove(legsAnimator, "run"))
+    :addInstantTransition("_start", "idle")
+    :addTransition("idle", "run", function(self) return self:getVariable("speed")>0.2 end)
+    :addTransition("run", "idle", function(self) return self:getVariable("speed")<0.1 end)
 
-local TorsoAnimator = function(element)
-    local animator = Animator(AssetManager:getAnimation('body-'.. element ..'-torso'))
-    animator:addState(AnimationStates.byLook(animator, "idle"))
-    animator:addState(AnimationStates.byMove(animator, "run"))
+local abstractAnimators = {
+    arms = armsAnimator,
 
-    animator:addInstantTransition("_start", "idle")
-    animator:addTransition("idle", "run", function(self) return self:getVariable("speed")>0.2 end)
-    animator:addTransition("run", "idle", function(self) return self:getVariable("speed")<0.1 end)
-    return animator
-end
+    head = headAnimator,
 
-local LegsAnimator = function(element)
-    local animator = Animator(AssetManager:getAnimation('body-'.. element ..'-legs'))
-    animator:addState(AnimationStates.byLook(animator, "idle"))
-    animator:addState(AnimationStates.byMove(animator, "run"))
+    torso = torsoAnimator,
 
-    animator:addInstantTransition("_start", "idle")
-    animator:addTransition("idle", "run", function(self) return self:getVariable("speed")>0.2 end)
-    animator:addTransition("run", "idle", function(self) return self:getVariable("speed")<0.1 end)
-    return animator
-end
-
-local animators = {
-    arms = ArmsAnimator,
-    head = HeadAnimator,
-    torso = TorsoAnimator,
-    legs = LegsAnimator
+    legs = legsAnimator
 }
 
+local function animatorFactory(kind, element)
+    return abstractAnimators[kind]:newInstance(AssetManager:getAnimation("body-"..element.."-"..kind))
+end
+
 local function addAnimator(entity, kind, element)
-    entity:addComponent('Animator', { animator = animators[kind](element), variablesUpdater = variablesUpdater })
+    entity:addComponent('Animator', { animator = animatorFactory(kind, element), variablesUpdater = variablesUpdater })
     return entity
 end
 
