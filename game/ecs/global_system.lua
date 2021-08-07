@@ -14,13 +14,14 @@ local AnimationSystem = require "game.ecs.systems.animation_system"
 local PhysicsSystem = require "game.ecs.systems.physics_system"
 local DamageSystem = require "game.ecs.systems.damage_system"
 local ActionSystem = require "game.ecs.systems.action_system"
+local MapSystem = require "game.ecs.systems.map_system"
 
 local GlobalSystem = Class {
     init = function(self)
         self.HC = HC.new()
         self.systems = {
-            --UserControlsSystem = System{{'UserControlled', 'Controlled'}},
-            --AiSystem = System{{'AiComponent', 'Controlled'}},
+            
+            MapSystem(self, 'test_island'),
             MouseSystem(self),
 
             MovingSystem(self),
@@ -32,7 +33,7 @@ local GlobalSystem = Class {
             AnimationSystem(self),
             PhysicsSystem(self),
             DamageSystem(self),
-            
+
             CameraSystem(self),
             DrawSystem(self),
         }
