@@ -28,10 +28,10 @@ function DrawSystem:draw()
         end
         love.graphics.pop()
 
-        local shapes = entity.globalSystem.HC:hash():shapes()
-        for _, shape in pairs(shapes) do
-            shape:draw()
-        end
+        -- local shapes = entity.globalSystem.HC:hash():shapes()
+        -- for _, shape in pairs(shapes) do
+        --     shape:draw()
+        -- end
     end
     love.graphics.setColor(1, 1, 1, 1)
 end
