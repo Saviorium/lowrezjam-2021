@@ -13,7 +13,20 @@ local MapSystem = Class {
 
 function MapSystem:update(dt)
     for entityId, entity in pairs(self.pool) do
-        entity:getComponentByType("Spawner")[1]:update(dt, entity, self.globalSystem)
+
+        local spawner = entity:getComponentByType("Spawner")[1]
+        local pos     = entity:getComponentByName('Position').position
+
+        if spawner.currentTimer > spawner.timeToSpawn then
+
+            table.insert(spawner.spawned, spawner.prefab(self.globalSystem, pos))
+            spawner.currentTimer = 0
+
+        else 
+            if table.getn(spawner.spawned) < spawner.maxCount then
+                spawner.currentTimer = spawner.currentTimer + dt
+            end
+        end
     end
 end
 
