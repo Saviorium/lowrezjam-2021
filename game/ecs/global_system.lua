@@ -10,13 +10,10 @@ local CameraSystem = require "game.ecs.systems.camera_system"
 local MouseSystem = require "game.ecs.systems.mouse_system"
 local RotateSystem = require "game.ecs.systems.rotate_system"
 local BodyPartsSystem = require "game.ecs.systems.body_parts_system"
-<<<<<<< Updated upstream
 local AnimationSystem = require "game.ecs.systems.animation_system"
-=======
 local PhysicsSystem = require "game.ecs.systems.physics_system"
 local DamageSystem = require "game.ecs.systems.damage_system"
 local ActionSystem = require "game.ecs.systems.action_system"
->>>>>>> Stashed changes
 
 local GlobalSystem = Class {
     init = function(self)
@@ -32,13 +29,10 @@ local GlobalSystem = Class {
             ActionSystem(self),
             BodyPartsSystem(self),
 
-<<<<<<< Updated upstream
             AnimationSystem(self),
-=======
             PhysicsSystem(self),
             DamageSystem(self),
-
->>>>>>> Stashed changes
+            
             CameraSystem(self),
             DrawSystem(self),
         }
