@@ -21,7 +21,7 @@ states = {
 
 fonts = require "data.fonts.fonts"
 
-local pixelCanvas = require "engine.render.global_pixel_canvas" (Vector(640, 640), 4)
+local pixelCanvas = require "engine.render.global_pixel_canvas" (Vector(64, 64), 4)
 
 function getScale()
     return pixelCanvas:getScale()
