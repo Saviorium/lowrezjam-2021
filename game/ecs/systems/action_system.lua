@@ -18,23 +18,11 @@ function ActionSystem:update(dt)
         local body     = entity:getComponentByName("Body")
         local snapshot = controller.inputManager.inputSnapshot
 
-        if snapshot.action1 == 1 then
-            for _, part in pairs(body.parts) do
-                for _, skill in pairs(part:getComponentByType('PrimarySkill')) do
-                    if skill.currentTimer > skill.cooldown then
-                        self:fireBullets( position, rotation, skill.count, 4, skill.angle, skill.prefab )
-                        skill.currentTimer = 0
-                    end
-                end
-            end
-        end
-        if snapshot.action2 == 1 then
-            for _, part in pairs(body.parts) do
-                for _, skill in pairs(part:getComponentByType('SecondarySkill')) do
-                    if skill.currentTimer > skill.cooldown then
-                        self:fireBullets( position, rotation, skill.count, 4, skill.angle, skill.prefab )
-                        skill.currentTimer = 0
-                    end
+        for _, part in pairs(body.parts) do
+            for _, skill in pairs(part:getComponentByType('Skill')) do
+                if skill.currentTimer > skill.cooldown and snapshot[skill.input] == 1 then
+                    self:fireBullets( position, rotation, skill.count, 4, skill.angle, skill.prefab, skill.damage)
+                    skill.currentTimer = 0
                 end
             end
         end
@@ -44,7 +32,7 @@ function ActionSystem:update(dt)
     end
 end
 
-function ActionSystem:fireBullets( position, rotation, bulletsCount, distanceBetweenBullets, angle, prefab )
+function ActionSystem:fireBullets( position, rotation, bulletsCount, distanceBetweenBullets, angle, prefab, damage)
     for bullet=1, bulletsCount do
         local direction = Vector (math.cos(rotation*math.pi/180), math.sin(rotation*math.pi/180))
         local perpendicular = direction:perpendicular()*distanceBetweenBullets
@@ -52,8 +40,13 @@ function ActionSystem:fireBullets( position, rotation, bulletsCount, distanceBet
         local x = ((bullet % 2 == 0) and 1 or -1 ) * ((bulletsCount % 2 ~= 0 and bullet == 1) and 0 or 1)*perpendicular.x + position.x
         local y = ((bullet % 2 == 0) and 1 or -1 ) * ((bulletsCount % 2 ~= 0 and bullet == 1) and 0 or 1)*perpendicular.y + position.y
         local angle = rotation +  ((bullet % 2 == 0) and 1 or -1 ) * ((bulletsCount % 2 ~= 0 and bullet == 1) and 0 or 1) * (math.floor(bullet / 2 )) * angle
+<<<<<<< Updated upstream
 
         prefab( self.globalSystem, Vector(x, y), angle)
+=======
+        
+        prefab( self.globalSystem, Vector(x, y) + direction*7, angle, damage)
+>>>>>>> Stashed changes
     end
 end
 

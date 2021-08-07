@@ -7,8 +7,12 @@ return {
         if Debug.dragCharacterDebug then
             local pos = entity:getComponentByName("Position").position
             local rotation = entity:getComponentByName("Rotation").rotation
+            local health = entity:getComponentByName("Health")
             love.graphics.setColor(1,1,1,1)
             love.graphics.print(pos.x..' '..pos.y, 0, 0)
+            if health then
+                love.graphics.print(health.currentHP, 0, 5)
+            end
             if entity:getComponentByName("CameraTarget") then
                 love.graphics.print(entity:getComponentByName("CameraTarget").isMain and 1 or 0, 0, 4)
             end

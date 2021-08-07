@@ -36,8 +36,31 @@ function Entity:setVariable(componentName, variable, value)
     return self
 end
 
-function Entity:removeComponent()
-    -- Удаление энтити из всех пулов всех систем в globalSystem
+function Entity:removeComponent(name)
+    local component = self.components[name]
+    self.components[name] = nil
+    for systemName, system in pairs(self.globalSystem.systems) do
+        if system.pool[self.id] then
+            for ind, condition in pairs(system.conditions) do
+                if not(table.getn(self:getComponentByType(condition)) == 0 and not self:getComponentByName(condition)) then
+                    system.pool[self.id] = nil
+                end
+            end
+        end
+    end
+end
+
+function Entity:delete()
+    for systemName, system in pairs(self.globalSystem.systems) do
+        system.pool[self.id] = nil
+    end
+    for _, collider in pairs(self:getComponentByType("Collider")) do
+        self.globalSystem.HC:remove(collider.collider)
+        print(collider)
+    end
+    self.globalSystem.objects[self.id] = nil
+    self.components = {}
+    self.globalSystem = nil
 end
 
 function Entity:listComponents()

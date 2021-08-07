@@ -28,6 +28,15 @@ function DrawSystem:draw()
         end
         love.graphics.pop()
 
+<<<<<<< Updated upstream
+=======
+        if Debug.drawCollidersDebug then
+            local shapes = entity.globalSystem.HC:hash():shapes()
+            for _, shape in pairs(shapes) do
+                shape:draw()
+            end
+        end
+>>>>>>> Stashed changes
     end
     love.graphics.setColor(1, 1, 1, 1)
 end

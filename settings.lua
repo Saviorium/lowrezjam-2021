@@ -23,6 +23,7 @@ Debug = {
     showFps = 1,
     mousePos = 0,
     strictComponentCheck = 1,
-    dragCharacterDebug = false,
+    dragCharacterDebug = true,
     PrintAnimationEvents = false,
+    drawCollidersDebug = false,
 }
