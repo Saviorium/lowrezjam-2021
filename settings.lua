@@ -23,5 +23,6 @@ Debug = {
     showFps = 1,
     mousePos = 0,
     strictComponentCheck = 1,
-    dragCharacterDebug = 1
+    dragCharacterDebug = 1,
+    PrintAnimationEvents = 0,
 }

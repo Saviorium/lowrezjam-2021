@@ -9,6 +9,7 @@ local CameraSystem = require "game.ecs.systems.camera_system"
 local MouseSystem = require "game.ecs.systems.mouse_system"
 local RotateSystem = require "game.ecs.systems.rotate_system"
 local BodyPartsSystem = require "game.ecs.systems.body_parts_system"
+local AnimationSystem = require "game.ecs.systems.animation_system"
 
 local GlobalSystem = Class {
     init = function(self)
@@ -22,6 +23,7 @@ local GlobalSystem = Class {
             ControlSystem(self),
             BodyPartsSystem(self),
 
+            AnimationSystem(self),
             CameraSystem(self),
             DrawSystem(self),
         }

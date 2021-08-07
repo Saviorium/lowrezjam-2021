@@ -1,10 +1,10 @@
 local System = require "game.ecs.systems.system"
 
 local kinds = {
-    head = require "game.ecs.prefabs.head",
-    arms = require "game.ecs.prefabs.arms",
-    torso = require "game.ecs.prefabs.torso",
-    legs = require "game.ecs.prefabs.legs",
+    head = require "game.ecs.prefabs.body_parts.head",
+    arms = require "game.ecs.prefabs.body_parts.arms",
+    torso = require "game.ecs.prefabs.body_parts.torso",
+    legs = require "game.ecs.prefabs.body_parts.legs",
 }
 
 local BodyPartsSystem = Class {
