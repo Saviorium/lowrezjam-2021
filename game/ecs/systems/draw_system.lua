@@ -18,15 +18,13 @@ function DrawSystem:draw()
         local pos = entity:getComponentByName("Position").position
         love.graphics.translate(pos.x, pos.y)
         for _, drawable in pairs(entity:getComponentByType("Drawable")) do
-            -- love.graphics.push()
-            -- if drawable.center then
-            --     love.graphics.translate(-drawable.center.x, -drawable.center.y)
-            -- end
+            if drawable.center then
+                love.graphics.translate(-drawable.center.x, -drawable.center.y)
+            end
 
             if not drawable.hidden then
                 drawable:draw(entity)
             end
-            -- love.graphics.pop()
         end
         love.graphics.pop()
 
