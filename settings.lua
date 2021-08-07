@@ -24,5 +24,5 @@ Debug = {
     mousePos = 0,
     strictComponentCheck = 1,
     dragCharacterDebug = 1,
-    PrintAnimationEvents = 0,
+    PrintAnimationEvents = false,
 }

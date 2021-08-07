@@ -3,6 +3,8 @@ local sti     = require "lib/sti"
 local PlayerSpawner = require "game.ecs.prefabs.player_spawner"
 local EnemySpawner     = require "game.ecs.prefabs.character_spawner"
 
+local clipper = require "lib.clipper.clipper"
+
 local MapSystem = Class {
     __includes = System,
     init = function(self, globalSystem)
@@ -39,7 +41,7 @@ function MapSystem:loadMap(mapName)
 
     for ind, tile in pairs(self.map.tiles) do
         if tile.objectGroup and tile.objectGroup.objects[1].polygon then
-            self.globalSystem.HC:polygon(tile.objectGroup.objects[1].polygon)
+            --self.globalSystem.HC:polygon(tile.objectGroup.objects[1].polygon)
         end
     end
 
@@ -51,6 +53,72 @@ function MapSystem:loadMap(mapName)
             EnemySpawner(self.globalSystem, Vector(obj.x, obj.y))
         end
     end
+
+    self.gridSize = Vector(self:getGridSize("tile-layer"))
+    local polygons = self:mergePolygons("tile-layer")
+    for _, polygon in pairs(polygons) do
+        local newcollider = self.globalSystem.HC:polygon(unpack(polygon))
+        newcollider.type = "Physics"
+    end
+end
+
+function MapSystem:getGridSize(layer)
+    for _, tile in pairs(self.map.tiles) do
+        return tile.width, tile.height
+    end
+end
+
+function MapSystem:mergePolygons(layer)
+    local polygons = {}
+    for y, col in pairs(self.map.layers[layer].data) do
+        for x, tile in pairs(col) do
+            if tile.objectGroup and type(tile.objectGroup) == "table" then
+                for _, object in pairs(tile.objectGroup.objects) do
+                    if type(object) == "table" then
+                        if object.polygon then
+                            local newPolygon = {
+                                x = (x-1)*self.gridSize.x + object.x,
+                                y = (y-1)*self.gridSize.y + object.y,
+                                polygon = object.polygon
+                            }
+                            table.insert(polygons, newPolygon)
+                        end
+                    end
+                end
+            end
+        end
+    end
+    local polyList = clipper.polygons()
+    for _, polygon in pairs(polygons) do
+        local cPoly = clipper.polygon()
+        for _, point in pairs(polygon.polygon) do
+            cPoly:add(point.x+polygon.x, point.y+polygon.y)
+        end
+        polyList:add(cPoly)
+    end
+
+    local clipPoly = clipper.polygon()
+    clipPoly:add(0, 0)
+    clipPoly:add(0, 1000)
+    clipPoly:add(1000, 1000)
+    clipPoly:add(1000, 0)
+
+    local merger = clipper.new()
+    merger:add_subject(polyList)
+    merger:add_clip(clipPoly)
+    local mergedPolys = merger:execute('intersection', 'positive')
+    local result = {}
+    for i = 1, mergedPolys:size(), 1 do
+        local cPoly = mergedPolys:get(i)
+        local newPolygon = {}
+        for j = 1, cPoly:size(), 1 do
+            local point = cPoly:get(j)
+            table.insert(newPolygon, tonumber(point.x))
+            table.insert(newPolygon, tonumber(point.y))
+        end
+        table.insert(result, newPolygon)
+    end
+    return result
 end
 
 return MapSystem
