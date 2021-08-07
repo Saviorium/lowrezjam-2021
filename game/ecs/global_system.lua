@@ -19,9 +19,11 @@ local MapSystem = require "game.ecs.systems.map_system"
 local GlobalSystem = Class {
     init = function(self)
         self.HC = HC.new()
+        self.objects = {}
+        self.newEntityId = 1
         self.systems = {
             
-            MapSystem(self, 'test_island'),
+            MapSystem(self),
             MouseSystem(self),
 
             MovingSystem(self),
@@ -37,8 +39,7 @@ local GlobalSystem = Class {
             CameraSystem(self),
             DrawSystem(self),
         }
-        self.objects = {}
-        self.newEntityId = 1
+        self.systems[1]:loadMap('test_island')
     end
 }
 

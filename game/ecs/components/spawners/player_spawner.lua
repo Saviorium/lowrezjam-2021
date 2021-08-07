@@ -1,15 +1,15 @@
-
 local CharacterPrefab = require "game.ecs.prefabs.character"
+
 return {
     name = "PlayerSpawner",
     type = "Spawner",
-    timeToSpawn = 10,
+    timeToSpawn = 1,
     maxCount = 1,
     spawned = {},
     currentTimer = 0,
 
     update = function(self, dt, entity, globalSystem)
-
+        print(self.currentTimer)
         if self.currentTimer > self.timeToSpawn then
 
             local pos = entity:getComponentByName('Position').position
@@ -25,11 +25,12 @@ return {
             EventManager:send("changePart", { entity = player.id, kind = "torso", element = "temp" })
             EventManager:send("changePart", { entity = player.id, kind = "legs", element = "temp" })
 
-            table.insert(spawned, player)
-
+            table.insert(self.spawned, player)
+            print(player:listComponents())
+            player:listComponents()
             self.currentTimer = 0
         else 
-            if table.getn(spawned) < maxCount then
+            if table.getn(self.spawned) < self.maxCount then
                 self.currentTimer = self.currentTimer + dt
             end
         end

@@ -3,6 +3,8 @@ return function(globalSystem, position)
     local physicsCollider = globalSystem.HC:rectangle(position.x, position.y, position.x + 6, position.y + 7)
     damageCollider.type = 'Damage'
     physicsCollider.type = 'Physics'
+
+    print('Spawning')
     return globalSystem:newEntity()
         :addComponent('Walking')
         :addComponent('Position', {position = position})
