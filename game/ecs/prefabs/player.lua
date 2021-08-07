@@ -1,3 +1,5 @@
+local BulletPrefab = require "game.ecs.prefabs.bullet"
+
 return function(globalSystem, position)
     local damageCollider =  globalSystem.HC:rectangle(0, 0, 4, 6)
     local physicsCollider = globalSystem.HC:rectangle(0, 0, 6, 8)
@@ -20,8 +22,8 @@ return function(globalSystem, position)
         :addComponent("TargetAtMouse")
         :addComponent("MouseControlled")
 
-    EventManager:send("changePart", { entity = ent.id, kind = "head", element = "temp" })
-    EventManager:send("changePart", { entity = ent.id, kind = "arms", element = "temp" })
+    EventManager:send("changePart", { entity = ent.id, kind = "head", element = "temp", skill = "BulletSecondary", ammunition = BulletPrefab })
+    EventManager:send("changePart", { entity = ent.id, kind = "arms", element = "temp", skill = "BulletPrimary", ammunition = BulletPrefab  })
     EventManager:send("changePart", { entity = ent.id, kind = "torso", element = "temp" })
     EventManager:send("changePart", { entity = ent.id, kind = "legs", element = "temp" })
     return ent

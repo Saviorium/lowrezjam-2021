@@ -25,14 +25,14 @@ function BodyPartsSystem:update(dt)
         if not entity then return end
 
         local body = entity:getComponentByName("Body")
-        local newPart = self:getPart(event.kind, event.element)
+        local newPart = self:getPart(event.kind, event.element, event.skill, event.ammunition)
         body.parts[event.kind] = newPart -- TODO: multiple parts of same kind?
         newPart:getComponentByName("BodyPart").parent = entity
     end
 end
 
-function BodyPartsSystem:getPart(kind, element)
-    return kinds[kind](self.globalSystem, element)
+function BodyPartsSystem:getPart(kind, element, skill, ammunition)
+    return kinds[kind](self.globalSystem, element, skill, ammunition)
 end
 
 return BodyPartsSystem

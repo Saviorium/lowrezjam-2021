@@ -15,6 +15,7 @@ local PhysicsSystem = require "game.ecs.systems.physics_system"
 local DamageSystem = require "game.ecs.systems.damage_system"
 local ActionSystem = require "game.ecs.systems.action_system"
 local MapSystem = require "game.ecs.systems.map_system"
+local ReloadSystem = require "game.ecs.systems.vistreli_system"
 
 local GlobalSystem = Class {
     init = function(self)
@@ -29,6 +30,7 @@ local GlobalSystem = Class {
             ControlSystem(self),
             ActionSystem(self),
             BodyPartsSystem(self),
+            ReloadSystem(self),
 
             AnimationSystem(self),
             PhysicsSystem(self),
@@ -38,7 +40,7 @@ local GlobalSystem = Class {
             MapSystem(self),
             DrawSystem(self),
         }
-        self.systems[11]:loadMap('test_island')
+        self.systems[12]:loadMap('test_island')
     end
 }
 
