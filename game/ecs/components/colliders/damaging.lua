@@ -1,5 +1,6 @@
 return {
     name = "Damaging",
     type = "Collider",
-    collider = nil
+    collider = nil,
+    center = Vector(0,0)
 }

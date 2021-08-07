@@ -1,6 +1,6 @@
 return function(globalSystem, position)
-    local damageCollider =  globalSystem.HC:rectangle(position.x + 5, position.y + 6, 10, 12)
-    local physicsCollider = globalSystem.HC:rectangle(position.x + 6, position.y + 7, 12, 14)
+    local damageCollider =  globalSystem.HC:rectangle(0, 0, 4, 6)
+    local physicsCollider = globalSystem.HC:rectangle(0, 0, 6, 8)
     damageCollider.type = 'Damage'
     physicsCollider.type = 'Physics'
 
@@ -8,8 +8,8 @@ return function(globalSystem, position)
         :addComponent('Walking')
         :addComponent('Position', {position = position})
         :addComponent('Rotation', {rotation = 0})
-        :addComponent('PhysicsCollider', {collider = physicsCollider})
-        :addComponent('TakingDamage', {collider = damageCollider})
+        :addComponent('PhysicsCollider', {collider = physicsCollider, center = Vector(1,3)})
+        :addComponent('TakingDamage', {collider = damageCollider, center = Vector(2,2)})
         :addComponent('Health')
         :addComponent('Velocity', {velocity = Vector(0,0)})
         :addComponent('Body', { parts = {} })

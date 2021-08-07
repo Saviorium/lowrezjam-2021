@@ -14,7 +14,7 @@ function MovingSystem:update(dt)
         local velocity = entity:getComponentByName("Velocity").velocity
         pos = pos + velocity * dt
         for ind, component in pairs(entity:getComponentByType("Collider")) do
-            component.collider:moveTo(pos.x, pos.y)
+            component.collider:moveTo(pos.x + component.center.x, pos.y + component.center.y)
         end
         entity:getComponentByName("Position").position = pos
         entity:getComponentByName("Velocity").velocity = velocity
