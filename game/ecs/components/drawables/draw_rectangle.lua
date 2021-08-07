@@ -2,7 +2,7 @@ return {
     name = "DrawRectangle",
     type = "Drawable",
     color = { 1, 0, 1, 1 },
-    size = {x = 5, y = 5},
+    size = {x = 12, y = 14},
 
     draw = function (self)
         local rect = self

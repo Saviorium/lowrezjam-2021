@@ -1,6 +1,7 @@
 local Entity = require "game.ecs.entity"
 local Components = require "game.ecs.components"
 local System = require "game.ecs.systems.system"
+local HC = require 'lib/hardoncollider'
 
 local DrawSystem = require "game.ecs.systems.draw_system"
 local MovingSystem = require "game.ecs.systems.moving_system"
@@ -9,10 +10,17 @@ local CameraSystem = require "game.ecs.systems.camera_system"
 local MouseSystem = require "game.ecs.systems.mouse_system"
 local RotateSystem = require "game.ecs.systems.rotate_system"
 local BodyPartsSystem = require "game.ecs.systems.body_parts_system"
+<<<<<<< Updated upstream
 local AnimationSystem = require "game.ecs.systems.animation_system"
+=======
+local PhysicsSystem = require "game.ecs.systems.physics_system"
+local DamageSystem = require "game.ecs.systems.damage_system"
+local ActionSystem = require "game.ecs.systems.action_system"
+>>>>>>> Stashed changes
 
 local GlobalSystem = Class {
     init = function(self)
+        self.HC = HC.new()
         self.systems = {
             --UserControlsSystem = System{{'UserControlled', 'Controlled'}},
             --AiSystem = System{{'AiComponent', 'Controlled'}},
@@ -21,9 +29,16 @@ local GlobalSystem = Class {
             MovingSystem(self),
             RotateSystem(self),
             ControlSystem(self),
+            ActionSystem(self),
             BodyPartsSystem(self),
 
+<<<<<<< Updated upstream
             AnimationSystem(self),
+=======
+            PhysicsSystem(self),
+            DamageSystem(self),
+
+>>>>>>> Stashed changes
             CameraSystem(self),
             DrawSystem(self),
         }
@@ -49,8 +64,12 @@ function GlobalSystem:registerComponent(entity, componentName, args)
 end
 
 function GlobalSystem:update(dt)
+    --print('New screen')
     for systemName, system in pairs(self.systems) do
+        --local time = love.timer.getTime( )
         system:update(dt)
+        --local result = love.timer.getTime() - time
+        --print(systemName, result)
     end
 end
 

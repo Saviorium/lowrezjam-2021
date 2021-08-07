@@ -1,3 +1,5 @@
+bullets_number = 1
+
 require "settings"
 Utils = require "engine.utils.utils"
 Vector = require "lib.hump.vector"
@@ -23,6 +25,10 @@ local pixelCanvas = require "engine.render.global_pixel_canvas" (Vector(64, 64),
 
 function getScale()
     return pixelCanvas:getScale()
+end
+
+function getScreenDimensions()
+    return pixelCanvas.resolution * pixelCanvas:getScale()
 end
 
 function love.load()

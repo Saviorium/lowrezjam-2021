@@ -7,6 +7,7 @@ local state = {}
 function state:enter(prev_state, args)
     EventManager = EventManagerClass() -- yes, Global
     self.world = GlobalSystem()
+
     local player = CharacterPrefab(self.world, Vector(10, 10))
                         :addComponent("UserControlled")
                         :addComponent("DrawDebug")
@@ -18,11 +19,14 @@ function state:enter(prev_state, args)
     EventManager:send("changePart", { entity = player.id, kind = "arms", element = "temp" })
     EventManager:send("changePart", { entity = player.id, kind = "torso", element = "temp" })
     EventManager:send("changePart", { entity = player.id, kind = "legs", element = "temp" })
-    local enemy = CharacterPrefab(self.world, Vector(30, 20)):addComponent('AiControlled')
+
+
+    local enemy = CharacterPrefab(self.world, Vector(30, 20)):addComponent('AiControlled')--:addComponent("DrawDebug")
     EventManager:send("changePart", { entity = enemy.id, kind = "head", element = "temp" })
     EventManager:send("changePart", { entity = enemy.id, kind = "arms", element = "temp" })
     EventManager:send("changePart", { entity = enemy.id, kind = "torso", element = "temp" })
     EventManager:send("changePart", { entity = enemy.id, kind = "legs", element = "temp" })
+
 end
 
 function state:mousepressed(x, y)

@@ -1,6 +1,7 @@
 return {
     name = "DrawDebug",
     type = "Drawable",
+    color = { 1, 0, 1, 1 },
 
     draw = function (self, entity)
         if Debug.dragCharacterDebug then
