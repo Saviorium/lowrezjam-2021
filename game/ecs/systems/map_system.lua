@@ -37,6 +37,12 @@ end
 function MapSystem:loadMap(mapName)
     self.map = sti("data/map/" .. mapName .. ".lua")
 
+    for ind, tile in pairs(self.map.tiles) do
+        if tile.objectGroup and tile.objectGroup.objects[1].polygon then
+            self.globalSystem.HC:polygon(tile.objectGroup.objects[1].polygon)
+        end
+    end
+
     for ind, obj in pairs(self.map.objects) do
         if obj.type == "player" then
             PlayerSpawner(self.globalSystem, Vector(obj.x, obj.y))
