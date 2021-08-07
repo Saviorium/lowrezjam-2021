@@ -1,6 +1,5 @@
 local Entity = require "game.ecs.entity"
 local Components = require "game.ecs.components"
-local System = require "game.ecs.systems.system"
 local HC = require 'lib/hardoncollider'
 
 local DrawSystem = require "game.ecs.systems.draw_system"

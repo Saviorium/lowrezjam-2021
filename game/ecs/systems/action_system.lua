@@ -52,7 +52,7 @@ function ActionSystem:fireBullets( position, rotation, bulletsCount, distanceBet
         local x = ((bullet % 2 == 0) and 1 or -1 ) * ((bulletsCount % 2 ~= 0 and bullet == 1) and 0 or 1)*perpendicular.x + position.x
         local y = ((bullet % 2 == 0) and 1 or -1 ) * ((bulletsCount % 2 ~= 0 and bullet == 1) and 0 or 1)*perpendicular.y + position.y
         local angle = rotation +  ((bullet % 2 == 0) and 1 or -1 ) * ((bulletsCount % 2 ~= 0 and bullet == 1) and 0 or 1) * (math.floor(bullet / 2 )) * angle
-        
+
         prefab( self.globalSystem, Vector(x, y), angle)
     end
 end

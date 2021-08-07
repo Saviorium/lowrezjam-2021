@@ -6,7 +6,7 @@ return {
     cooldown = 2,
     currentTimer = 0,
     prefab = nil,
-    
+
     update = function(self, dt)
         self.currentTimer = self.currentTimer + dt
     end

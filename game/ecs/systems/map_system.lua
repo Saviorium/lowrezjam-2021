@@ -24,7 +24,7 @@ function MapSystem:update(dt)
             table.insert(spawner.spawned, spawner.prefab(self.globalSystem, pos))
             spawner.currentTimer = 0
 
-        else 
+        else
             if table.getn(spawner.spawned) < spawner.maxCount then
                 spawner.currentTimer = spawner.currentTimer + dt
             end
@@ -38,12 +38,6 @@ end
 
 function MapSystem:loadMap(mapName)
     self.map = sti("data/map/" .. mapName .. ".lua")
-
-    for ind, tile in pairs(self.map.tiles) do
-        if tile.objectGroup and tile.objectGroup.objects[1].polygon then
-            --self.globalSystem.HC:polygon(tile.objectGroup.objects[1].polygon)
-        end
-    end
 
     for ind, obj in pairs(self.map.objects) do
         if obj.type == "player" then
@@ -97,16 +91,9 @@ function MapSystem:mergePolygons(layer)
         polyList:add(cPoly)
     end
 
-    local clipPoly = clipper.polygon()
-    clipPoly:add(0, 0)
-    clipPoly:add(0, 1000)
-    clipPoly:add(1000, 1000)
-    clipPoly:add(1000, 0)
-
     local merger = clipper.new()
     merger:add_subject(polyList)
-    merger:add_clip(clipPoly)
-    local mergedPolys = merger:execute('intersection', 'positive')
+    local mergedPolys = merger:execute('union', 'positive')
     local result = {}
     for i = 1, mergedPolys:size(), 1 do
         local cPoly = mergedPolys:get(i)

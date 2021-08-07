@@ -33,4 +33,6 @@ globals = {
   -- game
   "fonts",
   "EventManager",
+  "getScale",
+  "getScreenDimensions",
 }

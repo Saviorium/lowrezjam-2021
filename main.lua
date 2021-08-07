@@ -1,5 +1,3 @@
-bullets_number = 1
-
 require "settings"
 Utils = require "engine.utils.utils"
 Vector = require "lib.hump.vector"

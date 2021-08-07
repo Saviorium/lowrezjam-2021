@@ -2,8 +2,6 @@
 return function(globalSystem, position, rotation)
     local damagingCollider =  globalSystem.HC:circle(position.x, position.y, 0.5)
     damagingCollider.type = 'Damaging'
-    bullets_number = bullets_number + 1
-    print(bullets_number)
     return globalSystem:newEntity()
         :addComponent('Flying')
         :addComponent('Position', {position = position})

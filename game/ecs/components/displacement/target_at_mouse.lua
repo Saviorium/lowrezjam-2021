@@ -1,13 +1,13 @@
 return {
     name = "TargetAtMouse",
     type = 'Targeting',
-    turningSpeed = 1, 
+    turningSpeed = 1,
 
     update = function (self, dt, entity)
         local mousePos  = entity:getComponentByName("MouseControlled").mousePosition
 
         local pos = Vector(mousePos.x, mousePos.y)
-        local rotation = entity:getComponentByName('Rotation').rotation
+        local rotation
 
         local angle = pos:toPolar().x * 180 / math.pi - 90
 

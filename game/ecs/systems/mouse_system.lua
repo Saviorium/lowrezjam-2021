@@ -8,8 +8,13 @@ local MouseSystem = Class {
 }
 
 function MouseSystem:update(dt)
+    local dimensions = getScreenDimensions()
+    local mouseScreenPosition = Vector(love.mouse.getPosition())
+    local mousePosition = (mouseScreenPosition-dimensions/2) / getScale()
     for entityId, entity in pairs(self.pool) do
-        entity:getComponentByName("MouseControlled"):update(dt)
+        local component = entity:getComponentByName("MouseControlled")
+        component.mouseScreenPosition = mouseScreenPosition
+        component.mousePosition = mousePosition
     end
 end
 
