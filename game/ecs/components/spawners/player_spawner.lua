@@ -17,7 +17,7 @@ return {
                                 :addComponent("UserControlled")
                                 :addComponent("DrawDebug")
                                 :addComponent("CameraTarget", {inGoingToBeMain = true})
-                                :setVariable("Walking", "maxSpeed", 15)
+                                :setVariable("Walking", "maxSpeed", 105)
                                 :addComponent("TargetAtMouse")
                                 :addComponent("MouseControlled")
             EventManager:send("changePart", { entity = player.id, kind = "head", element = "temp" })

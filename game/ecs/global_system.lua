@@ -22,8 +22,6 @@ local GlobalSystem = Class {
         self.objects = {}
         self.newEntityId = 1
         self.systems = {
-            
-            MapSystem(self),
             MouseSystem(self),
 
             MovingSystem(self),
@@ -37,9 +35,10 @@ local GlobalSystem = Class {
             DamageSystem(self),
 
             CameraSystem(self),
+            MapSystem(self),
             DrawSystem(self),
         }
-        self.systems[1]:loadMap('test_island')
+        self.systems[11]:loadMap('test_island')
     end
 }
 
