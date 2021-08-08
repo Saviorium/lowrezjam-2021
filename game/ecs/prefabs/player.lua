@@ -18,7 +18,7 @@ return function(globalSystem, position)
         :addComponent("UserControlled")
         :addComponent("DrawDebug")
         :addComponent("CameraTarget", {inGoingToBeMain = true})
-        :setVariable("Walking", "maxSpeed", 15)
+        :setVariable("Walking", "maxSpeed", 25)
         :addComponent("TargetAtMouse")
         :addComponent("MouseControlled")
 

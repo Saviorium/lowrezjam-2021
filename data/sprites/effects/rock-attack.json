@@ -1,0 +1,75 @@
+{ "frames": [
+   {
+    "filename": "rock-attack 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 1, "y": 1, "w": 13, "h": 15 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 33
+   },
+   {
+    "filename": "rock-attack 1.aseprite",
+    "frame": { "x": 15, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 1, "y": 1, "w": 13, "h": 15 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 33
+   },
+   {
+    "filename": "rock-attack 2.aseprite",
+    "frame": { "x": 30, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 1, "y": 1, "w": 13, "h": 15 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 33
+   },
+   {
+    "filename": "rock-attack 3.aseprite",
+    "frame": { "x": 45, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 1, "y": 1, "w": 13, "h": 15 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 33
+   },
+   {
+    "filename": "rock-attack 4.aseprite",
+    "frame": { "x": 60, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 1, "y": 1, "w": 13, "h": 15 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 33
+   },
+   {
+    "filename": "rock-attack 5.aseprite",
+    "frame": { "x": 60, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 1, "y": 1, "w": 13, "h": 15 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 200
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.27",
+  "image": "rock-attack.png",
+  "format": "RGBA8888",
+  "size": { "w": 75, "h": 17 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "start", "from": 0, "to": 5, "direction": "forward" },
+   { "name": "back", "from": 0, "to": 4, "direction": "reverse" },
+   { "name": "up", "from": 5, "to": 5, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
