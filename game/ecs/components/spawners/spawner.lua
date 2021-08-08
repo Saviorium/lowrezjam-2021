@@ -23,7 +23,6 @@ return {
                     i = i + 1
                 end
             end
-            print(self.currentTimer, i)
             if i < self.maxCount then
                 self.currentTimer = self.currentTimer + dt
             end

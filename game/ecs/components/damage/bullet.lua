@@ -10,6 +10,7 @@ return {
     input = 'action1',
     damage = 10,
     distanceBetweenBullets = 0,
+    offsetDistance = 7,
 
     update = function(self, dt)
         self.currentTimer = self.currentTimer + dt
@@ -32,7 +33,7 @@ return {
                 local y = ((bullet % 2 == 0) and 1 or -1 ) * ((self.count % 2 ~= 0 and bullet == 1) and 0 or 1)*perpendicular.y + position.y
                 local angle = rotation +  ((bullet % 2 == 0) and 1 or -1 ) * ((self.count % 2 ~= 0 and bullet == 1) and 0 or 1) * (math.floor(bullet / 2 )) * self.angle
 
-                self.prefab( entity.globalSystem, Vector(x, y) + direction*7, angle, self.damage, self.animator)
+                self.prefab( entity.globalSystem, Vector(x, y) + direction*self.offsetDistance, angle, self.damage, self.animator, entity)
 
             end
             self.currentTimer = 0

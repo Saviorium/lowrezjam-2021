@@ -18,6 +18,10 @@ function DrawSystem:draw()
         local pos = entity:getComponentByName("Position").position
         love.graphics.translate(pos.x, pos.y)
         for _, drawable in pairs(entity:getComponentByType("Drawable")) do
+            if entity:getComponentByName("RotateThisThing") then
+                local rotation = entity:getComponentByName("Rotation").rotation
+                love.graphics.rotate( rotation*math.pi/180 + math.pi/2)
+            end
             if drawable.center then
                 love.graphics.translate(-drawable.center.x, -drawable.center.y)
             end
