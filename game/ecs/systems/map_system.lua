@@ -16,6 +16,7 @@ local MapSystem = Class {
 }
 
 function MapSystem:update(dt)
+    self.map:update(dt)
     for entityId, entity in pairs(self.pool) do
         local spawner = entity:getComponentByName("Spawner")
 
