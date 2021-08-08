@@ -1,7 +1,13 @@
 local addAnimator = require "game.ecs.prefabs.body_parts.animators"
-local BulletPrefab = require "game.ecs.prefabs.bullet"
+local Fireball = require "game.ecs.prefabs.ammunition.fireball"
+local Animator = require "engine.animation.animator"
 
-return function(globalSystem, element, skill, ammunition)
+return function(globalSystem, element)
+
+    local bulletAnimator = Animator()
+    bulletAnimator:addSimpleTagState("active")
+    bulletAnimator:addInstantTransition("_start", "active")
+
     local entity = globalSystem:newEntity()
         :addComponent('BodyPart', { kind = 'head', parent = nil })
         :addComponent('DrawAnimation', { hidden = true })
@@ -10,7 +16,8 @@ return function(globalSystem, element, skill, ammunition)
                                  count = 3,
                                  cooldown = 1,
                                  currentTimer = 0,
-                                 prefab = BulletPrefab,
+                                 prefab = Fireball,
+                                 animator = bulletAnimator,
                                  input = 'action2',
                                  damage = 5,
                                  distanceBetweenBullets = 2
