@@ -11,7 +11,7 @@ return function(globalSystem, element)
     local entity = globalSystem:newEntity()
         :addComponent('BodyPart', { kind = 'head', parent = nil })
         :addComponent('DrawAnimation', { hidden = true })
-        :addComponent('Bullet', { 
+        :addComponent('Bullet', {
                                  angle = 30,
                                  count = 3,
                                  cooldown = 1,
@@ -22,7 +22,7 @@ return function(globalSystem, element)
                                  damage = 5,
                                  distanceBetweenBullets = 2
                                 } )
-        
+
     addAnimator(entity, 'head', element)
     return entity
 end

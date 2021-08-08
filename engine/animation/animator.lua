@@ -27,7 +27,7 @@ function Animator:createSimpleTagState(stateName, tagName)
         stateName,
         self,
         nil,
-        function(state) state.animator:play(tagName) end,
+        function(state) state:play(tagName) end,
         nil
     )
 end
@@ -173,6 +173,7 @@ function AnimatorInstance:switchToState(state)
         print("Switched to animation state: " .. state)
     end
     if self.animator.states[self.state] and self.animator.states[self.state].onEnter then
+        vardump(self)
         self.animator.states[self.state].onEnter(self)
     end
 end

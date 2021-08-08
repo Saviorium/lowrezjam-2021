@@ -4,7 +4,7 @@ return function(globalSystem, position, rotation, damage, animator)
 
     damagingCollider.damage = damage or 1
 
-	animator:newInstance(AssetManager:getAnimation("fireball"))
+	local fireballAnimator = animator:newInstance(AssetManager:getAnimation("fireball"))
 
     local entity = globalSystem:newEntity()
         :addComponent('Flying'  , {maxSpeed = 5})
@@ -13,7 +13,7 @@ return function(globalSystem, position, rotation, damage, animator)
         :addComponent('Damaging', {collider = damagingCollider})
         :addComponent('Velocity', {velocity = Vector(10,0):rotated(rotation*math.pi/180)})
         :addComponent('DrawAnimation')
-        :addComponent('Animator', { animator = animator })
+        :addComponent('Animator', { animator = fireballAnimator })
         :addComponent("DeathByTimer", {timer = 5})
 
     damagingCollider.parent = entity
