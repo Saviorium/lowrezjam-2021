@@ -17,12 +17,12 @@ return function(globalSystem, element)
         :addComponent('Bullet', { 
                                  angle = 0,
                                  count = 1,
-                                 cooldown = 1,
+                                 cooldown = 0.01,
                                  currentTimer = 0,
                                  prefab = Water2,
                                  animator = bulletAnimator,
                                  input = 'action1',
-                                 damage = 10,
+                                 damage = 0.1,
                                  distanceBetweenBullets = 0
                                 } )
     addAnimator(entity, 'arms', element)

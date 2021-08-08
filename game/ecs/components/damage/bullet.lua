@@ -13,7 +13,9 @@ return {
     offsetDistance = 7,
 
     update = function(self, dt)
-        self.currentTimer = self.currentTimer + dt
+        if self.currentTimer < self.cooldown then
+            self.currentTimer = self.currentTimer + dt
+        end
     end,
 
 
@@ -33,7 +35,7 @@ return {
                 local y = ((bullet % 2 == 0) and 1 or -1 ) * ((self.count % 2 ~= 0 and bullet == 1) and 0 or 1)*perpendicular.y + position.y
                 local angle = rotation +  ((bullet % 2 == 0) and 1 or -1 ) * ((self.count % 2 ~= 0 and bullet == 1) and 0 or 1) * (math.floor(bullet / 2 )) * self.angle
 
-                self.prefab( entity.globalSystem, Vector(x, y) + direction*self.offsetDistance, angle, self.damage, self.animator, entity)
+                self.prefab( entity.globalSystem, Vector(x, y) + direction*self.offsetDistance, angle, self.damage, self.animator)
 
             end
             self.currentTimer = 0
