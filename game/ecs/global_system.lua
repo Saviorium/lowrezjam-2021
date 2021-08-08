@@ -15,6 +15,7 @@ local DamageSystem = require "game.ecs.systems.damage_system"
 local ActionSystem = require "game.ecs.systems.action_system"
 local MapSystem = require "game.ecs.systems.map_system"
 local ReloadSystem = require "game.ecs.systems.skill_system"
+local DeathSystem = require "game.ecs.systems.death_system"
 
 local GlobalSystem = Class {
     init = function(self)
@@ -38,6 +39,8 @@ local GlobalSystem = Class {
             CameraSystem(self),
             MapSystem(self),
             DrawSystem(self),
+
+            DeathSystem(self),
         }
         self.systems[12]:loadMap('test_island')
     end

@@ -1,5 +1,5 @@
-return function(globalSystem, position)
+return function(globalSystem, position, spawnerParameters )
     return globalSystem:newEntity()
         :addComponent('Position', {position = position})
-        :addComponent('EnemySpawner')
+        :addComponent('Spawner', spawnerParameters)
 end

@@ -13,8 +13,11 @@ return function(globalSystem, position)
         :addComponent('Health')
         :addComponent('Velocity', {velocity = Vector(0,0)})
         :addComponent('Body', { parts = {} })
+        :addComponent("DrawDebug")
 
         :addComponent('AiControlled')
+        :addComponent("DeathByTimer", {timer = 10})
+        :addComponent("DeathByHealth")
 
     EventManager:send("changePart", { entity = ent.id, kind = "head", element = "temp" })
     EventManager:send("changePart", { entity = ent.id, kind = "arms", element = "temp" })

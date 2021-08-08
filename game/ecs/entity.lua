@@ -51,12 +51,19 @@ function Entity:removeComponent(name)
 end
 
 function Entity:delete()
-    for systemName, system in pairs(self.globalSystem.systems) do
+    for name, system in pairs(self.globalSystem.systems) do
         system.pool[self.id] = nil
     end
     for _, collider in pairs(self:getComponentByType("Collider")) do
         self.globalSystem.HC:remove(collider.collider)
-        print(collider)
+    end
+    if self:getComponentByName("Body") then
+        for _, part in pairs(self:getComponentByName("Body").parts) do
+            part:delete()
+        end
+    end
+    if self:getComponentByName("Spawned") then
+        self:getComponentByName("Spawned").spawner.spawned[self.id] = nil
     end
     self.globalSystem.objects[self.id] = nil
     self.components = {}

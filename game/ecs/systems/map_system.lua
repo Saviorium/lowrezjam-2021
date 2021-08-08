@@ -1,9 +1,10 @@
 local System = require "game.ecs.systems.system"
 local sti     = require "lib/sti"
-local PlayerSpawner = require "game.ecs.prefabs.player_spawner"
-local EnemySpawner     = require "game.ecs.prefabs.character_spawner"
-local Tree     = require "game.ecs.prefabs.environment.tree"
+local Spawner = require "game.ecs.prefabs.character_spawner"
+local EnemyPrefab = require "game.ecs.prefabs.enemy"
+local PlayerPrefab = require "game.ecs.prefabs.player"
 
+local Tree     = require "game.ecs.prefabs.environment.tree"
 local clipper = require "lib.clipper.clipper"
 
 local MapSystem = Class {
@@ -16,20 +17,10 @@ local MapSystem = Class {
 
 function MapSystem:update(dt)
     for entityId, entity in pairs(self.pool) do
+        print(entityId)
+        local spawner = entity:getComponentByName("Spawner")
 
-        local spawner = entity:getComponentByType("Spawner")[1]
-        local pos     = entity:getComponentByName('Position').position
-
-        if spawner.currentTimer > spawner.timeToSpawn then
-
-            table.insert(spawner.spawned, spawner.prefab(self.globalSystem, pos))
-            spawner.currentTimer = 0
-
-        else
-            if table.getn(spawner.spawned) < spawner.maxCount then
-                spawner.currentTimer = spawner.currentTimer + dt
-            end
-        end
+        spawner:update(dt, entity)
     end
 end
 
@@ -42,10 +33,10 @@ function MapSystem:loadMap(mapName)
 
     for ind, obj in pairs(self.map.objects) do
         if obj.type == "player" then
-            PlayerSpawner(self.globalSystem, Vector(obj.x, obj.y))
+            Spawner(self.globalSystem, Vector(obj.x, obj.y), { prefab = PlayerPrefab, timeToSpawn = 1 })
         end
         if obj.type == "enemy" then
-            EnemySpawner(self.globalSystem, Vector(obj.x, obj.y))
+            Spawner(self.globalSystem, Vector(obj.x, obj.y), { prefab = EnemyPrefab, maxCount = 2  })
         end
         if obj.type == "tree" then
             Tree(self.globalSystem, Vector(obj.x, obj.y))

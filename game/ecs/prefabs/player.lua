@@ -21,6 +21,7 @@ return function(globalSystem, position)
         :setVariable("Walking", "maxSpeed", 25)
         :addComponent("TargetAtMouse")
         :addComponent("MouseControlled")
+        :addComponent("DeathByHealth")
 
     EventManager:send("changePart", { entity = ent.id, kind = "head", element = "temp", skill = "BulletSecondary", ammunition = BulletPrefab })
     EventManager:send("changePart", { entity = ent.id, kind = "arms", element = "temp", skill = "BulletPrimary", ammunition = BulletPrefab  })
