@@ -1,4 +1,7 @@
-return function(globalSystem, position, timeToLive, animator, spawnCount)
+
+--local Earth = require "game.ecs.prefabs.ammunition.earth"
+
+return function(globalSystem, position, timeToLive, animator)
     local damagingCollider =  globalSystem.HC:circle(position.x, position.y, 2)
     damagingCollider.type = 'Damaging'
 
@@ -13,8 +16,13 @@ return function(globalSystem, position, timeToLive, animator, spawnCount)
         :addComponent('DrawAnimation', {center = Vector(8,4)})
         :addComponent('Animator', { animator = animatorInst})
         :addComponent("DeathByTimer", {timer = timeToLive})
-        :addComponent("SpawnRecursively", {timer = 0.2, count = spawnCount or 5--, prefab = 
-    })
+        :addComponent("SpawnObjectByTimer", 
+            {   timer = 0.2, 
+                count = 5, 
+                spawnFunction = function(count)
+                    --Earth()
+                    print('Lol')
+                end})
         :addComponent('RotateThisThing')
 
     damagingCollider.parent = entity

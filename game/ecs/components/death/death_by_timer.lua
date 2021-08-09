@@ -9,7 +9,6 @@ return {
         self.currentTimer = self.currentTimer + dt
         if self.currentTimer >= self.timer then
             if self.onDeathTrigger then
-                print(entity:listComponents())
                 self:onDeathTrigger(entity)
             end
             return entity

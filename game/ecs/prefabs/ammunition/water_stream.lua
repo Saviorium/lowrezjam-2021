@@ -7,7 +7,6 @@ return function(globalSystem, position, rotation, damage, animator)
 	local animatorInst1 = animator:newInstance(AssetManager:getAnimation("water-stream"))
     local animatorInst2 = animator:newInstance(AssetManager:getAnimation("water-splash"))
     local onDeathTrigger = function (self, parent)
-                            print('Hello', parent:listComponents())
                             local position = parent:getComponentByName('Position').position
                             local rotation = parent:getComponentByName('Rotation').rotation
                             globalSystem:newEntity()

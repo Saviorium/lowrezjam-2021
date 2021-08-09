@@ -8,7 +8,6 @@ return {
         local health = entity:getComponentByName('Health').currentHP
         if health <= self.limit then
             if self.onDeathTrigger then
-                print(entity)
                 self:onDeathTrigger(entity)
             end
             return entity

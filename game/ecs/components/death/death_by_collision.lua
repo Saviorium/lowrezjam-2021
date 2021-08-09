@@ -10,7 +10,6 @@ return {
                 for _, condition in pairs(self.collisionsCondition) do
                     if shape.type == condition then
                         if self.onDeathTrigger then
-                            print(entity)
                             self:onDeathTrigger(entity)
                         end
                         return entity
