@@ -26,4 +26,5 @@ Debug = {
     dragCharacterDebug = false,
     PrintAnimationEvents = false,
     drawCollidersDebug = false,
+    generateMap = false,
 }

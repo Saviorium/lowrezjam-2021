@@ -5,7 +5,6 @@ local EnemyPrefab = require "game.ecs.prefabs.enemy"
 local PlayerPrefab = require "game.ecs.prefabs.player"
 
 local Tree     = require "game.ecs.prefabs.environment.tree"
-local clipper = require "lib.clipper.clipper"
 
 local MapSystem = Class {
     __includes = System,
@@ -43,64 +42,13 @@ function MapSystem:loadMap(mapName)
         end
     end
 
-    self.gridSize = Vector(self:getGridSize("tile-layer"))
-    local polygons = self:mergePolygons("tile-layer")
-    for _, polygon in pairs(polygons) do
-        local newcollider = self.globalSystem.HC:polygon(unpack(polygon))
-        newcollider.type = "Physics"
-    end
-end
-
-function MapSystem:getGridSize(layer)
-    for _, tile in pairs(self.map.tiles) do
-        return tile.width, tile.height
-    end
-end
-
-function MapSystem:mergePolygons(layer)
-    local polygons = {}
-    for y, col in pairs(self.map.layers[layer].data) do
-        for x, tile in pairs(col) do
-            if tile.objectGroup and type(tile.objectGroup) == "table" then
-                for _, object in pairs(tile.objectGroup.objects) do
-                    if type(object) == "table" then
-                        if object.polygon then
-                            local newPolygon = {
-                                x = (x-1)*self.gridSize.x + object.x,
-                                y = (y-1)*self.gridSize.y + object.y,
-                                polygon = object.polygon
-                            }
-                            table.insert(polygons, newPolygon)
-                        end
-                    end
-                end
-            end
+    local colliderData = require "data.map.colliders.test_island" -- see main.lua and Debug.generateMap
+    for layerName, polygons in pairs(colliderData) do
+        for _, polygon in pairs(polygons) do
+            local newcollider = self.globalSystem.HC:polygon(unpack(polygon))
+            newcollider.type = "Physics"
         end
     end
-    local polyList = clipper.polygons()
-    for _, polygon in pairs(polygons) do
-        local cPoly = clipper.polygon()
-        for _, point in pairs(polygon.polygon) do
-            cPoly:add(point.x+polygon.x, point.y+polygon.y)
-        end
-        polyList:add(cPoly)
-    end
-
-    local merger = clipper.new()
-    merger:add_subject(polyList)
-    local mergedPolys = merger:execute('union', 'positive')
-    local result = {}
-    for i = 1, mergedPolys:size(), 1 do
-        local cPoly = mergedPolys:get(i)
-        local newPolygon = {}
-        for j = 1, cPoly:size(), 1 do
-            local point = cPoly:get(j)
-            table.insert(newPolygon, tonumber(point.x))
-            table.insert(newPolygon, tonumber(point.y))
-        end
-        table.insert(result, newPolygon)
-    end
-    return result
 end
 
 return MapSystem

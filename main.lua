@@ -1,7 +1,15 @@
 require "settings"
+
 Utils = require "engine.utils.utils"
 Vector = require "lib.hump.vector"
 Class = require "lib.hump.class"
+
+if Debug and Debug.generateMap == true then
+    local mapGenerator = require "engine.map_generator"
+    local mapData = mapGenerator:generateColliders("test_island")
+    mapGenerator:saveColliders("test_island", mapData)
+    error(0)
+end
 
 StateManager = require "lib.hump.gamestate"
 
