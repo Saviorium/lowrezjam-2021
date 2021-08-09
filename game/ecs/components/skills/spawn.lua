@@ -1,5 +1,5 @@
 return {
-    name = "SpawnObject",
+    name = "SpawnObject1",
     type = "Skill",
     cooldown = 1,
     cooldownTimer = 0,

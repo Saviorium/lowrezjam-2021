@@ -5,14 +5,16 @@ return {
     onDeathTrigger = nil,
 
     update = function(self, dt, entity)
-        
-        for shape, delta in pairs(self.globalSystem.HC:collisions(collider)) do
-            for _, condition in pairs(self.collisionsCondition) do
-                if shape.type == condition then
-                    if onDeathTrigger then
-                        self:onDeathTrigger()
+        for _, collider in pairs(entity:getComponentByType("Collider")) do
+            for shape, delta in pairs(entity.globalSystem.HC:collisions(collider.collider)) do
+                for _, condition in pairs(self.collisionsCondition) do
+                    if shape.type == condition then
+                        if self.onDeathTrigger then
+                            print(entity)
+                            self:onDeathTrigger(entity)
+                        end
+                        return entity
                     end
-                    return entity
                 end
             end
         end

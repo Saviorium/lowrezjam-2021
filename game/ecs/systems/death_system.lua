@@ -12,8 +12,9 @@ function DeathSystem:update(dt)
     local killedEntityes = {}
     for entityId, entity in pairs(self.pool) do
         for _, trigger in pairs(entity:getComponentByType('DeathTrigger')) do
+            print(entity)
             local result = trigger:update( dt, entity )
-            if trigger:update( dt, entity ) then
+            if result then
                 table.insert(killedEntityes, result)
                 break
             end

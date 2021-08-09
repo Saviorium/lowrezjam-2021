@@ -7,8 +7,9 @@ return {
     update = function(self, dt, entity)
         local health = entity:getComponentByName('Health').currentHP
         if health <= self.limit then
-            if onDeathTrigger then
-                self:onDeathTrigger()
+            if self.onDeathTrigger then
+                print(entity)
+                self:onDeathTrigger(entity)
             end
             return entity
         end

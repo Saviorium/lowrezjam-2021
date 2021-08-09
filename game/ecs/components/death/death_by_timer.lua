@@ -8,8 +8,9 @@ return {
     update = function(self, dt, entity)
         self.currentTimer = self.currentTimer + dt
         if self.currentTimer >= self.timer then
-            if onDeathTrigger then
-                self:onDeathTrigger()
+            if self.onDeathTrigger then
+                print(entity:listComponents())
+                self:onDeathTrigger(entity)
             end
             return entity
         end

@@ -1,4 +1,4 @@
-local StartFire = require "game.prefabs.start_fire"
+local StartFire = require "game.ecs.prefabs.start_fire"
 
 return {
     name = "Bullet",

@@ -173,7 +173,7 @@ function AnimatorInstance:switchToState(state)
         print("Switched to animation state: " .. state)
     end
     if self.animator.states[self.state] and self.animator.states[self.state].onEnter then
-        vardump(self)
+        --vardump(self)
         self.animator.states[self.state].onEnter(self)
     end
 end
