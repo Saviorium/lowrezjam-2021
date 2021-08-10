@@ -2,7 +2,7 @@ local clipper = require "lib.clipper.clipper"
 local sti     = require "lib/sti"
 local serpent = require "lib.serpent.serpent"
 
-MapGenerator = {}
+local MapGenerator = {}
 
 function MapGenerator:generateColliders(mapName)
     local map = sti("data/map/" .. mapName .. ".lua")
@@ -72,7 +72,7 @@ end
 
 function MapGenerator:saveColliders(mapName, data)
     local dataString = serpent.dump(data)
-    file = io.open("data/map/colliders/" .. mapName .. ".lua", "w")
+    local file = io.open("data/map/colliders/" .. mapName .. ".lua", "w")
     file:write(dataString)
     file:close()
 end

@@ -49,6 +49,26 @@ function MapSystem:loadMap(mapName)
             newcollider.type = "Physics"
         end
     end
+
+    local mapSize = self.getMapSize(self.map)
+    self.map:resize(mapSize.x, mapSize.y) -- fix STI bug - it thinks that you should use window size for map size
+end
+
+function MapSystem.getMapSize(map)
+    local size = Vector()
+    for _, layer in pairs(map.layers) do
+        if layer.type == "tilelayer" then
+            size.x, size.y = layer.width, layer.height
+            break
+        end
+    end
+    for _, tile in pairs(map.tiles) do
+        size.x = size.x * tile.width
+        size.y = size.y * tile.height
+        break
+    end
+    vardump(size)
+    return size
 end
 
 return MapSystem

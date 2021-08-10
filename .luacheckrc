@@ -1,6 +1,7 @@
 ignore = {
    "212",  -- unused argument 'self'
    "213",  -- Unused loop variable
+   "512",  -- Loop can be executed at most once.
 }
 
 std = 'luajit+love'
