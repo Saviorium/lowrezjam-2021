@@ -1,10 +1,17 @@
+local Animator = require "engine.animation.animator"
+local waterAnimator = Animator()
+waterAnimator:addSimpleTagState("start", "start")
+waterAnimator:addSimpleTagState("active", "active")
+waterAnimator:addInstantTransition("_start", "start")
+waterAnimator:addTransitionOnAnimationEnd("start", "active")
+
 return function(globalSystem, position, rotation, damage, animator)
     local damagingCollider =  globalSystem.HC:rectangle(0, 0, 4, 8)
     damagingCollider.type = 'Damaging'
 
     damagingCollider.damage = damage or 1
 
-	local animatorInst1 = animator:newInstance(AssetManager:getAnimation("water-stream"))
+	local animatorInst1 = waterAnimator:newInstance(AssetManager:getAnimation("water-stream"))
     local animatorInst2 = animator:newInstance(AssetManager:getAnimation("water-splash"))
     local onDeathTrigger = function (self, parent)
                             local position = parent:getComponentByName('Position').position

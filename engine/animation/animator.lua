@@ -45,9 +45,9 @@ end
 
 function Animator:addTransitionOnAnimationEnd(from, to, condition)
     if not condition then
-        self:addTransition(from, to, self.isLooped)
+        self:addTransition(from, to, function(animator) return animator:isLooped() end)
     else
-        self:addTransition(from, to, function() return condition and self:isLooped() end)
+        self:addTransition(from, to, function(animator) return condition and animator:isLooped() end)
     end
     return self
 end

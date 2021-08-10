@@ -10,7 +10,7 @@ return {
     prefab = nil,
     animator = nil,
     input = 'action1',
-    startFire = nil, 
+    startFire = nil,
     hiddenTimer = nil,
     damage = 10,
     distanceBetweenBullets = 0,
