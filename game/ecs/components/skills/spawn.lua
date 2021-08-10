@@ -1,5 +1,5 @@
 return {
-    name = "SpawnObject1",
+    name = "SpawnObject",
     type = "Skill",
     cooldown = 1,
     cooldownTimer = 0,
@@ -28,7 +28,7 @@ return {
 
             local pos = position + direction*self.offsetDistance
             
-            self.prefab( entity.globalSystem, pos, self.timeToLive, self.animator)
+            self.prefab( entity.globalSystem, pos, self.timeToLive, self.animator, self.prefab)
 
             self.cooldownTimer = 0
         end

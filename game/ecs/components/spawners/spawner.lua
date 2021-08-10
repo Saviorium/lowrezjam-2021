@@ -5,13 +5,15 @@ return {
     spawned = {},
     currentTimer = 0,
     prefab = nil,
+    spawnPosition = nil,
+    countLeft = nil,
 
     update = function (self, dt, entity )
         local pos     = entity:getComponentByName('Position').position
 
-        if self.currentTimer > self.timeToSpawn then
+        if self.currentTimer > self.timeToSpawn and (self.countLeft or 1) > 0 then
 
-            local prefabEntity = self.prefab(entity.globalSystem, pos)
+            local prefabEntity = self.prefab(entity.globalSystem, self.spawnPosition or pos)
             prefabEntity:addComponent('Spawned', {spawner = self})
             self.spawned[prefabEntity.id] = prefabEntity
             self.currentTimer = 0
@@ -23,7 +25,7 @@ return {
                     i = i + 1
                 end
             end
-            if i < self.maxCount then
+            if i < self.maxCount and (self.countLeft or 1) > 0 then
                 self.currentTimer = self.currentTimer + dt
             end
         end
