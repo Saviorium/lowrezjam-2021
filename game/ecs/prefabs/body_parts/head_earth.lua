@@ -15,7 +15,7 @@ return function(globalSystem, element, parent)
                                         cooldown = 5,
                                         prefab = Wall,
                                         -- animator = nil,
-                                        input = 'action1',
+                                        input = 'action2',
                                         offsetDistance = 0,
                                         timeToLive = 5,
                                      } )

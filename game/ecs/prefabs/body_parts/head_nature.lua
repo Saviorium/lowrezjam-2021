@@ -8,17 +8,20 @@ return function(globalSystem, element, parent)
     bulletAnimator:addSimpleTagState("active")
     bulletAnimator:addInstantTransition("_start", "active")
 
+    local heal = 10
+
     local entity = globalSystem:newEntity()
         :addComponent('BodyPart', { kind = 'head', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
-        :addComponent('SpawnObject', { 
-                                        cooldown = 5,
-                                        prefab = Shield,
-                                        -- animator = nil,
-                                        input = 'action2',
-                                        offsetDistance = 0,
-                                        timeToLive = 5,
-                                     } )
+        :addComponent('ApplyBuff', { 
+                                    cooldown = 1,
+                                    -- animator = nil,
+                                    input = 'action2',
+                                    buffFunction = function(entity)
+                                        local health = parent:getComponentByName('Health')
+                                        health.currentHP = math.clamp(0, health.currentHP + heal, health.maxHp) 
+                                    end,
+                                   } )
 
     addAnimator(entity, 'head', 'temp')
     return entity
