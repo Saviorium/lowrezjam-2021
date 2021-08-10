@@ -9,8 +9,8 @@ return function(globalSystem, TODO)
     local animatorInstance = eatPartAnimator:newInstance(AssetManager:getAnimation("eat-ui-parts"))
     animatorInstance:setVariable("part", "legs") -- TODO: test example
     local entity = globalSystem:newEntity()
-        :addComponent('DrawAnimation')
-        :addComponent('Animator', { animator = animatorInstance})
+        :addComponent('DrawAnimation', { center = Vector(1, 1) })
+        :addComponent('Animator', { animator = animatorInstance })
         :addComponent('Position', { position = Vector(200, 200) })
-        :addComponent('Image', { image = AssetManager:getImage("eat-ui") })
+        :addComponent('Image', { image = AssetManager:getImage("eat-ui")})
 end

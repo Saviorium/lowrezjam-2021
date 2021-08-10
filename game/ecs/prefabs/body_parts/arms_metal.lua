@@ -1,5 +1,5 @@
 local addAnimator = require "game.ecs.prefabs.body_parts.animators"
-local Bullet = require "game.ecs.prefabs.ammunition.bullet"
+local Bullet = require "game.ecs.prefabs.ammunition.bullet-metal"
 local Animator = require "engine.animation.animator"
 
 return function(globalSystem, parent)
@@ -13,7 +13,7 @@ return function(globalSystem, parent)
     local entity = globalSystem:newEntity()
         :addComponent('BodyPart', { kind = 'arms', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
-        :addComponent('Bullet', { 
+        :addComponent('Bullet', {
                                  angle = 0,
                                  count = 2,
                                  cooldown = 0.1,
@@ -21,7 +21,7 @@ return function(globalSystem, parent)
                                  prefab = Bullet,
                                  animator = bulletAnimator,
                                  input = 'action1',
-                                 startFire = nil, 
+                                 startFire = nil,
                                  hiddenTyimer = 0.1,
                                  damage = 1,
                                  distanceBetweenBullets = 2
