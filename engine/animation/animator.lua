@@ -38,6 +38,32 @@ function Animator:addSimpleTagState(stateName, tagName)
     return self
 end
 
+function Animator:createSimpleVarToState(stateName, varName)
+    if not varName then
+        varName = stateName
+    end
+    return AnimationState(
+        stateName,
+        self,
+        function (animatorInstance)
+            local lastVal = animatorInstance:getVariable("prev-" .. varName)
+            local newVal = animatorInstance:getVariable(varName)
+            if newVal ~= lastVal then
+                animatorInstance:play(newVal)
+                animatorInstance:setVariable(newVal)
+            end
+        end,
+        nil,
+        nil
+    )
+end
+
+function Animator:addSimpleVarToTagState(stateName, varName)
+    local state = self:createSimpleVarToState(stateName, varName)
+    self:addState(state)
+    return self
+end
+
 function Animator:addInstantTransition(from, to)
     self:addTransition(from, to, function() return true end)
     return self
@@ -173,7 +199,6 @@ function AnimatorInstance:switchToState(state)
         print("Switched to animation state: " .. state)
     end
     if self.animator.states[self.state] and self.animator.states[self.state].onEnter then
-        --vardump(self)
         self.animator.states[self.state].onEnter(self)
     end
 end

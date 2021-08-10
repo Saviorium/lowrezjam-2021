@@ -6,7 +6,7 @@ local state = {}
 function state:enter(prev_state, args)
     EventManager = EventManagerClass() -- yes, Global
     self.world = GlobalSystem()
-
+    require "game.ecs.prefabs.ui.eat-ui"(self.world)
 end
 
 function state:mousepressed(x, y)
