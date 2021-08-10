@@ -17,6 +17,7 @@ return {
             prefabEntity:addComponent('Spawned', {spawner = self})
             self.spawned[prefabEntity.id] = prefabEntity
             self.currentTimer = 0
+            self.countLeft = self.countLeft and self.countLeft - 1 or self.countLeft
 
         else
             local i = 0

@@ -16,7 +16,7 @@ function DamageSystem:update(dt)
         for shape, delta in pairs(self.globalSystem.HC:collisions(collider)) do
             if shape.type == 'Damaging' and (love.timer.getTime( ) - shape.start) > 0.2 then
                 currentHP = currentHP - shape.damage
-                shape.parent:delete()
+                --shape.parent:delete()
             end
             entity:getComponentByName("Health").currentHP = currentHP
         end

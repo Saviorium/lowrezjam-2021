@@ -1,28 +1,31 @@
 return function(globalSystem, position, component, entity, count)
-    if count > 0 then
-        local damagingCollider =  globalSystem.HC:circle(position.x, position.y, 2)
-        local physicsCollider  = globalSystem.HC:circle(position.x, position.y, 2)
+    if not count or count > 0 then
+        local damagingCollider =  globalSystem.HC:circle(position.x, position.y, 8)
+        local physicsCollider  = globalSystem.HC:circle(position.x, position.y, 8)
         damagingCollider.type = 'Damaging'
         physicsCollider.type = 'Physics'
 
         damagingCollider.damage = 40
 
         local animatorInst = component.animator:newInstance(AssetManager:getAnimation("rock-attack"))
+        local rotation = entity:getComponentByName('Rotation').rotation
+        local direction = Vector (math.cos(rotation*math.pi/180), math.sin(rotation*math.pi/180))
 
         local entity = globalSystem:newEntity()
             :addComponent('Position', {position = position})
-            :addComponent('Rotation', {rotation = rotation})
+            -- :addComponent('Rotation', {rotation = rotation})
             :addComponent('Damaging', {collider = damagingCollider})
-            :addComponent('Physics',  {collider = physicsCollider})
+            :addComponent('PhysicsCollider',  {collider = physicsCollider})
             :addComponent('DrawAnimation', {center = Vector(8,4)})
             :addComponent('Animator', { animator = animatorInst})
             :addComponent("DeathByTimer", {timer = component.timeToLive})
             :addComponent("SpawnObjectByTimer", 
                 {   timer = 0.2, 
-                    spawnFunction = function(count)
-                        component.prefab(globalSystem, position, component, entity, count and count - 1 or 5)
+                    spawnFunction = function()
+                        position = position + direction * 10
+                        component.prefab(globalSystem, position, component, entity, count and count - 1 or 4)
                     end})
-            :addComponent('RotateThisThing')
+            -- :addComponent('RotateThisThing')
 
         damagingCollider.parent = entity
         damagingCollider.start = love.timer.getTime( )

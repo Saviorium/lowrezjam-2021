@@ -13,11 +13,10 @@ function AttachedObjectsSystem:update(dt)
         local pos1 = entity:getComponentByName("Position").position
         local pos2 = entity:getComponentByName("AttachedToEntity").entity:getComponentByName('Position').position
 
-        pos1 = pos2
         for ind, component in pairs(entity:getComponentByType("Collider")) do
             component.collider:moveTo(pos2.x + component.center.x, pos2.y + component.center.y)
         end
-        entity:getComponentByName("Position").position = pos1
+        entity:getComponentByName("Position").position = pos2
     end
 end
 

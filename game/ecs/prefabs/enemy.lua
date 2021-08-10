@@ -19,9 +19,9 @@ return function(globalSystem, position)
         :addComponent("DeathByTimer", {timer = 10})
         :addComponent("DeathByHealth")
 
-    EventManager:send("changePart", { entity = ent.id, kind = "head", element = "temp" })
-    EventManager:send("changePart", { entity = ent.id, kind = "arms", element = "temp" })
-    EventManager:send("changePart", { entity = ent.id, kind = "torso", element = "temp" })
-    EventManager:send("changePart", { entity = ent.id, kind = "legs", element = "temp" })
+    EventManager:send("changePart", { entity = ent.id, kind = "head", element = "" })
+    EventManager:send("changePart", { entity = ent.id, kind = "arms", element = "" })
+    EventManager:send("changePart", { entity = ent.id, kind = "torso", element = "" })
+    EventManager:send("changePart", { entity = ent.id, kind = "legs", element = "" })
     return ent
 end

@@ -3,7 +3,7 @@ local Fireball = require "game.ecs.prefabs.ammunition.fireball"
 local Earth = require "game.ecs.prefabs.ammunition.earth"
 local Animator = require "engine.animation.animator"
 
-return function(globalSystem, element, parent)
+return function(globalSystem, parent)
 
     local bulletAnimator = Animator()
     bulletAnimator:addSimpleTagState("active")
@@ -25,6 +25,6 @@ return function(globalSystem, element, parent)
                                  offsetDistance = -2
                                 } )
 
-    addAnimator(entity, 'head', element)
+    addAnimator(entity, 'head', 'temp')
     return entity
 end

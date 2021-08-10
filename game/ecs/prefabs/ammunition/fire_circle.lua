@@ -12,7 +12,7 @@ return function(globalSystem, position, component, entity)
         :addComponent('DrawCircle', {radius = 15})
         -- :addComponent('DrawAnimation', {center = Vector(6,4)})
         -- :addComponent('Animator', { animator = animatorInst})
-        :addComponent("DeathByTimer", {timer = 2})
+        :addComponent("DeathByTimer", {timer = component.timeToLive})
 
     damagingCollider.parent = entity
     damagingCollider.start = love.timer.getTime( )

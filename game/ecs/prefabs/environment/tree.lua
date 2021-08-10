@@ -1,4 +1,3 @@
-local BulletPrefab = require "game.ecs.prefabs.bullet"
 
 return function(globalSystem, position)
     local physicsCollider = globalSystem.HC:rectangle(0, 0, 8, 8)

@@ -4,7 +4,7 @@ local Earth = require "game.ecs.prefabs.ammunition.earth"
 local Water = require "game.ecs.prefabs.ammunition.water_stream"
 local Animator = require "engine.animation.animator"
 
-return function(globalSystem, element, parent)
+return function(globalSystem, parent)
 
     local bulletAnimator = Animator()
     bulletAnimator:addSimpleTagState("active")
@@ -22,9 +22,9 @@ return function(globalSystem, element, parent)
                                  animator = bulletAnimator,
                                  input = 'action1',
                                  hiddenTyimer = 0.1,
-                                 damage = 0.1,
+                                 damage = 5,
                                  distanceBetweenBullets = 0
                                 } )
-    addAnimator(entity, 'arms', element)
+    addAnimator(entity, 'arms', 'temp')
     return entity
 end

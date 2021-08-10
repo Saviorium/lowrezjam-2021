@@ -8,7 +8,7 @@ return function(globalSystem, parent)
     bulletAnimator:addSimpleTagState("active")
     bulletAnimator:addInstantTransition("_start", "active")
 
-	local startFireAnimatorInst = bulletAnimator:newInstance(AssetManager:getAnimation("water-stream-start"))
+	-- local startFireAnimatorInst = bulletAnimator:newInstance(AssetManager:getAnimation("water-stream-start"))
 
     local entity = globalSystem:newEntity()
         :addComponent('BodyPart', { kind = 'arms', parent = parent })
@@ -17,8 +17,9 @@ return function(globalSystem, parent)
                                         cooldown = 1,
                                         prefab = Earth,
                                         input = 'action1',
+                                        animator = bulletAnimator,
                                         offsetDistance = 10,
-                                        timeToLive = 5,
+                                        timeToLive = 0.4,
                                      } )
     addAnimator(entity, 'arms', 'temp')
     return entity

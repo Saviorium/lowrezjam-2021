@@ -27,4 +27,5 @@ Debug = {
     PrintAnimationEvents = false,
     drawCollidersDebug = false,
     generateMap = false,
+    cheatsOn = true
 }

@@ -2,7 +2,7 @@ local addAnimator = require "game.ecs.prefabs.body_parts.animators"
 local Wall = require "game.ecs.prefabs.ammunition.earth_wall"
 local Animator = require "engine.animation.animator"
 
-return function(globalSystem, element, parent)
+return function(globalSystem, parent)
 
     local bulletAnimator = Animator()
     bulletAnimator:addSimpleTagState("active")
@@ -12,11 +12,11 @@ return function(globalSystem, element, parent)
         :addComponent('BodyPart', { kind = 'head', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
         :addComponent('SpawnObject', { 
-                                        cooldown = 5,
+                                        cooldown = 1,
                                         prefab = Wall,
                                         -- animator = nil,
                                         input = 'action2',
-                                        offsetDistance = 0,
+                                        offsetDistance = 10,
                                         timeToLive = 5,
                                      } )
 

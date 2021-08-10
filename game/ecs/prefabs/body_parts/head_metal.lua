@@ -2,7 +2,7 @@ local addAnimator = require "game.ecs.prefabs.body_parts.animators"
 local Fireball = require "game.ecs.prefabs.ammunition.fireball"
 local Animator = require "engine.animation.animator"
 
-return function(globalSystem, element, parent)
+return function(globalSystem, parent)
 
     local bulletAnimator = Animator()
     bulletAnimator:addSimpleTagState("active")
