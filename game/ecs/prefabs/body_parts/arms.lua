@@ -11,6 +11,8 @@ return function(globalSystem, element)
     bulletAnimator:addSimpleTagState("active")
     bulletAnimator:addInstantTransition("_start", "active")
 
+	local startFireAnimatorInst = bulletAnimator:newInstance(AssetManager:getAnimation("water-splash-start"))
+
     local entity = globalSystem:newEntity()
         :addComponent('BodyPart', { kind = 'arms', parent = nil })
         :addComponent('DrawAnimation', { hidden = true })
@@ -22,6 +24,8 @@ return function(globalSystem, element)
                                  prefab = Water2,
                                  animator = bulletAnimator,
                                  input = 'action1',
+                                 startFire = startFireAnimatorInst, 
+                                 hiddenTyimer = 0.1,
                                  damage = 0.1,
                                  distanceBetweenBullets = 0
                                 } )

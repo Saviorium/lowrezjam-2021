@@ -4,6 +4,8 @@ return {
     parent = nil,
 
     draw = function (component, entity)
-        entity:getComponentByType("Drawable")[1]:draw(entity)
+        for ind, comp in pairs(entity:getComponentByType("Drawable")) do
+            comp:draw(entity)
+        end
     end
 }
