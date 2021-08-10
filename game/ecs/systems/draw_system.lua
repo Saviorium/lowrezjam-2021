@@ -16,9 +16,14 @@ function DrawSystem:draw()
     for entityId, entity in pairs(self.pool) do
         love.graphics.push()
         local pos = entity:getComponentByName("Position").position
-        love.graphics.translate(pos.x, pos.y)
+        local rotateEntity = entity:getComponentByName("RotateThisThing") ~= nil
+        if rotateEntity then
+            love.graphics.translate(pos.x, pos.y)
+        else
+            love.graphics.translate(math.floor(pos.x), math.floor(pos.y))
+        end
         for _, drawable in pairs(entity:getComponentByType("Drawable")) do
-            if entity:getComponentByName("RotateThisThing") then
+            if rotateEntity then
                 local rotation = entity:getComponentByName("Rotation").rotation
                 love.graphics.rotate( rotation*math.pi/180 + math.pi/2)
             end
