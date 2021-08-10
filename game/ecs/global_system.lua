@@ -16,6 +16,7 @@ local ActionSystem = require "game.ecs.systems.action_system"
 local MapSystem = require "game.ecs.systems.map_system"
 local ReloadSystem = require "game.ecs.systems.skill_system"
 local DeathSystem = require "game.ecs.systems.death_system"
+local AttachedObjectsSystem = require "game.ecs.systems.attached_to_objects_system"
 
 local GlobalSystem = Class {
     init = function(self)
@@ -26,6 +27,7 @@ local GlobalSystem = Class {
             MouseSystem(self),
 
             MovingSystem(self),
+            AttachedObjectsSystem(self)
             RotateSystem(self),
             ControlSystem(self),
             ActionSystem(self),
@@ -42,7 +44,7 @@ local GlobalSystem = Class {
 
             DeathSystem(self),
         }
-        self.systems[12]:loadMap('test_island')
+        self.systems[13]:loadMap('test_island')
     end
 }
 

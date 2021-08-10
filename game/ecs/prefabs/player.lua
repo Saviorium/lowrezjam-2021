@@ -23,8 +23,8 @@ return function(globalSystem, position)
         :addComponent("MouseControlled")
         :addComponent("DeathByHealth")
 
-    EventManager:send("changePart", { entity = ent.id, kind = "head", element = "temp", skill = "BulletSecondary", ammunition = BulletPrefab })
-    EventManager:send("changePart", { entity = ent.id, kind = "arms", element = "temp", skill = "BulletPrimary", ammunition = BulletPrefab  })
+    EventManager:send("changePart", { entity = ent.id, kind = "head", element = "temp"})
+    EventManager:send("changePart", { entity = ent.id, kind = "arms", element = "temp"})
     EventManager:send("changePart", { entity = ent.id, kind = "torso", element = "temp" })
     EventManager:send("changePart", { entity = ent.id, kind = "legs", element = "temp" })
     return ent

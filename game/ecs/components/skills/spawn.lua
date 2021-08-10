@@ -28,7 +28,7 @@ return {
 
             local pos = position + direction*self.offsetDistance
             
-            self.prefab( entity.globalSystem, pos, self.timeToLive, self.animator, self.prefab)
+            self.prefab( entity.globalSystem, pos, self, entity)
 
             self.cooldownTimer = 0
         end

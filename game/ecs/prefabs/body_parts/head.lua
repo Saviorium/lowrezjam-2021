@@ -3,14 +3,14 @@ local Fireball = require "game.ecs.prefabs.ammunition.fireball"
 local Earth = require "game.ecs.prefabs.ammunition.earth"
 local Animator = require "engine.animation.animator"
 
-return function(globalSystem, element)
+return function(globalSystem, element, parent)
 
     local bulletAnimator = Animator()
     bulletAnimator:addSimpleTagState("active")
     bulletAnimator:addInstantTransition("_start", "active")
 
     local entity = globalSystem:newEntity()
-        :addComponent('BodyPart', { kind = 'head', parent = nil })
+        :addComponent('BodyPart', { kind = 'head', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
         :addComponent('Bullet', {
                                  angle = 25,

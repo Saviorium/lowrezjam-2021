@@ -1,6 +1,4 @@
 local addAnimator = require "game.ecs.prefabs.body_parts.animators"
-local Fireball = require "game.ecs.prefabs.ammunition.fireball"
-local Earth = require "game.ecs.prefabs.ammunition.earth"
 local Water = require "game.ecs.prefabs.ammunition.water_stream"
 local Animator = require "engine.animation.animator"
 
@@ -13,21 +11,22 @@ return function(globalSystem, element, parent)
 	local startFireAnimatorInst = bulletAnimator:newInstance(AssetManager:getAnimation("water-stream-start"))
 
     local entity = globalSystem:newEntity()
-        :addComponent('BodyPart', { kind = 'arms', parent = parent })
+        :addComponent('BodyPart', { kind = 'head', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
-        :addComponent('Bullet', { 
-                                 angle = 0,
-                                 count = 1,
-                                 cooldown = 0.1,
+        :addComponent('Bullet', {
+                                 angle = 25,
+                                 count = 30,
+                                 cooldown = 1,
                                  currentTimer = 0,
                                  prefab = Water,
                                  animator = bulletAnimator,
-                                 input = 'action1',
+                                 input = 'action2',
+                                 damage = 5,
                                  startFire = startFireAnimatorInst, 
-                                 hiddenTyimer = 0.1,
-                                 damage = 0.1,
+                                 damage = 1,
                                  distanceBetweenBullets = 0
                                 } )
-    addAnimator(entity, 'arms', element)
+
+    addAnimator(entity, 'head', 'temp')
     return entity
 end

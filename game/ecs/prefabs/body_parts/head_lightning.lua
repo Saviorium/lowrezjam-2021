@@ -1,25 +1,25 @@
 local addAnimator = require "game.ecs.prefabs.body_parts.animators"
-local Earth = require "game.ecs.prefabs.ammunition.earth"
+local Shield = require "game.ecs.prefabs.ammunition.shield"
 local Animator = require "engine.animation.animator"
 
-return function(globalSystem, parent)
+return function(globalSystem, element, parent)
 
     local bulletAnimator = Animator()
     bulletAnimator:addSimpleTagState("active")
     bulletAnimator:addInstantTransition("_start", "active")
 
-	local startFireAnimatorInst = bulletAnimator:newInstance(AssetManager:getAnimation("water-stream-start"))
-
     local entity = globalSystem:newEntity()
-        :addComponent('BodyPart', { kind = 'arms', parent = parent })
+        :addComponent('BodyPart', { kind = 'head', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
         :addComponent('SpawnObject', { 
-                                        cooldown = 1,
-                                        prefab = Earth,
+                                        cooldown = 5,
+                                        prefab = Shield,
+                                        -- animator = nil,
                                         input = 'action1',
-                                        offsetDistance = 10,
+                                        offsetDistance = 0,
                                         timeToLive = 5,
                                      } )
-    addAnimator(entity, 'arms', 'temp')
+
+    addAnimator(entity, 'head', 'temp')
     return entity
 end
