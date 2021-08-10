@@ -22,7 +22,7 @@ return {
       columns = 17,
       image = "../tilesets/terrain-tileset.png",
       imagewidth = 136,
-      imageheight = 88,
+      imageheight = 320,
       objectalignment = "unspecified",
       tileoffset = {
         x = 0,
@@ -820,7 +820,7 @@ return {
           }
         }
       },
-      tilecount = 187,
+      tilecount = 680,
       tiles = {
         {
           id = 5,
