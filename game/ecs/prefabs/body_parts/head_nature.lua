@@ -19,7 +19,7 @@ return function(globalSystem, parent)
                                     input = 'action2',
                                     buffFunction = function(entity)
                                         local health = parent:getComponentByName('Health')
-                                        health.currentHP = math.clamp(0, health.currentHP + heal, health.maxHp)
+                                        health:addHealth(heal)
                                     end,
                                    } )
 

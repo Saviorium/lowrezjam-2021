@@ -1,5 +1,3 @@
-local StartFire = require "game.ecs.prefabs.start_fire"
-
 return {
     name = "Bullet",
     type = "Skill",
@@ -10,8 +8,6 @@ return {
     prefab = nil,
     animator = nil,
     input = 'action1',
-    startFire = nil,
-    hiddenTimer = nil,
     damage = 10,
     distanceBetweenBullets = 0,
     offsetDistance = 7,
@@ -47,9 +43,6 @@ return {
                     firedBullet:addComponent("Team", { team = team.team })
                 end
 
-                if self.startFire then
-                    StartFire(entity.globalSystem, Vector(x, y) + direction*self.offsetDistance, angle, self.startFire, self.hiddenTimer)
-                end
             end
             self.currentTimer = 0
         end

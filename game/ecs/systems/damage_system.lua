@@ -16,9 +16,9 @@ function DamageSystem:update(dt)
         for other, delta in pairs(self.globalSystem.HC:collisions(collider)) do
             if other.type == 'Damaging' then
                 local team = self:getTeam(entity)
-                local ohterTeam = self:getTeam(other.parent)
+                local otherTeam = self:getTeam(other.parent)
 
-                if team ~= ohterTeam then
+                if team ~= otherTeam then
                     currentHP = currentHP - other.damage
                 end
                 entity:getComponentByName("Health").currentHP = currentHP

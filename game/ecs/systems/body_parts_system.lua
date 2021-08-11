@@ -71,7 +71,9 @@ function BodyPartsSystem:getPart(kind, element, parent)
 
     local part = require(path)
     local resultPart = part(self.globalSystem, parent)
+    resultPart:getComponentByName('BodyPart').element = element
 
+    print('Creating part with ', resultPart:getComponentByName('BodyPart').element)
     return resultPart
 end
 

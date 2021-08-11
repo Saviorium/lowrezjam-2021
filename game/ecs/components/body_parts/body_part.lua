@@ -2,6 +2,7 @@ return {
     name = "BodyPart",
     kind = nil,
     parent = nil,
+    element = nil,
 
     draw = function (component, entity)
         for ind, comp in pairs(entity:getComponentByType("Drawable")) do
