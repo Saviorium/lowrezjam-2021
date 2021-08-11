@@ -7,5 +7,6 @@ return function(globalSystem, position)
         :addComponent('Position', {position = position})
         :addComponent('PhysicsCollider', {collider = physicsCollider, center = {0,8}})
         :addComponent('Image', {image = AssetManager:getImage('tree'), center = {x = 4,y = 16}})
+        :addComponent("Command", {command = 'Object'})
     return ent
 end

@@ -1,11 +1,9 @@
 return {
     name = "Walking",
     type = "MovingManager",
-    defaultParams = {
-        maxSpeed = 5,
-        friction = 30,
-        acceleration = 5,
-    },
+    maxSpeed = 5,
+    friction = 30,
+    acceleration = 5,
 
     update = function (self, dt, entity)
         local snapshot = entity:getComponentByType("Controlled")[1].inputManager.inputSnapshot

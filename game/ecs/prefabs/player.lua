@@ -21,6 +21,7 @@ return function(globalSystem, position)
         :addComponent("TargetAtMouse")
         :addComponent("MouseControlled")
         :addComponent("DeathByHealth")
+        :addComponent("Command", {command = 'Player'})
 
     EventManager:send("changePart", { entity = ent.id, kind = "head", element = ""})
     EventManager:send("changePart", { entity = ent.id, kind = "arms", element = ""})

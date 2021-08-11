@@ -18,6 +18,7 @@ return function(globalSystem, position)
         :addComponent('AiControlled')
         :addComponent("DeathByTimer", {timer = 10})
         :addComponent("DeathByHealth")
+        :addComponent("Command", {command = 'Enemy'})
 
     EventManager:send("changePart", { entity = ent.id, kind = "head", element = "" })
     EventManager:send("changePart", { entity = ent.id, kind = "arms", element = "" })

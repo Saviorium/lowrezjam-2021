@@ -10,7 +10,9 @@ local RotateSystem = Class {
 
 function RotateSystem:update(dt)
     for entityId, entity in pairs(self.pool) do
-        entity:getComponentByType('Targeting')[1]:update(dt, entity)
+        for _, comp in pairs(entity:getComponentByType('Targeting')) do
+            comp:update(dt, entity)
+        end
     end
 end
 

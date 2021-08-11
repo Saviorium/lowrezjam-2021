@@ -8,7 +8,9 @@ return {
         for _, collider in pairs(entity:getComponentByType("Collider")) do
             for shape, delta in pairs(entity.globalSystem.HC:collisions(collider.collider)) do
                 for _, condition in pairs(self.collisionsCondition) do
-                    if shape.type == condition then
+                    if shape.type == condition 
+                   and shape.parent 
+                   and entity:getComponentByName('Command').command ~= shape.parent:getComponentByName('Command').command then
                         if self.onDeathTrigger then
                             self:onDeathTrigger(entity)
                         end

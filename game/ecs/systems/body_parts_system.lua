@@ -26,6 +26,9 @@ function BodyPartsSystem:update(dt)
         local body = entity:getComponentByName("Body")
         local newPart = self:getPart(event.kind, event.element, entity)
         if body.parts[event.kind] then
+            for _, buff in pairs(body.parts[event.kind]:getComponentByType('Buff')) do
+                buff.revert(entity)
+            end
             body.parts[event.kind]:delete()
         end
         body.parts[event.kind] = newPart -- TODO: multiple parts of same kind?
@@ -35,9 +38,23 @@ end
 
 function BodyPartsSystem:getPart(kind, element, parent)
     local path = kinds[kind]..(element == '' and element or ('_'..element)) 
-    print(path)
+
+    for _, part in pairs(parent:getComponentByName("Body").parts) do
+        for _, buff in pairs(part:getComponentByType('Buff')) do
+            buff.revert(parent)
+        end
+    end
+
     local part = require(path)
-    return part(self.globalSystem, parent)
+    local resultPart = part(self.globalSystem, parent)
+
+    for _, part in pairs(parent:getComponentByName("Body").parts) do
+        for _, buff in pairs(part:getComponentByType('Buff')) do
+            buff.apply(parent)
+        end
+    end
+
+    return resultPart
 end
 
 return BodyPartsSystem
