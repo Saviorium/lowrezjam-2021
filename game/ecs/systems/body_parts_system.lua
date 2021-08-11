@@ -35,17 +35,24 @@ function BodyPartsSystem:handleChangePart(event)
 
     local body = entity:getComponentByName("Body")
     local newPart = self:getPart(event.kind, event.element, entity)
-    if entity:getComponentByName("Team") then
-        newPart:addComponent("Team", { team = entity:getComponentByName("Team").team })
-    end
+
     if body.parts[event.kind] then
         for _, buff in pairs(body.parts[event.kind]:getComponentByType('Buff')) do
             buff:revert(entity)
         end
         body.parts[event.kind]:delete()
     end
+
     body.parts[event.kind] = newPart -- TODO: multiple parts of same kind?
     newPart:getComponentByName("BodyPart").parent = entity
+
+    for _, buff in pairs(newPart:getComponentByType('Buff')) do
+        buff:apply(entity)
+    end
+
+    if entity:getComponentByName("Team") then
+        newPart:addComponent("Team", { team = entity:getComponentByName("Team").team })
+    end
 end
 
 function BodyPartsSystem:handleEntityDestroyed(event)
@@ -62,20 +69,8 @@ end
 function BodyPartsSystem:getPart(kind, element, parent)
     local path = kinds[kind]..(element == '' and element or ('_'..element))
 
-    for _, part in pairs(parent:getComponentByName("Body").parts) do
-        for _, buff in pairs(part:getComponentByType('Buff')) do
-            buff:revert(parent)
-        end
-    end
-
     local part = require(path)
     local resultPart = part(self.globalSystem, parent)
-
-    for _, part in pairs(parent:getComponentByName("Body").parts) do
-        for _, buff in pairs(part:getComponentByType('Buff')) do
-            buff:apply(parent)
-        end
-    end
 
     return resultPart
 end
