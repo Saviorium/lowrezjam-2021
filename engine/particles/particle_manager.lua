@@ -98,7 +98,7 @@ function ParticleManager:update(dt)
                 end
             end
         end
-        while particleId < #particlesOfType.particles do -- if there are still particles to update
+        while particleId <= #particlesOfType.particles do -- if there are still particles to update
             local particle = particlesOfType.particles[particleId]
             particle:update(dt)
             if time > particle.dieAt then
@@ -107,7 +107,6 @@ function ParticleManager:update(dt)
             particleId = particleId + 1
         end
     end
-    --vardump(self)
 end
 
 function ParticleManager:draw(spawnType)
