@@ -91,7 +91,7 @@
   "frameTags": [
    { "name": "head", "from": 0, "to": 1, "direction": "forward" },
    { "name": "arms", "from": 2, "to": 3, "direction": "forward" },
-   { "name": "body", "from": 4, "to": 5, "direction": "forward" },
+   { "name": "torso", "from": 4, "to": 5, "direction": "forward" },
    { "name": "legs", "from": 6, "to": 7, "direction": "forward" },
    { "name": "nothing", "from": 8, "to": 8, "direction": "forward" }
   ],
