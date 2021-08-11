@@ -20,7 +20,6 @@ local BodyPartsSystem = Class {
 function BodyPartsSystem:update(dt)
     local events = EventManager:getEvents("BodyPartsSystem")
     for _, event in pairs(events) do
-        --vardump("Set part", event)
         local entity = self.pool[event.entity]
         if not entity then return end
 

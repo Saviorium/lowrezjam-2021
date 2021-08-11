@@ -13,13 +13,13 @@ return function(globalSystem, parent)
     local entity = globalSystem:newEntity()
         :addComponent('BodyPart', { kind = 'head', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
-        :addComponent('ApplyBuff', { 
+        :addComponent('ApplyBuff', {
                                     cooldown = 1,
                                     -- animator = nil,
                                     input = 'action2',
                                     buffFunction = function(entity)
                                         local health = parent:getComponentByName('Health')
-                                        health.currentHP = math.clamp(0, health.currentHP + heal, health.maxHp) 
+                                        health.currentHP = math.clamp(0, health.currentHP + heal, health.maxHp)
                                     end,
                                    } )
 

@@ -21,7 +21,7 @@ return function(globalSystem, parent)
                                  prefab = Water,
                                  animator = bulletAnimator,
                                  input = 'action1',
-                                 hiddenTyimer = 0.1,
+                                 hiddenTimer = 0.1,
                                  damage = 5,
                                  distanceBetweenBullets = 0
                                 } )

@@ -11,7 +11,7 @@ return function(globalSystem, parent)
     local entity = globalSystem:newEntity()
         :addComponent('BodyPart', { kind = 'head', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
-        :addComponent('SpawnObject', { 
+        :addComponent('SpawnObject', {
                                         cooldown = 1,
                                         prefab = Wall,
                                         -- animator = nil,

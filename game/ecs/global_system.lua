@@ -18,6 +18,7 @@ local ReloadSystem = require "game.ecs.systems.skill_system"
 local DeathSystem = require "game.ecs.systems.death_system"
 local AttachedObjectsSystem = require "game.ecs.systems.attached_objects_system"
 local CheatSystem = require "game.ecs.systems.cheat_system"
+local ParticleSystem = require "game.ecs.systems.particle_system"
 
 local GlobalSystem = Class {
     init = function(self)
@@ -42,6 +43,7 @@ local GlobalSystem = Class {
             CameraSystem(self),
             MapSystem(self),
             DrawSystem(self),
+            ParticleSystem(self),
 
             DeathSystem(self),
             CheatSystem(self),
@@ -67,12 +69,8 @@ function GlobalSystem:registerComponent(entity, componentName, args)
 end
 
 function GlobalSystem:update(dt)
-    --print('New screen')
     for systemName, system in pairs(self.systems) do
-        --local time = love.timer.getTime( )
         system:update(dt)
-        --local result = love.timer.getTime() - time
-        --print(systemName, result)
     end
 end
 

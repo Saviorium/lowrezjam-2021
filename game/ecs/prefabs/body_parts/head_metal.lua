@@ -21,11 +21,10 @@ return function(globalSystem, parent)
                                  animator = bulletAnimator,
                                  input = 'action2',
                                  damage = 100,
-                                 startFire = nil, 
+                                 startFire = nil,
                                  distanceBetweenBullets = 0
                                 } )
 
-                                
     addAnimator(entity, 'head', 'temp')
     return entity
 end

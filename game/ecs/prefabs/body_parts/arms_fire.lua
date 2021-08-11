@@ -13,16 +13,16 @@ return function(globalSystem, parent)
     local entity = globalSystem:newEntity()
         :addComponent('BodyPart', { kind = 'arms', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
-        :addComponent('Bullet', { 
+        :addComponent('Bullet', {
                                  angle = 0,
                                  count = 1,
-                                 cooldown = 0.1,
+                                 cooldown = 0.4,
                                  currentTimer = 0,
                                  prefab = Fireball,
                                  animator = bulletAnimator,
                                  input = 'action1',
-                                 startFire = nil, 
-                                 hiddenTyimer = 0.1,
+                                 startFire = nil,
+                                 hiddenTimer = 0.1,
                                  damage = 0.1,
                                  distanceBetweenBullets = 0
                                 } )

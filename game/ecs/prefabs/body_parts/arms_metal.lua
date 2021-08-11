@@ -22,7 +22,7 @@ return function(globalSystem, parent)
                                  animator = bulletAnimator,
                                  input = 'action1',
                                  startFire = nil,
-                                 hiddenTyimer = 0.1,
+                                 hiddenTimer = 0.1,
                                  damage = 1,
                                  distanceBetweenBullets = 2
                                 } )

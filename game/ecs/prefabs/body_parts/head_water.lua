@@ -21,7 +21,7 @@ return function(globalSystem, parent)
                                  animator = bulletAnimator,
                                  input = 'action2',
                                  damage = 5,
-                                 startFire = nil, --startFireAnimatorInst, 
+                                 startFire = nil, --startFireAnimatorInst,
                                  distanceBetweenBullets = 0
                                 } )
 
