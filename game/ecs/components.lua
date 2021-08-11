@@ -7,7 +7,13 @@ local Component = Class {
     end,
     name = "Component",
     type = nil,
-    defaultParams = {}
+    defaultParams = {},
+    __tostring = function(self)
+        return {
+            name = self.name,
+            type = self.type
+        }
+    end
 }
 
 function Component:addParams(params)

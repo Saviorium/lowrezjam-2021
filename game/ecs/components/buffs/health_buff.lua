@@ -1,12 +1,12 @@
 return {
-    name = "CooldownBuff",
+    name = "HealthBuff",
     type = "Buff",
     value = 1,
 
-    apply = function(entity)
-        entity:getComponentByName('Health').maxHp = entity:getComponentByName('Health').maxHp * value
+    apply = function(buff, entity)
+        entity:getComponentByName('Health').maxHp = entity:getComponentByName('Health').maxHp * buff.value
     end,
-    revert = function(entity)
-        entity:getComponentByName('Health').maxHp = entity:getComponentByName('Health').maxHp / value
+    revert = function(buff, entity)
+        entity:getComponentByName('Health').maxHp = entity:getComponentByName('Health').maxHp / buff.value
     end
 }

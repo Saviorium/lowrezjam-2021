@@ -81,4 +81,11 @@ function Entity:listComponents()
     return description .. "}"
 end
 
+function Entity:__tostring()
+    return {
+        id = self.id,
+        components = self.components
+    }
+end
+
 return Entity

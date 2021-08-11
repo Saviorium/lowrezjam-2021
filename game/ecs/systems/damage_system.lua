@@ -13,15 +13,29 @@ function DamageSystem:update(dt)
 
         local collider = entity:getComponentByName("TakingDamage").collider
         local currentHP   = entity:getComponentByName("Health").currentHP
-        for shape, delta in pairs(self.globalSystem.HC:collisions(collider)) do
-            if shape.type == 'Damaging'
-           and shape.parent 
-           and entity:getComponentByName('Command').command ~= shape.parent:getComponentByName('Command').command thenthen
-                currentHP = currentHP - shape.damage
+        for other, delta in pairs(self.globalSystem.HC:collisions(collider)) do
+            if other.type == 'Damaging' then
+                local team = self:getTeam(entity)
+                local ohterTeam = self:getTeam(other.parent)
+                vardump(entity, team, other.parent, ohterTeam)
+
+                if team ~= ohterTeam then
+                    currentHP = currentHP - other.damage
+                end
+                entity:getComponentByName("Health").currentHP = currentHP
             end
-            entity:getComponentByName("Health").currentHP = currentHP
         end
     end
+end
+
+function DamageSystem:getTeam(entity)
+    local defaultTeam = "Environment"
+    if not entity then return defaultTeam end
+
+    local team = entity:getComponentByName('Team')
+    if not team then return defaultTeam end
+
+    return team.team
 end
 
 function DamageSystem:draw()

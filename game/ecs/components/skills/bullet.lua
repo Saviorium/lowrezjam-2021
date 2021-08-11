@@ -23,7 +23,7 @@ return {
     end,
 
 
-    activateSkill = function ( self, entity)
+    activateSkill = function (self, entity)
 
         local controller = entity:getComponentByType("Controlled")[1]
         local snapshot = controller.inputManager.inputSnapshot
@@ -31,6 +31,9 @@ return {
         if self.currentTimer > self.cooldown and snapshot[self.input] == 1 then
             local position = entity:getComponentByName('Position').position
             local rotation = entity:getComponentByName('Rotation').rotation
+
+            local team = entity:getComponentByName("Team")
+
             for bullet=1, self.count do
                 local direction = Vector (math.cos(rotation*math.pi/180), math.sin(rotation*math.pi/180))
                 local perpendicular = direction:perpendicular()*self.distanceBetweenBullets
@@ -39,10 +42,13 @@ return {
                 local y = ((bullet % 2 == 0) and 1 or -1 ) * ((self.count % 2 ~= 0 and bullet == 1) and 0 or 1)*perpendicular.y + position.y
                 local angle = rotation +  ((bullet % 2 == 0) and 1 or -1 ) * ((self.count % 2 ~= 0 and bullet == 1) and 0 or 1) * (math.floor(bullet / 2 )) * self.angle
 
-                self.prefab( entity.globalSystem, Vector(x, y) + direction*self.offsetDistance, angle, self.damage, self.animator)
+                local firedBullet = self.prefab(entity.globalSystem, Vector(x, y) + direction*self.offsetDistance, angle, self.damage, self.animator)
+                if team then
+                    firedBullet:addComponent("Team", { team = team.team })
+                end
 
                 if self.startFire then
-                    StartFire( entity.globalSystem, Vector(x, y) + direction*self.offsetDistance, angle, self.startFire, self.hiddenTimer)
+                    StartFire(entity.globalSystem, Vector(x, y) + direction*self.offsetDistance, angle, self.startFire, self.hiddenTimer)
                 end
             end
             self.currentTimer = 0

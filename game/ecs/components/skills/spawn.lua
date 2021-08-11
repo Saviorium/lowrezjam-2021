@@ -27,7 +27,7 @@ return {
             local direction = Vector (math.cos(rotation*math.pi/180), math.sin(rotation*math.pi/180))
 
             local pos = position + direction*self.offsetDistance
-            
+
             self.prefab( entity.globalSystem, pos, self, entity)
 
             self.cooldownTimer = 0

@@ -10,7 +10,7 @@ local ActionSystem = Class {
 
 function ActionSystem:update(dt)
     for entityId, entity in pairs(self.pool) do
-        local body     = entity:getComponentByName("Body")
+        local body = entity:getComponentByName("Body")
 
         for _, part in pairs(body.parts) do
             for _, skill in pairs(part:getComponentByType('Skill')) do
