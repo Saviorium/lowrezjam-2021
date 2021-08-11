@@ -45,7 +45,7 @@ function MapSystem:loadMap(mapName)
         end
     end
 
-    local colliderData = require "data.map.colliders.test_island" -- see main.lua and Debug.generateMap
+    local colliderData = require("data.map.colliders."..mapName) -- see main.lua and Debug.generateMap
     for layerName, polygons in pairs(colliderData) do
         for _, polygon in pairs(polygons) do
             local newcollider = self.globalSystem.HC:polygon(unpack(polygon))

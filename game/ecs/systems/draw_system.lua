@@ -4,6 +4,7 @@ local DrawSystem = Class {
     __includes = System,
     init = function(self, globalSystem)
         System.init(self, {'Position', 'Drawable'})
+        self.globalSystem = globalSystem
     end
 }
 
@@ -36,12 +37,12 @@ function DrawSystem:draw()
             end
         end
         love.graphics.pop()
-
-        if Debug.drawCollidersDebug then
-            local shapes = entity.globalSystem.HC:hash():shapes()
-            for _, shape in pairs(shapes) do
-                shape:draw()
-            end
+    end
+    if Debug.drawCollidersDebug then
+        local shapes = self.globalSystem.HC:hash():shapes()
+        for _, shape in pairs(shapes) do
+            love.graphics.setColor(1, 0, 0, 0.3)
+            shape:draw("fill")
         end
     end
     love.graphics.setColor(1, 1, 1, 1)
