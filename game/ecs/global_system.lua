@@ -49,7 +49,7 @@ local GlobalSystem = Class {
 
             DeathSystem(self),
             CheatSystem(self),
-            --TeamSystem(self),
+            TeamSystem = TeamSystem(self),
 
             EntityDeleteSystem(self),
         }

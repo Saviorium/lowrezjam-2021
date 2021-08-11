@@ -1,5 +1,6 @@
 local addAnimator = require "game.ecs.prefabs.body_parts.animators"
-local Fireball = require "game.ecs.prefabs.ammunition.fireball"
+-- local Fireball = require "game.ecs.prefabs.ammunition.fireball"
+local Rocket = require "game.ecs.prefabs.ammunition.rocket"
 local Animator = require "engine.animation.animator"
 
 return function(globalSystem, parent)
@@ -17,7 +18,7 @@ return function(globalSystem, parent)
                                  angle = 0,
                                  count = 1,
                                  cooldown = 1,
-                                 prefab = Fireball,
+                                 prefab = Rocket,
                                  animator = bulletAnimator,
                                  input = 'action2',
                                  damage = 100,

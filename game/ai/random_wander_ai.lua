@@ -1,6 +1,6 @@
 local ai = require "game.ai.ai"
 
-ai.update = function(self, world)
+ai.update = function(self, entity)
     local action = ai.getBlankInputs()
     local time = love.timer.getTime()
     action.move.x = math.sin(time)%1

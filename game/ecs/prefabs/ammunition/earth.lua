@@ -1,4 +1,4 @@
-return function(globalSystem, position, component, entity, count)
+return function(globalSystem, position, component, parent, count)
     if not count or count > 0 then
         local damagingCollider =  globalSystem.HC:circle(position.x, position.y, 8)
         local physicsCollider  = globalSystem.HC:circle(position.x, position.y, 8)
@@ -8,7 +8,7 @@ return function(globalSystem, position, component, entity, count)
         damagingCollider.damage = 40
 
         local animatorInst = component.animator:newInstance(AssetManager:getAnimation("rock-attack"))
-        local rotation = entity:getComponentByName('Rotation').rotation
+        local rotation = parent:getComponentByName('Rotation').rotation
         local direction = Vector (math.cos(rotation*math.pi/180), math.sin(rotation*math.pi/180))
 
         local entity = globalSystem:newEntity()
@@ -23,11 +23,11 @@ return function(globalSystem, position, component, entity, count)
                 {   timer = 0.2, 
                     spawnFunction = function()
                         position = position + direction * 10
-                        component.prefab(globalSystem, position, component, entity, count and count - 1 or 4)
+                        component.prefab(globalSystem, position, component, parent, count and count - 1 or 4)
                     end})
             -- :addComponent('RotateThisThing')
 
-        damagingCollider.parent = entity
+        damagingCollider.parent = parent
         damagingCollider.start = love.timer.getTime( )
 
         return entity

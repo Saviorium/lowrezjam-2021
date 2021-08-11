@@ -11,8 +11,7 @@ return function(globalSystem, position, rotation, damage)
         :addComponent('Velocity', {velocity = Vector(50,0):rotated(rotation*math.pi/180)})
         :addComponent('DrawCircle', {radius = 1})
         :addComponent("DeathByTimer", {timer = 1})
-        :addComponent("DeathByCollision", {collisionsCondition = {'Damage'--, 'Physics'
-        }})
+        :addComponent("DeathByCollision", {collisionsCondition = {'Damage', 'Physics'}})
         :addComponent('RotateThisThing')
 
     damagingCollider.parent = entity

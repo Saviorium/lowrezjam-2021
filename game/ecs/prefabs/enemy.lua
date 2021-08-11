@@ -14,11 +14,14 @@ return function(globalSystem, position)
         :addComponent('Velocity', {velocity = Vector(0,0)})
         :addComponent('Body', { parts = {} })
         :addComponent("DrawDebug")
-
+        :addComponent("TargetAtNearestEnemy", {enemy = 'Player'})
         :addComponent('AiControlled')
         :addComponent("DeathByTimer", {timer = 10})
         :addComponent("DeathByHealth")
-        :addComponent("Team", {team = 'Enemy'})
+        :addComponent("Team", {team = 'Enemy', main = true})
+
+    damageCollider.parent = ent
+    -- physicsCollider.parent = ent
 
     EventManager:send("changePart", { entity = ent.id, kind = "head", element = "" })
     EventManager:send("changePart", { entity = ent.id, kind = "arms", element = "" })

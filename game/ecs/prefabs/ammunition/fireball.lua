@@ -16,8 +16,7 @@ return function(globalSystem, position, rotation, damage, animator)
         :addComponent('Animator', { animator = animatorInst})
         :addComponent('ParticleEmitter', {particles = {spark = {intensity = 10}}})
         :addComponent("DeathByTimer", {timer = 5})
-        :addComponent("DeathByCollision", {collisionsCondition = {'Damage'--, 'Physics'
-        }})
+        :addComponent("DeathByCollision", {collisionsCondition = {'Damage', 'Physics'}})
         :addComponent('RotateThisThing')
 
     damagingCollider.parent = entity
