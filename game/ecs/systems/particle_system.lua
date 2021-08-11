@@ -11,9 +11,6 @@ local ParticleSystem = Class {
     end
 }
 
-local getRotationDefaultFunc = function()
-    return 0
-end
 
 function ParticleSystem:update(dt)
     local events = EventManager:getEvents("ParticleSystem")
@@ -36,6 +33,10 @@ function ParticleSystem:update(dt)
         end
     end
     self.particleManager:update(dt)
+end
+
+local getRotationDefaultFunc = function()
+    return 0
 end
 
 function ParticleSystem:addEmitters(entity, particleEmitterComponent)

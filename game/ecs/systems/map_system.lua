@@ -11,10 +11,13 @@ local MapSystem = Class {
     init = function(self, globalSystem)
         self.globalSystem = globalSystem
         System.init(self, {'Spawner', 'Position'})
+        EventManager:subscribe("SpawnSystem", "entityDestroyed")
     end
 }
 
 function MapSystem:update(dt)
+    self:handleDestroyedEntities()
+
     self.map:update(dt)
     for entityId, entity in pairs(self.pool) do
         for _, obj in pairs(entity:getComponentByType("Spawner")) do
@@ -69,6 +72,17 @@ function MapSystem.getMapSize(map)
     end
     vardump(size)
     return size
+end
+
+function MapSystem:handleDestroyedEntities()
+    local events = EventManager:getEvents("SpawnSystem")
+    for _, event in pairs(events) do
+        local entity = self.globalSystem.objects[event.entityId]
+        local spawned = entity:getComponentByName("Spawned")
+        if spawned then
+            spawned.spawner.spawned[event.entityId] = nil
+        end
+    end
 end
 
 return MapSystem

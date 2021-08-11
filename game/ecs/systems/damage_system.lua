@@ -17,7 +17,6 @@ function DamageSystem:update(dt)
             if other.type == 'Damaging' then
                 local team = self:getTeam(entity)
                 local ohterTeam = self:getTeam(other.parent)
-                vardump(entity, team, other.parent, ohterTeam)
 
                 if team ~= ohterTeam then
                     currentHP = currentHP - other.damage

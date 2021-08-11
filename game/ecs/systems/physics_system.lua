@@ -5,10 +5,19 @@ local PhysicsSystem = Class {
     init = function(self, globalSystem)
         System.init(self, {'PhysicsCollider', 'Position', 'Velocity'})
         self.globalSystem = globalSystem
+        EventManager:subscribe("PhysicsSystem", "entityDestroyed")
     end
 }
 
 function PhysicsSystem:update(dt)
+    local events = EventManager:getEvents("PhysicsSystem")
+    for _, event in pairs(events) do
+        local entity = self.globalSystem.objects[event.entityId]
+        for _, collider in pairs(entity:getComponentByType("Collider")) do
+            self.globalSystem.HC:remove(collider.collider)
+        end
+    end
+
     for entityId, entity in pairs(self.pool) do
         local collider = entity:getComponentByName("PhysicsCollider").collider
         local pos      = entity:getComponentByName("Position").position

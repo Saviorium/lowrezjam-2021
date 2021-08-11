@@ -20,6 +20,7 @@ local AttachedObjectsSystem = require "game.ecs.systems.attached_objects_system"
 local CheatSystem = require "game.ecs.systems.cheat_system"
 local ParticleSystem = require "game.ecs.systems.particle_system"
 local TeamSystem = require "game.ecs.systems.team_system"
+local EntityDeleteSystem = require "game.ecs.systems.entity_delete_system"
 
 local GlobalSystem = Class {
     init = function(self)
@@ -49,6 +50,8 @@ local GlobalSystem = Class {
             DeathSystem(self),
             CheatSystem(self),
             --TeamSystem(self),
+
+            EntityDeleteSystem(self),
         }
         self.systems[13]:loadMap('test_island')
     end

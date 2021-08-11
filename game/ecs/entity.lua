@@ -50,27 +50,8 @@ function Entity:removeComponent(name)
     end
 end
 
-function Entity:delete() -- FIXME: this is a terrifying Gordian Knot
-    if self.globalSystem then
-        for name, system in pairs(self.globalSystem.systems) do
-            system.pool[self.id] = nil
-        end
-        for _, collider in pairs(self:getComponentByType("Collider")) do
-            self.globalSystem.HC:remove(collider.collider)
-        end
-        if self:getComponentByName("Body") then
-            for _, part in pairs(self:getComponentByName("Body").parts) do
-                part:delete()
-            end
-        end
-        if self:getComponentByName("Spawned") then
-            self:getComponentByName("Spawned").spawner.spawned[self.id] = nil
-        end
-        EventManager:send("entityDestroyed", { entityId = self.id })
-        self.globalSystem.objects[self.id] = nil
-        self.components = {}
-        self.globalSystem = nil
-    end
+function Entity:delete()
+    self:addComponent("Destroyed")
 end
 
 function Entity:listComponents()
