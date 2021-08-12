@@ -31,13 +31,13 @@ local GlobalSystem = Class {
         self.systems = {
             MouseSystem(self),
 
-            MovingSystem(self),
             AttachedObjectsSystem(self),
             RotateSystem(self),
             ControlSystem(self),
             ActionSystem(self),
             BodyPartsSystem(self),
             ReloadSystem(self),
+            MovingSystem(self),
 
             AnimationSystem(self),
             PhysicsSystem(self),

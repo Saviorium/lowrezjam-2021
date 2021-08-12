@@ -1,0 +1,100 @@
+{ "frames": [
+   {
+    "filename": "nature-leaf 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 7, "h": 8 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 6 },
+    "sourceSize": { "w": 5, "h": 6 },
+    "duration": 66
+   },
+   {
+    "filename": "nature-leaf 1.aseprite",
+    "frame": { "x": 7, "y": 0, "w": 7, "h": 8 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 6 },
+    "sourceSize": { "w": 5, "h": 6 },
+    "duration": 66
+   },
+   {
+    "filename": "nature-leaf 2.aseprite",
+    "frame": { "x": 14, "y": 0, "w": 7, "h": 8 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 6 },
+    "sourceSize": { "w": 5, "h": 6 },
+    "duration": 66
+   },
+   {
+    "filename": "nature-leaf 3.aseprite",
+    "frame": { "x": 21, "y": 0, "w": 7, "h": 8 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 6 },
+    "sourceSize": { "w": 5, "h": 6 },
+    "duration": 66
+   },
+   {
+    "filename": "nature-leaf 4.aseprite",
+    "frame": { "x": 28, "y": 0, "w": 7, "h": 8 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 6 },
+    "sourceSize": { "w": 5, "h": 6 },
+    "duration": 66
+   },
+   {
+    "filename": "nature-leaf 5.aseprite",
+    "frame": { "x": 35, "y": 0, "w": 7, "h": 8 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 6 },
+    "sourceSize": { "w": 5, "h": 6 },
+    "duration": 66
+   },
+   {
+    "filename": "nature-leaf 6.aseprite",
+    "frame": { "x": 42, "y": 0, "w": 7, "h": 8 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 6 },
+    "sourceSize": { "w": 5, "h": 6 },
+    "duration": 66
+   },
+   {
+    "filename": "nature-leaf 7.aseprite",
+    "frame": { "x": 49, "y": 0, "w": 7, "h": 8 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 6 },
+    "sourceSize": { "w": 5, "h": 6 },
+    "duration": 66
+   },
+   {
+    "filename": "nature-leaf 8.aseprite",
+    "frame": { "x": 56, "y": 0, "w": 7, "h": 8 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 5, "h": 6 },
+    "sourceSize": { "w": 5, "h": 6 },
+    "duration": 66
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.27",
+  "image": "nature-leaf.png",
+  "format": "RGBA8888",
+  "size": { "w": 63, "h": 8 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "active", "from": 0, "to": 8, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

@@ -3,13 +3,17 @@ local System = require "game.ecs.systems.system"
 local MovingSystem = Class {
     __includes = System,
     init = function(self, globalSystem)
-        System.init(self, {'Velocity', 'Position'})
+        System.init(self, {'MovingManager', 'Velocity', 'Position'})
     end
 }
 
-
 function MovingSystem:update(dt)
     for entityId, entity in pairs(self.pool) do
+        local managers = entity:getComponentByType("MovingManager")
+        for _, manager in pairs(managers) do
+            manager:update(dt, entity)
+        end
+
         local pos = entity:getComponentByName("Position").position
         local velocity = entity:getComponentByName("Velocity").velocity
         pos = pos + velocity * dt

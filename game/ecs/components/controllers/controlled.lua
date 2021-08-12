@@ -20,8 +20,10 @@ return {
 
         for k, v in pairs(self.inputSnapshot) do
             local newValue = snapshot[k]
-            if type(newValue) == "table" or type(newValue) == "number" then
-                self.inputSnapshot[k] = self.inputSnapshot[k] + newValue
+            if type(newValue) == "table" then
+                self.inputSnapshot[k] = (self.inputSnapshot[k] + newValue):normalized()
+            elseif type(newValue) == "number" then
+                self.inputSnapshot[k] = self.inputSnapshot[k] + math.clamp(0, newValue, 1)
             end
         end
     end,

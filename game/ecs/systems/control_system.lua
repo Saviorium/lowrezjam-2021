@@ -3,7 +3,7 @@ local System = require "game.ecs.systems.system"
 local ControlSystem = Class {
     __includes = System,
     init = function(self, globalSystem)
-        System.init(self, {'MovingManager', 'Controlled', 'InputSource', 'Velocity', 'Position'})
+        System.init(self, {'Controlled', 'InputSource'})
     end
 }
 
@@ -17,9 +17,6 @@ function ControlSystem:update(dt)
             local inputs = inputSource:updateAndGetInputs(dt, entity)
             controller:setInputs(inputs)
         end
-
-        local manager = entity:getComponentByType("MovingManager")[1]
-        manager:update(dt, entity)
     end
 end
 

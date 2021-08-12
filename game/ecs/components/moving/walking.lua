@@ -7,6 +7,9 @@ return {
 
     update = function (self, dt, entity)
         local snapshot = entity:getComponentByName("Controlled").inputSnapshot
+        if not snapshot then
+            return
+        end
         local velocity = entity:getComponentByName("Velocity").velocity
 
         local dirrectX, dirrectY = velocity.x > 0 and 1 or -1 , math.clamp(-1, velocity.y, 1)

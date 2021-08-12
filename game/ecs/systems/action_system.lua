@@ -17,9 +17,6 @@ function ActionSystem:update(dt)
                 skill:activateSkill(entity)
             end
         end
-
-        local manager = entity:getComponentByType("MovingManager")[1]
-        manager:update(dt, entity)
     end
 end
 

@@ -27,7 +27,7 @@ function ParticleManager:addEmitter(emitterId, particleName, getPositionFunc, ge
         getPositionFunc = getPositionFunc,
         getAngleFunc = getAngleFunc,
         intensity = 0,
-        spawn = 0,
+        spawn = love.math.random(),
     }
 end
 

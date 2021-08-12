@@ -20,6 +20,7 @@ return function(globalSystem, position, rotation, damage, animator)
         :addComponent('RotateThisThing')
         :addComponent("TargetAtNearestEnemy")
         :addComponent('AiControlled', {inputManager = require "game.ai.follow_rotation_ai"})
+        :addComponent('Controlled')
 
     damagingCollider.parent = entity
     damagingCollider.start = love.timer.getTime( )

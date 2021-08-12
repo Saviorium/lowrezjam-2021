@@ -45,4 +45,27 @@ return {
             intensity = 0,
         }
     },
+    leafSmall = {
+        spawnType = "world",
+        drawType = "rectangle",
+        color = { 0.078, 0.627, 0.180, 1 },
+        size = 1,
+        gravity = 0.01,
+        friction = 0.99,
+        translate = Vector(0, 0),
+        angle = 0,
+        speed = 0.4,
+        timeToLive = 1,
+        maxIntensity = 10,
+        maxTotalNum = 200,
+        random = {
+            color = 0.2,
+            size = 0,
+            translate = 0,
+            angle = 90,
+            speed = 0.1,
+            timeToLive = 0,
+            intensity = 1,
+        }
+    },
 }
