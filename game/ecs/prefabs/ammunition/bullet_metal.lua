@@ -3,6 +3,17 @@ return function(globalSystem, position, rotation, damage, animator)
     damagingCollider.type = 'Damaging'
 
 	local animatorInst = animator:newInstance(AssetManager:getAnimation("metal-bullet"))
+    local hitAnimatorInst = animator:newInstance(AssetManager:getAnimation("armor-hit"))
+
+    local onDeathTrigger = function (self, parent)
+        local position = parent:getComponentByName('Position').position
+        local rotation = parent:getComponentByName('Rotation').rotation
+        globalSystem:newEntity()
+            :addComponent('Position', {position = position})
+            :addComponent('DrawAnimation', {center = Vector(1,1)})
+            :addComponent('Animator', { animator = hitAnimatorInst})
+            :addComponent("DeathByTimer", {timer = 0.2})
+    end
 
     damagingCollider.damage = damage or 1
     local entity = globalSystem:newEntity()
@@ -14,7 +25,7 @@ return function(globalSystem, position, rotation, damage, animator)
         :addComponent('DrawAnimation', {center = Vector(1,1)})
         :addComponent('Animator', { animator = animatorInst})
         :addComponent("DeathByTimer", {timer = 4})
-        :addComponent("DeathByCollision", {collisionsCondition = {'Damage', 'Physics'}})
+        :addComponent("DeathByCollision", {collisionsCondition = {'Damage', 'Physics'}, onDeathTrigger = onDeathTrigger})
         :addComponent('RotateThisThing')
 
     damagingCollider.parent = entity

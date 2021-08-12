@@ -62,7 +62,7 @@ function ParticleManager:update(dt)
         for _, emitter in pairs(particlesOfType.emitters) do
             local position = emitter:getPositionFunc() -- translate for that emitter
             local angle = emitter:getAngleFunc()
-            position = particlesOfType.type.translate:rotated(angle) + position
+            position = particlesOfType.type.translate:rotated(math.rad(angle)) + position
             angle = angle + particlesOfType.type.angle
 
             if emitter.intensity > 0 then

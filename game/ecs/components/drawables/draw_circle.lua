@@ -9,5 +9,6 @@ return {
         local rect = self
         love.graphics.setColor(rect.color)
         love.graphics.circle('fill', 0, 0, rect.radius)
+        love.graphics.setColor(1,1,1,1)
     end
 }

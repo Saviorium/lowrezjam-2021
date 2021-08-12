@@ -28,7 +28,12 @@ return {
 
             local pos = position + direction*self.offsetDistance
 
-            self.prefab( entity.globalSystem, pos, self, entity)
+            local team = entity:getComponentByName("Team")
+
+            local spawnedEnt = self.prefab( entity.globalSystem, pos, self, entity)
+            if team then
+                spawnedEnt:addComponent("Team", { team = team.team })
+            end
 
             self.cooldownTimer = 0
         end

@@ -1,5 +1,5 @@
 local addAnimator = require "game.ecs.prefabs.body_parts.animators"
-local Bullet = require "game.ecs.prefabs.ammunition.bullet-metal"
+local Bullet = require "game.ecs.prefabs.ammunition.bullet_metal"
 local Animator = require "engine.animation.animator"
 
 return function(globalSystem, parent)

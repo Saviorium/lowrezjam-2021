@@ -11,6 +11,7 @@ return {
     damage = 10,
     distanceBetweenBullets = 0,
     offsetDistance = 7,
+    useParentInertia = true,
 
     update = function(self, dt)
         if self.currentTimer < self.cooldown then
@@ -30,6 +31,17 @@ return {
 
             local team = entity:getComponentByName("Team")
 
+            local addVelocity
+            if self.useParentInertia then
+                local velocityComp = entity:getComponentByName('Velocity')
+                if not velocityComp and entity:getComponentByName('BodyPart') then
+                    velocityComp = entity:getComponentByName('BodyPart').parent:getComponentByName('Velocity')
+                end
+                if velocityComp then
+                    addVelocity = velocityComp.velocity
+                end
+            end
+
             for bullet=1, self.count do
                 local direction = Vector (math.cos(rotation*math.pi/180), math.sin(rotation*math.pi/180))
                 local perpendicular = direction:perpendicular()*self.distanceBetweenBullets
@@ -43,6 +55,10 @@ return {
                     firedBullet:addComponent("Team", { team = team.team })
                 end
 
+                if addVelocity then
+                    local vel = firedBullet:getComponentByName('Velocity').velocity
+                    firedBullet:setVariable('Velocity', 'velocity', vel+addVelocity)
+                end
             end
             self.currentTimer = 0
         end

@@ -8,5 +8,6 @@ return {
         local rect = self
         love.graphics.setColor(rect.color)
         love.graphics.rectangle('fill', 0, 0, rect.size.x, rect.size.y)
+        love.graphics.setColor(1,1,1,1)
     end
 }
