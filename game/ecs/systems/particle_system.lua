@@ -27,7 +27,7 @@ function ParticleSystem:update(dt)
         for particleName, emitterData in pairs(component.particles) do
             self.particleManager:setIntensity(entityId, particleName, emitterData.intensity)
             if emitterData.spawn > 0 then
-                self.particleManager:spawn(emitterData.spawn)
+                self.particleManager:spawn(entityId, particleName, emitterData.spawn)
                 emitterData.spawn = 0
             end
         end

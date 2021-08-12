@@ -22,6 +22,29 @@ return {
             intensity = 0,
         }
     },
+    lightningSpark = {
+        spawnType = "world",
+        drawType = "rectangle",
+        color = { 1, 1, 1, 1 },
+        size = 1,
+        gravity = 0.02,
+        friction = 0.999,
+        translate = Vector(0, 0),
+        angle = 0,
+        speed = 2,
+        timeToLive = 0.15,
+        maxIntensity = 99,
+        maxTotalNum = 200,
+        random = {
+            color = 0.01,
+            size = 0,
+            translate = 1,
+            angle = 180,
+            speed = 0,
+            timeToLive = 0.05,
+            intensity = 0,
+        }
+    },
     waterDrop = {
         spawnType = "world",
         drawType = "rectangle",

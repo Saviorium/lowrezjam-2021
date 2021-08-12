@@ -5,12 +5,12 @@ return function(globalSystem, position, rotation, damage, animator, parent)
     damagingCollider.damage = damage or 1
 
     local entity = globalSystem:newEntity()
-        :addComponent('Flying'  , {maxSpeed = 40})
+        :addComponent('Flying'  , {maxSpeed = 20})
         :addComponent('Position', {position = position})
         :addComponent('Rotation', {rotation = rotation})
-        :addComponent('Velocity', {velocity = Vector(40,0):rotated(rotation*math.pi/180)})
-        :addComponent('DrawLine', {from = parent})
-        :addComponent('ParticleEmitter', {particles = {spark = {intensity = 10}}})
+        :addComponent('Velocity', {velocity = Vector(20,0):rotated(rotation*math.pi/180)})
+        :addComponent('DrawLine', {from = parent, style = "lightning"})
+        :addComponent('ParticleEmitter', {particles = {lightningSpark = {intensity = 30}}})
         :addComponent("MouseControlled")
         :addComponent("TargetAtMouse")
         :addComponent('AiControlled', {inputManager = require "game.ai.follow_rotation_ai"})
@@ -19,6 +19,8 @@ return function(globalSystem, position, rotation, damage, animator, parent)
             entity
                 :addComponent("DeathByTimer", {timer = 0.2})
                 :addComponent('Damaging', {collider = damagingCollider})
+                :addComponent('DrawCircle', {color = {1,1,1,1}, radius = 5})
+            entity:getComponentByName('ParticleEmitter').particles.lightningSpark.spawn = 30
         end })
 
     damagingCollider.parent = entity
