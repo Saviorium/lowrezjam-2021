@@ -39,7 +39,7 @@ end
 function Entity:removeComponent(name)
     local component = self.components[name]
     self.components[name] = nil
-    for systemName, system in pairs(self.globalSystem.systems) do
+    for systemName, system in ipairs(self.globalSystem._systems) do
         if system.pool[self.id] then
             for ind, condition in pairs(system.conditions) do
                 if not(table.getn(self:getComponentByType(condition)) == 0 and not self:getComponentByName(condition)) then

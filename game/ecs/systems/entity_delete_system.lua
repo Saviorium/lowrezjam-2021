@@ -24,7 +24,7 @@ function EntityDeleteSystem:update(dt)
     end
 
     for entityId, entity in pairs(self.pool) do
-        for name, system in pairs(self.globalSystem.systems) do
+        for name, system in pairs(self.globalSystem._systems) do
             system.pool[entityId] = nil
         end
         EventManager:send("entityDestroyed", { entityId = entityId })

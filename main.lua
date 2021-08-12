@@ -26,7 +26,10 @@ states = {
 
 fonts = require "data.fonts.fonts"
 
-local pixelCanvas = require "engine.render.global_pixel_canvas" (Vector(64, 64), 4)
+local pixelCanvas = require "engine.render.global_pixel_canvas" (
+    Vector(config.render.screenSize.x, config.render.screenSize.y),
+    config.render.initialResolution
+)
 
 function getScale()
     return pixelCanvas:getScale()

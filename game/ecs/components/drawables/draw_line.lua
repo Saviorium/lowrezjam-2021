@@ -48,7 +48,6 @@ return {
             end
             table.insert(points, 0)
             table.insert(points, 0)
-            vardump(points)
             return points
         end
     }

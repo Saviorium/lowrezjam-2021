@@ -13,6 +13,11 @@ config = {
             move = {'left', 'right', 'up', 'down'}
         },
     },
+    render = {
+        screenSize = { x = 64, y = 64 },
+        initialResolution = 4,
+        drawOrderGrid = 4
+    }
 }
 
 settings = {

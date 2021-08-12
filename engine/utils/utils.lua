@@ -20,4 +20,14 @@ end
 
 local Utils = {}
 
+-- usage:
+-- Utils.timed("Slow function", function()
+-- %your tested code%
+-- end)
+Utils.timed = function(msg, fn)
+    local start = love.timer.getTime()
+    fn()
+    print(string.format("%s took: %f ms", msg, (love.timer.getTime() - start)*1000))
+end
+
 return Utils

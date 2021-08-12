@@ -53,11 +53,12 @@ function MapSystem:loadMap(mapName)
         end
     end
 
-    local mapSize = self.getMapSize(self.map)
+    local mapSize = self:getMapSize(self.map)
     self.map:resize(mapSize.x, mapSize.y) -- fix STI bug - it thinks that you should use window size for map size
 end
 
-function MapSystem.getMapSize(map)
+function MapSystem:getMapSize(map)
+    if not map then map = self.map end
     local size = Vector()
     for _, layer in pairs(map.layers) do
         if layer.type == "tilelayer" then
@@ -70,7 +71,6 @@ function MapSystem.getMapSize(map)
         size.y = size.y * tile.height
         break
     end
-    vardump(size)
     return size
 end
 

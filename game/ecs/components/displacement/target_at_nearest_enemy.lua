@@ -12,7 +12,7 @@ return {
             -- print(self.enemy)
         end
 
-        for _, obj in pairs(entity.globalSystem.systems.TeamSystem.pool) do
+        for _, obj in pairs(entity.globalSystem.systems.teamSystem.pool) do
             local objTeam = obj:getComponentByName('Team')
             if objTeam.team == self.enemy and objTeam.main and obj:getComponentByName('Position') then
 

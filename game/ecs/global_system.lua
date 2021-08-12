@@ -28,7 +28,11 @@ local GlobalSystem = Class {
         self.HC = HC.new()
         self.objects = {}
         self.newEntityId = 1
-        self.systems = {
+        self.systems = { -- take system here if you need a quick dirty fix
+            teamSystem = TeamSystem(self),
+            mapSystem = MapSystem(self)
+        }
+        self._systems = { -- order is important
             MouseSystem(self),
 
             AttachedObjectsSystem(self),
@@ -45,17 +49,17 @@ local GlobalSystem = Class {
             TriggerSystem(self),
 
             CameraSystem(self),
-            MapSystem(self),
+            self.systems.mapSystem,
             DrawSystem(self),
             ParticleSystem(self),
 
             DeathSystem(self),
             CheatSystem(self),
-            TeamSystem = TeamSystem(self),
+            self.systems.teamSystem,
 
             EntityDeleteSystem(self),
         }
-        self.systems[14]:loadMap('test_island')
+        self.systems.mapSystem:loadMap('test_island')
     end
 }
 
@@ -70,20 +74,20 @@ function GlobalSystem:registerComponent(entity, componentName, args)
     local newComponent = Components[componentName]
     assert(newComponent, "No such component " .. componentName)
     entity:__doAddComponent(newComponent(args))
-    for systemName, system in pairs(self.systems) do
+    for systemName, system in ipairs(self._systems) do
         system:tryAdd(entity)
     end
 end
 
 function GlobalSystem:update(dt)
-    for systemName, system in pairs(self.systems) do
+    for systemName, system in ipairs(self._systems) do
         system:update(dt)
     end
 end
 
 function GlobalSystem:draw()
     local stackDepthBefore = love.graphics.getStackDepth()
-    for systemName, system in pairs(self.systems) do
+    for systemName, system in ipairs(self._systems) do
         system:draw()
     end
     while love.graphics.getStackDepth() > stackDepthBefore do
