@@ -33,7 +33,7 @@ function getScale()
 end
 
 function getScreenDimensions()
-    return pixelCanvas.resolution * pixelCanvas:getScale()
+    return pixelCanvas.resolution
 end
 
 function love.load()
@@ -47,10 +47,6 @@ function love.draw()
         StateManager.draw()
         if Debug and Debug.showFps == 1 then
             love.graphics.print(""..tostring(love.timer.getFPS( )), 2, 2)
-        end
-        if Debug and Debug.mousePos == 1 then
-            local x, y = love.mouse.getPosition()
-            love.graphics.print(""..tostring(x)..","..tostring(y), 2, 32)
         end
     end )
     pixelCanvas:draw()

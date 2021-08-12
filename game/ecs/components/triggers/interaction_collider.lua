@@ -1,6 +1,6 @@
 return {
     name = "InteractionCollider",
-    type = "Collider",
+    type = "Trigger",
     collider = nil,
     center = Vector(0,0),
     interactionCallback = nil,

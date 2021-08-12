@@ -19,8 +19,8 @@ return function(globalSystem, position, component, parent, count)
             :addComponent('DrawAnimation', {center = Vector(8,4)})
             :addComponent('Animator', { animator = animatorInst})
             :addComponent("DeathByTimer", {timer = component.timeToLive})
-            :addComponent("SpawnObjectByTimer", 
-                {   timer = 0.2, 
+            :addComponent("SpawnObjectByTimer",
+                {   timer = 0.2,
                     spawnFunction = function()
                         position = position + direction * 10
                         component.prefab(globalSystem, position, component, parent, count and count - 1 or 4)
@@ -31,5 +31,5 @@ return function(globalSystem, position, component, parent, count)
         damagingCollider.start = love.timer.getTime( )
 
         return entity
-    end 
+    end
 end

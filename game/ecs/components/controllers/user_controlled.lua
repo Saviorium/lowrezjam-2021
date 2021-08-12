@@ -1,9 +1,10 @@
 return {
     name = "UserControlled",
-    type = "Controlled",
+    type = "InputSource",
     inputManager = require "engine.controls.user_input_manager" (config.inputs),
 
-    update = function(self, dt)
+    updateAndGetInputs = function(self, dt)
         self.inputManager:update(dt)
+        return self.inputManager.inputSnapshot
     end
 }

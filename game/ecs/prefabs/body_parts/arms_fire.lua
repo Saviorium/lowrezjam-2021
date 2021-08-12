@@ -23,7 +23,7 @@ return function(globalSystem, parent)
                                  input = 'action1',
                                  startFire = nil,
                                  hiddenTimer = 0.1,
-                                 damage = 0.1,
+                                 damage = 10,
                                  distanceBetweenBullets = 0,
                                  useParentInertia = false
                                 } )

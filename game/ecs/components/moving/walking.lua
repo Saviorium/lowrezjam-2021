@@ -6,7 +6,7 @@ return {
     acceleration = 5,
 
     update = function (self, dt, entity)
-        local snapshot = entity:getComponentByType("Controlled")[1].inputManager.inputSnapshot
+        local snapshot = entity:getComponentByName("Controlled").inputSnapshot
         local velocity = entity:getComponentByName("Velocity").velocity
 
         local dirrectX, dirrectY = velocity.x > 0 and 1 or -1 , math.clamp(-1, velocity.y, 1)

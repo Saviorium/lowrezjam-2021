@@ -21,7 +21,7 @@ settings = {
 
 Debug = {
     showFps = 1,
-    mousePos = 0,
+    mousePos = 1,
     strictComponentCheck = 1,
     dragCharacterDebug = false,
     PrintAnimationEvents = false,

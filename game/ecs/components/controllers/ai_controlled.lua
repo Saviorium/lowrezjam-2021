@@ -1,9 +1,11 @@
 return {
     name = "AiControlled",
-    type = "Controlled",
+    type = "InputSource",
     inputManager = require "game.ai.random_wander_ai",
+    inputSnapshot = {},
 
-    update = function(self, dt, entity)
+    updateAndGetInputs = function(self, dt, entity)
         self.inputManager:update(dt, entity)
+        return self.inputManager.inputSnapshot
     end
 }

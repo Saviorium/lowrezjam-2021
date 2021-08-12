@@ -15,9 +15,9 @@ return {
 
 
     activateSkill = function ( self, entity)
-        local controller = entity:getComponentByType("Controlled")[1]
-        local snapshot = controller.inputManager.inputSnapshot
-        
+        local controller = entity:getComponentByName("Controlled")
+        local snapshot = controller.inputSnapshot
+
         if self.cooldownTimer > self.cooldown and snapshot[self.input] == 1 then
             self.buffFunction(entity)
             self.cooldownTimer = 0

@@ -8,19 +8,28 @@ local CameraSystem = Class {
 }
 
 function CameraSystem:update(dt)
-    local newMain, oldMain = nil, nil
+    local main
     for entityId, entity in pairs(self.pool) do
         local target = entity:getComponentByName("CameraTarget")
-        oldMain = target.isMain and entityId or nil
+        if target.isMain then
+            main = entity
+        end
         if target.inGoingToBeMain then
-            entity:getComponentByName("CameraTarget").isMain = true
-            entity:getComponentByName("CameraTarget").inGoingToBeMain = false
-            newMain = entityId
+            target.isMain = true
+            target.inGoingToBeMain = false
+            if main then
+                entity:getComponentByName("CameraTarget").isMain = false
+            end
+            main = entity
         end
     end
-    if newMain and oldMain then
-        self.pool[oldMain]:getComponentByName("CameraTarget").isMain = false
+    local position
+    if main then
+        position = main:getComponentByName("Position").position
+    else
+        position = Vector()
     end
+    EventManager:send('mainCameraPosition', { position = position })
 end
 
 function CameraSystem:draw()

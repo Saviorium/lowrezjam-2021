@@ -1,7 +1,5 @@
 local addAnimator = require "game.ecs.prefabs.body_parts.animators"
-local Fireball = require "game.ecs.prefabs.ammunition.fireball"
-local Earth = require "game.ecs.prefabs.ammunition.earth"
-local Water = require "game.ecs.prefabs.ammunition.water_stream"
+local Lightning = require "game.ecs.prefabs.ammunition.lightning"
 local Animator = require "engine.animation.animator"
 
 return function(globalSystem, parent)
@@ -13,18 +11,25 @@ return function(globalSystem, parent)
     local entity = globalSystem:newEntity()
         :addComponent('BodyPart', { kind = 'arms', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
-        :addComponent('Bullet', {
-                                 angle = 0,
-                                 count = 1,
-                                 cooldown = 0.1,
-                                 currentTimer = 0,
-                                 prefab = Water,
-                                 animator = bulletAnimator,
-                                 input = 'action1',
-                                 hiddenTimer = 0.1,
-                                 damage = 5,
-                                 distanceBetweenBullets = 0
-                                } )
+        :addComponent('Chargeable', {
+            angle = 0,
+            count = 1,
+            cooldown = 2,
+            currentTimer = 0,
+            prefab = Lightning,
+            animator = nil,
+            input = 'action1',
+            hiddenTimer = 0.1,
+            damage = 20,
+            distanceBetweenBullets = 0,
+            useParentInertia = false,
+        } )
+        :addComponent('OnDeathTrigger', { onDeathTrigger = function(self, parent)
+            local chargeable = parent:getComponentByName('Chargeable')
+            if chargeable and chargeable.child then
+                chargeable.child:delete()
+            end
+        end } )
     addAnimator(entity, 'arms', 'temp')
     return entity
 end
