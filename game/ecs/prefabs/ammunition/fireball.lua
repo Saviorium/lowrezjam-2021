@@ -15,7 +15,7 @@ return function(globalSystem, position, rotation, damage, animator)
         :addComponent('DrawAnimation', {center = Vector(5,4)})
         :addComponent('Animator', { animator = animatorInst})
         :addComponent('ParticleEmitter', {particles = {spark = {intensity = 10}}})
-        :addComponent("DeathByTimer", {timer = 5})
+        :addComponent("DeathByTimer", {timer = 1})
         :addComponent("DeathByCollision", {collisionsCondition = {'Damage', 'Physics'}})
         :addComponent('RotateThisThing')
 

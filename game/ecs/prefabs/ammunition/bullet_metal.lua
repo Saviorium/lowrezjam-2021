@@ -24,7 +24,7 @@ return function(globalSystem, position, rotation, damage, animator)
         :addComponent('Velocity', {velocity = Vector(150,0):rotated(rotation*math.pi/180)})
         :addComponent('DrawAnimation', {center = Vector(1,1)})
         :addComponent('Animator', { animator = animatorInst})
-        :addComponent("DeathByTimer", {timer = 4})
+        :addComponent("DeathByTimer", {timer = 0.5})
         :addComponent("DeathByCollision", {collisionsCondition = {'Damage', 'Physics'}, onDeathTrigger = onDeathTrigger})
         :addComponent('RotateThisThing')
 

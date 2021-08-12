@@ -9,7 +9,7 @@ return {
         if not self.enemy then
             local selfTeam = entity:getComponentByName('Team').team
             self.enemy = selfTeam == 'Player' and 'Enemy' or selfTeam
-            print(self.enemy)
+            -- print(self.enemy)
         end
 
         for _, obj in pairs(entity.globalSystem.systems.TeamSystem.pool) do
