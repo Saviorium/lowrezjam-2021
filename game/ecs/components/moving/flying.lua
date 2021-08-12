@@ -6,11 +6,11 @@ return {
     acceleration = 5,
 
     update = function (self, dt, entity)
-        local snapshot = entity:getComponentByName("Controlled")
+        local controlComp = entity:getComponentByName("Controlled")
         local velocity = entity:getComponentByName("Velocity").velocity
 
-        if snapshot then
-            velocity = velocity + dt*60*snapshot.snapshot.move*self.acceleration
+        if controlComp and controlComp.inputSnapshot and controlComp.inputSnapshot.move then
+            velocity = velocity + dt*60*controlComp.inputSnapshot.move*self.acceleration
         end
         velocity = velocity / (self.friction)
         velocity.x = math.clamp(-self.maxSpeed, velocity.x, self.maxSpeed)
