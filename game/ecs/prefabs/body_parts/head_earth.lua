@@ -12,7 +12,7 @@ return function(globalSystem, parent)
         :addComponent('BodyPart', { kind = 'head', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
         :addComponent('SpawnObject', {
-                                        cooldown = 1,
+                                        cooldown = 10,
                                         prefab = Wall,
                                         -- animator = nil,
                                         input = 'action2',

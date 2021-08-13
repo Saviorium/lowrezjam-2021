@@ -1,6 +1,6 @@
 return {
     name = "Spawner",
-    timeToSpawn = 2,
+    timeToSpawn = 5,
     maxCount = 1,
     spawned = {},
     currentTimer = 0,

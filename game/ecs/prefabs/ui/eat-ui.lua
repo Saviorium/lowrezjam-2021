@@ -12,6 +12,6 @@ return function(globalSystem, position, part)
         :addComponent('DrawAnimation', { center = Vector(1, 1) })
         :addComponent('Animator', { animator = animatorInstance })
         :addComponent('Position', { position = position or Vector(200,200) })
-        :addComponent('Image', { image = AssetManager:getImage("eat-ui")})
+        :addComponent('Image', { image = AssetManager:getImage("eat-ui"),center = Vector(30, 30) })
     return entity
 end

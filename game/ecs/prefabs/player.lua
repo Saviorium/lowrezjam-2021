@@ -1,10 +1,10 @@
+local HpUi = require "game.ecs.prefabs.ui.hp_bar"
 
 return function(globalSystem, position)
     local damageCollider =  globalSystem.HC:rectangle(0, 0, 4, 6)
     local physicsCollider = globalSystem.HC:rectangle(0, 0, 6, 8)
     damageCollider.type = 'Damage'
     physicsCollider.type = 'Physics'
-
     local ent =  globalSystem:newEntity()
         :addComponent('Walking')
         :addComponent('Position', {position = position})
@@ -21,7 +21,6 @@ return function(globalSystem, position)
         :setVariable("Walking", "maxSpeed", 25)
         :addComponent("TargetAtMouse")
         :addComponent("MouseControlled")
-        :addComponent("DeathByHealth")
         :addComponent("Team", {team = 'Player', main = true})
 
     damageCollider.parent = ent
@@ -31,5 +30,14 @@ return function(globalSystem, position)
     EventManager:send("changePart", { entity = ent.id, kind = "arms", element = ""})
     EventManager:send("changePart", { entity = ent.id, kind = "torso", element = "" })
     EventManager:send("changePart", { entity = ent.id, kind = "legs", element = "" })
+
+    local hpUi = HpUi(globalSystem, Vector(1,1), ent)
+
+    local onDeathTrigger = 
+    function (self, parent)
+        hpUi:delete()
+    end
+    ent:addComponent("DeathByHealth", { onDeathTrigger = onDeathTrigger})
+
     return ent
 end

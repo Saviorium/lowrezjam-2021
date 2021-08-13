@@ -30,7 +30,7 @@ Debug = {
     strictComponentCheck = 1,
     dragCharacterDebug = false,
     PrintAnimationEvents = false,
-    drawCollidersDebug = false,
+    drawCollidersDebug = true,
     generateMap = false,
     cheatsOn = true
 }

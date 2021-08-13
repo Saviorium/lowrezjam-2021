@@ -44,12 +44,13 @@ return function(globalSystem, position)
                                 end
                                 end
                             end, 
+                            
                             uninteractionCallback = 
-                            function(self, entity)
-                                eatUi:getComponentByName('DrawAnimation').hidden = true
-                                eatUi:getComponentByName('Image').hidden = true
-                            end,
-                            })
+                                function(self, entity)
+                                    eatUi:getComponentByName('DrawAnimation').hidden = true
+                                    eatUi:getComponentByName('Image').hidden = true
+                                end,
+                                })
                             :addComponent('DrawRectangle', {size = {x = 8, y = 8}})
                             :addComponent("UserControlled")
 
@@ -67,7 +68,6 @@ return function(globalSystem, position)
         :addComponent("TargetAtNearestEnemy", {enemy = 'Player'})
         :addComponent('Controlled')
         :addComponent('AiControlled', {inputManager = require "game.ai.normal_ai"})
-        -- :addComponent("DeathByTimer", {timer = 10})
         :addComponent("DeathByHealth", {onDeathTrigger = onDeathTrigger})
         :addComponent("Team", {team = 'Enemy', main = true})
 

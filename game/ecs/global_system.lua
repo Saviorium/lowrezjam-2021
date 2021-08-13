@@ -22,6 +22,7 @@ local ParticleSystem = require "game.ecs.systems.particle_system"
 local TeamSystem = require "game.ecs.systems.team_system"
 local EntityDeleteSystem = require "game.ecs.systems.entity_delete_system"
 local TriggerSystem = require "game.ecs.systems.trigger_system"
+local DrawUiSystem = require "game.ecs.systems.draw_ui_system"
 
 local GlobalSystem = Class {
     init = function(self)
@@ -49,6 +50,7 @@ local GlobalSystem = Class {
             TriggerSystem(self),
 
             CameraSystem(self),
+            DrawUiSystem(self),
             self.systems.mapSystem,
             DrawSystem(self),
             ParticleSystem(self),
