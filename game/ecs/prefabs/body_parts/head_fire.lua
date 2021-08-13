@@ -20,6 +20,6 @@ return function(globalSystem, parent)
                                         timeToLive = 5,
                                      } )
 
-    addAnimator(entity, 'head', 'temp')
+    addAnimator(entity, 'head', 'fire')
     return entity
 end

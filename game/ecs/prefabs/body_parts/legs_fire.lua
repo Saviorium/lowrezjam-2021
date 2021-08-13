@@ -8,6 +8,6 @@ return function(globalSystem, parent)
         :addComponent('DamageBuff', {value = 1})
         :addComponent('CooldownBuff', {value = 1.25})
         :addComponent('HealthBuff', {value = 0.75})
-    addAnimator(entity, 'legs', 'temp')
+    addAnimator(entity, 'legs', 'fire')
     return entity
 end

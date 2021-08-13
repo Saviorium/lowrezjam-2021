@@ -27,6 +27,6 @@ return function(globalSystem, parent)
                                  distanceBetweenBullets = 0,
                                  useParentInertia = false
                                 } )
-    addAnimator(entity, 'arms', 'temp')
+    addAnimator(entity, 'arms', 'fire')
     return entity
 end
