@@ -9,7 +9,7 @@ return {
   tilewidth = 8,
   tileheight = 8,
   nextlayerid = 3,
-  nextobjectid = 45,
+  nextobjectid = 57,
   properties = {},
   tilesets = {
     {
@@ -5336,7 +5336,9 @@ return {
           height = 0,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["count"] = 1
+          }
         },
         {
           id = 5,
@@ -5783,6 +5785,96 @@ return {
           visible = true,
           properties = {
             ["gateName"] = "gate1"
+          }
+        },
+        {
+          id = 51,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 270.5,
+          y = 244,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["count"] = 1
+          }
+        },
+        {
+          id = 52,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 259,
+          y = 268.25,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["count"] = 1
+          }
+        },
+        {
+          id = 53,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 255.5,
+          y = 302.25,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["count"] = 1
+          }
+        },
+        {
+          id = 54,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 264.75,
+          y = 324.75,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["count"] = 1
+          }
+        },
+        {
+          id = 55,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 289,
+          y = 347,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["count"] = 1
+          }
+        },
+        {
+          id = 56,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 323.5,
+          y = 358.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["count"] = 1
           }
         }
       }

@@ -30,13 +30,13 @@ return function(globalSystem, position)
 
                                 local snapshot = entity:getComponentByName("UserControlled").inputManager.inputSnapshot
 
-                                if snapshot.action1 == 1 then
+                                if snapshot.action2 == 1 then
                                     -- print(bodyPart, bodyPart.element)
                                     EventManager:send("changePart", { entity = player.id, kind = randomPart, element = bodyPart.element})
                                     entity:delete()
                                     eatUi:delete()
                                     return
-                                else if snapshot.action2 == 1  then
+                                else if snapshot.action1 == 1  then
                                     player:getComponentByName('Health'):addHealth(healAmount)
                                     entity:delete()
                                     eatUi:delete()

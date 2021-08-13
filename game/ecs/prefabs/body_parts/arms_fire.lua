@@ -16,7 +16,7 @@ return function(globalSystem, parent)
         :addComponent('Bullet', {
                                  angle = 0,
                                  count = 1,
-                                 cooldown = 0.4,
+                                 cooldown = 1,
                                  currentTimer = 0,
                                  prefab = Fireball,
                                  animator = bulletAnimator,
@@ -25,7 +25,8 @@ return function(globalSystem, parent)
                                  hiddenTimer = 0.1,
                                  damage = 10,
                                  distanceBetweenBullets = 0,
-                                 useParentInertia = false
+                                 useParentInertia = false,
+                                        element = 'fire',
                                 } )
     addAnimator(entity, 'arms', 'fire')
     return entity

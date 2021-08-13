@@ -5,8 +5,41 @@ local DamageSystem = Class {
     init = function(self, globalSystem)
         System.init(self, {'TakingDamage', 'Health'})
         self.globalSystem = globalSystem
-    end
+    end,
+    damageTable = {
+        water = {
+            fire = 0.90,
+            lightning = 1.1,
+            nature = 0.90,
+        },
+        fire = {
+            water = 1.1,
+            nature = 0.90,
+        },
+        lightning = {
+            water = 0.90,
+            earth = 1.1,
+        },
+        metal = {
+            fire = 1.05,
+            water = 1.05,
+            nature = 0.90,
+        },
+        earth = {
+            fire = 0.90,
+            lightning = 0.90,
+            water = 1.05,
+        },
+        nature = {
+            fire = 1.1,
+            water = 0.90,
+            metal = 1.05,
+            earth = 1.05,
+        },
+    }
 }
+
+
 
 function DamageSystem:update(dt)
     for entityId, entity in pairs(self.pool) do
@@ -19,7 +52,17 @@ function DamageSystem:update(dt)
                 local otherTeam = self:getTeam(other.parent)
 
                 if team ~= otherTeam then
-                    currentHP = currentHP - other.damage
+                    local body = entity:getComponentByName('Body')
+                    local damage = other.damage
+                    local element = other.element
+                    if body then
+                        for _, part in pairs(body.parts) do
+                            if self.damageTable[part:getComponentByName('BodyPart').element] then
+                                damage = damage * (self.damageTable[part:getComponentByName('BodyPart').element][element] or 1 )
+                            end
+                        end
+                    end
+                    currentHP = currentHP - damage
                 end
                 entity:getComponentByName("Health").currentHP = currentHP
             end

@@ -24,7 +24,8 @@ return function(globalSystem, parent)
                                  startFire = nil,--startFireAnimatorInst,
                                  hiddenTimer = 0.1,
                                  damage = 1,
-                                 distanceBetweenBullets = 0
+                                 distanceBetweenBullets = 0,
+                                 element = 'water',
                                 } )
     addAnimator(entity, 'arms', 'water')
     return entity

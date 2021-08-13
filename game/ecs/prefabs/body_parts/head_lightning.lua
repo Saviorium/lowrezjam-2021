@@ -18,6 +18,7 @@ return function(globalSystem, parent)
                                         input = 'action2',
                                         offsetDistance = 0,
                                         timeToLive = 5,
+                                        element = 'lightning',
                                      } )
 
     addAnimator(entity, 'head', 'temp')

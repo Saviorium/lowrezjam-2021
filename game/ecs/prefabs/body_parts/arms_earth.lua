@@ -20,6 +20,7 @@ return function(globalSystem, parent)
                                         animator = bulletAnimator,
                                         offsetDistance = 10,
                                         timeToLive = 0.4,
+                                        element = 'earth',
                                      } )
     addAnimator(entity, 'arms', 'earth')
     return entity

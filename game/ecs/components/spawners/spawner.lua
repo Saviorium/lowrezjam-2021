@@ -6,7 +6,7 @@ return {
     currentTimer = 0,
     prefab = nil,
     spawnPosition = nil,
-    countLeft = 1,
+    countLeft = nil,
 
     update = function (self, dt, entity )
         local pos     = entity:getComponentByName('Position').position

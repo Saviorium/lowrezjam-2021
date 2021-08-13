@@ -37,10 +37,10 @@ function MapSystem:loadMap(mapName)
 
     for ind, obj in pairs(self.map.objects) do
         if obj.type == "player" then
-            Spawner(self.globalSystem, Vector(obj.x, obj.y), {spawned = {}, prefab = PlayerPrefab, timeToSpawn = 1 })
+            Spawner(self.globalSystem, Vector(obj.x, obj.y), {spawned = {}, prefab = PlayerPrefab, timeToSpawn = 1})
         end
         if obj.type == "enemy" then
-            Spawner(self.globalSystem, Vector(obj.x, obj.y), {spawned = {}, prefab = EnemyPrefab, maxCount = 1  })
+            Spawner(self.globalSystem, Vector(obj.x, obj.y), {spawned = {}, prefab = EnemyPrefab, maxCount = 1 , countLeft = obj.properties.count  })
         end
         if obj.type == "boss" then
             BossPrefab(self.globalSystem, Vector(obj.x, obj.y), obj.properties.gateName)

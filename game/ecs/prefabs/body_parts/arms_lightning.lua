@@ -23,6 +23,7 @@ return function(globalSystem, parent)
             damage = 20,
             distanceBetweenBullets = 0,
             useParentInertia = false,
+            element = 'lightning',
         } )
         :addComponent('OnDeathTrigger', { onDeathTrigger = function(self, parent)
             local chargeable = parent:getComponentByName('Chargeable')

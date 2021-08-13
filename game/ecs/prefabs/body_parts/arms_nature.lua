@@ -26,6 +26,7 @@ return function(globalSystem, parent)
                                  damage = 1,
                                  distanceBetweenBullets = 2,
                                  offsetDistance = 5,
+                                 element = 'nature',
                                 } )
     addAnimator(entity, 'arms', 'nature')
     return entity

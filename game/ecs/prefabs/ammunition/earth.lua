@@ -1,7 +1,7 @@
 return function(globalSystem, position, component, parent, count)
     if not count or count > 0 then
-        local damagingCollider =  globalSystem.HC:circle(position.x, position.y, 8)
-        local physicsCollider  = globalSystem.HC:circle(position.x, position.y, 8)
+        local damagingCollider =  globalSystem.HC:circle(position.x-2, position.y+4, 6)
+        local physicsCollider  = globalSystem.HC:circle(position.x-2, position.y+4, 6)
         damagingCollider.type = 'Damaging'
         physicsCollider.type = 'Physics'
 
@@ -15,7 +15,7 @@ return function(globalSystem, position, component, parent, count)
             :addComponent('Position', {position = position})
             -- :addComponent('Rotation', {rotation = rotation})
             :addComponent('Damaging', {collider = damagingCollider})
-            :addComponent('PhysicsCollider',  {collider = physicsCollider})
+            :addComponent('PhysicsCollider',  {collider = physicsCollider, center = {x = -8, y = 8}})
             :addComponent('DrawAnimation', {center = Vector(8,4)})
             :addComponent('Animator', { animator = animatorInst})
             :addComponent("DeathByTimer", {timer = component.timeToLive})

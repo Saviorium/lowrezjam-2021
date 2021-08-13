@@ -12,6 +12,7 @@ return {
     distanceBetweenBullets = 0,
     offsetDistance = 7,
     useParentInertia = true,
+    element = 'fire',
 
     update = function(self, dt)
         if self.currentTimer < self.cooldown then
@@ -50,6 +51,8 @@ return {
                 local angle = rotation +  ((bullet % 2 == 0) and 1 or -1 ) * ((self.count % 2 ~= 0 and bullet == 1) and 0 or 1) * (math.floor(bullet / 2 )) * self.angle
 
                 local firedBullet = self.prefab(entity.globalSystem, Vector(x, y) + direction*self.offsetDistance, angle, self.damage, self.animator, entity)
+                
+                firedBullet:getComponentByName('Damaging').collider.element = self.element
                 if team then
                     firedBullet:addComponent("Team", { team = team.team })
                 end
