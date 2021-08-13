@@ -1,10 +1,12 @@
 local System = require "game.ecs.systems.system"
 local sti     = require "lib/sti"
-local Spawner = require "game.ecs.prefabs.character_spawner"
+local Spawner = require "game.ecs.prefabs.environment.character_spawner"
 local EnemyPrefab = require "game.ecs.prefabs.enemy"
 local PlayerPrefab = require "game.ecs.prefabs.player"
+local BossPrefab = require "game.ecs.prefabs.boss"
 
 local Tree     = require "game.ecs.prefabs.environment.tree"
+local Gate     = require "game.ecs.prefabs.environment.gate"
 
 local MapSystem = Class {
     __includes = System,
@@ -40,8 +42,14 @@ function MapSystem:loadMap(mapName)
         if obj.type == "enemy" then
             Spawner(self.globalSystem, Vector(obj.x, obj.y), {spawned = {}, prefab = EnemyPrefab, maxCount = 1  })
         end
+        if obj.type == "boss" then
+            BossPrefab(self.globalSystem, Vector(obj.x, obj.y), obj.properties.gateName)
+        end
         if obj.type == "tree" then
             Tree(self.globalSystem, Vector(obj.x, obj.y))
+        end
+        if obj.type == "gate" then
+            Gate(self.globalSystem, Vector(obj.x, obj.y), obj.properties.rotation, {x = obj.width, y = obj.height}, obj.properties.name )
         end
     end
 

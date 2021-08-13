@@ -23,6 +23,7 @@ local TeamSystem = require "game.ecs.systems.team_system"
 local EntityDeleteSystem = require "game.ecs.systems.entity_delete_system"
 local TriggerSystem = require "game.ecs.systems.trigger_system"
 local DrawUiSystem = require "game.ecs.systems.draw_ui_system"
+local GateSystem = require "game.ecs.systems.gate_system"
 
 local GlobalSystem = Class {
     init = function(self)
@@ -31,7 +32,8 @@ local GlobalSystem = Class {
         self.newEntityId = 1
         self.systems = { -- take system here if you need a quick dirty fix
             teamSystem = TeamSystem(self),
-            mapSystem = MapSystem(self)
+            mapSystem = MapSystem(self),
+            gateSystem = GateSystem(self),
         }
         self._systems = { -- order is important
             MouseSystem(self),
@@ -58,6 +60,7 @@ local GlobalSystem = Class {
             DeathSystem(self),
             CheatSystem(self),
             self.systems.teamSystem,
+            self.systems.gateSystem,
 
             EntityDeleteSystem(self),
         }

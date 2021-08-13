@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.5.0" orientation="orthogonal" renderorder="left-up" width="100" height="100" tilewidth="8" tileheight="8" infinite="0" nextlayerid="3" nextobjectid="43">
+<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="left-up" width="100" height="100" tilewidth="8" tileheight="8" infinite="0" nextlayerid="3" nextobjectid="45">
  <editorsettings>
   <export target="test_island.lua" format="lua"/>
  </editorsettings>
@@ -1276,5 +1276,16 @@
   <object id="40" type="tree" x="369.273" y="300.909" width="8" height="8" visible="0"/>
   <object id="41" type="tree" x="372.364" y="311.818" width="8" height="8" visible="0"/>
   <object id="42" type="tree" x="376.364" y="300.727" width="8" height="8" visible="0"/>
+  <object id="43" type="gate" x="583.917" y="295.851" width="16.0056" height="32.2917">
+   <properties>
+    <property name="name" value="gate1"/>
+    <property name="rotation" type="int" value="90"/>
+   </properties>
+  </object>
+  <object id="44" type="boss" x="551.875" y="303.875" width="8.25" height="16.125">
+   <properties>
+    <property name="gateName" value="gate1"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

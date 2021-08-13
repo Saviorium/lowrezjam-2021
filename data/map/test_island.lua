@@ -1,7 +1,7 @@
 return {
   version = "1.5",
   luaversion = "5.1",
-  tiledversion = "1.5.0",
+  tiledversion = "1.7.1",
   orientation = "orthogonal",
   renderorder = "left-up",
   width = 100,
@@ -9,7 +9,7 @@ return {
   tilewidth = 8,
   tileheight = 8,
   nextlayerid = 3,
-  nextobjectid = 43,
+  nextobjectid = 45,
   properties = {},
   tilesets = {
     {
@@ -5753,6 +5753,37 @@ return {
           rotation = 0,
           visible = false,
           properties = {}
+        },
+        {
+          id = 43,
+          name = "",
+          type = "gate",
+          shape = "rectangle",
+          x = 583.917,
+          y = 295.851,
+          width = 16.0056,
+          height = 32.2917,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["name"] = "gate1",
+            ["rotation"] = 90
+          }
+        },
+        {
+          id = 44,
+          name = "",
+          type = "boss",
+          shape = "rectangle",
+          x = 551.875,
+          y = 303.875,
+          width = 8.25,
+          height = 16.125,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["gateName"] = "gate1"
+          }
         }
       }
     }
