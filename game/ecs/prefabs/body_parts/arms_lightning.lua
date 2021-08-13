@@ -31,6 +31,6 @@ return function(globalSystem, parent)
                 chargeable.child:delete()
             end
         end } )
-    addAnimator(entity, 'arms', 'temp')
+    addAnimator(entity, 'arms', 'lightning')
     return entity
 end

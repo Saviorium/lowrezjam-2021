@@ -21,6 +21,6 @@ return function(globalSystem, parent)
                                         element = 'lightning',
                                      } )
 
-    addAnimator(entity, 'head', 'temp')
+    addAnimator(entity, 'head', 'lightning')
     return entity
 end
