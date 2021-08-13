@@ -9,7 +9,7 @@ return {
   tilewidth = 8,
   tileheight = 8,
   nextlayerid = 3,
-  nextobjectid = 57,
+  nextobjectid = 62,
   properties = {},
   tilesets = {
     {
@@ -5326,21 +5326,6 @@ return {
       properties = {},
       objects = {
         {
-          id = 4,
-          name = "",
-          type = "enemy",
-          shape = "rectangle",
-          x = 296,
-          y = 232,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["count"] = 1
-          }
-        },
-        {
           id = 5,
           name = "",
           type = "player",
@@ -5788,93 +5773,98 @@ return {
           }
         },
         {
-          id = 51,
+          id = 57,
           name = "",
           type = "enemy",
           shape = "rectangle",
-          x = 270.5,
-          y = 244,
+          x = 254.5,
+          y = 252.5,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           properties = {
-            ["count"] = 1
+            ["arms"] = "earth",
+            ["count"] = 1,
+            ["head"] = "earth",
+            ["legs"] = "earth",
+            ["torso"] = "earth"
           }
         },
         {
-          id = 52,
+          id = 58,
           name = "",
           type = "enemy",
           shape = "rectangle",
-          x = 259,
-          y = 268.25,
+          x = 291,
+          y = 233,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           properties = {
-            ["count"] = 1
+            ["arms"] = "fire",
+            ["count"] = 1,
+            ["head"] = "fire",
+            ["legs"] = "fire",
+            ["torso"] = "fire"
           }
         },
         {
-          id = 53,
+          id = 59,
           name = "",
           type = "enemy",
           shape = "rectangle",
-          x = 255.5,
-          y = 302.25,
+          x = 245,
+          y = 282.5,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           properties = {
-            ["count"] = 1
+            ["arms"] = "water",
+            ["count"] = 1,
+            ["head"] = "water",
+            ["legs"] = "water",
+            ["torso"] = "water"
           }
         },
         {
-          id = 54,
+          id = 60,
           name = "",
           type = "enemy",
           shape = "rectangle",
-          x = 264.75,
-          y = 324.75,
+          x = 246.75,
+          y = 328.5,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           properties = {
-            ["count"] = 1
+            ["arms"] = "metal",
+            ["count"] = 1,
+            ["head"] = "metal",
+            ["legs"] = "metal",
+            ["torso"] = "metal"
           }
         },
         {
-          id = 55,
+          id = 61,
           name = "",
           type = "enemy",
           shape = "rectangle",
-          x = 289,
-          y = 347,
+          x = 301.75,
+          y = 349.75,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           properties = {
-            ["count"] = 1
-          }
-        },
-        {
-          id = 56,
-          name = "",
-          type = "enemy",
-          shape = "rectangle",
-          x = 323.5,
-          y = 358.5,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["count"] = 1
+            ["arms"] = "lightning",
+            ["count"] = 1,
+            ["head"] = "lightning",
+            ["legs"] = "lightning",
+            ["torso"] = "lightning"
           }
         }
       }

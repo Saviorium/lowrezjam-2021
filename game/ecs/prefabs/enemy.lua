@@ -1,6 +1,6 @@
 local EatUI = require "game.ecs.prefabs.ui.eat-ui"
 
-return function(globalSystem, position)
+return function(globalSystem, position, bodyParts)
     local damageCollider =  globalSystem.HC:rectangle(0, 0, 4, 6)
     local physicsCollider = globalSystem.HC:rectangle(0, 0, 6, 8)
     damageCollider.type = 'Damage'
@@ -74,9 +74,9 @@ return function(globalSystem, position)
     damageCollider.parent = ent
     -- physicsCollider.parent = ent
 
-    EventManager:send("changePart", { entity = ent.id, kind = "head", element = "earth" })
-    EventManager:send("changePart", { entity = ent.id, kind = "arms", element = "fire" })
-    EventManager:send("changePart", { entity = ent.id, kind = "torso", element = "water" })
-    EventManager:send("changePart", { entity = ent.id, kind = "legs", element = "metal" })
+    EventManager:send("changePart", { entity = ent.id, kind = "head", element = bodyParts["head"] })
+    EventManager:send("changePart", { entity = ent.id, kind = "arms", element = bodyParts["arms"] })
+    EventManager:send("changePart", { entity = ent.id, kind = "torso", element = bodyParts["torso"] })
+    EventManager:send("changePart", { entity = ent.id, kind = "legs", element = bodyParts["legs"] })
     return ent
 end

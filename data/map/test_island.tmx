@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="left-up" width="100" height="100" tilewidth="8" tileheight="8" infinite="0" nextlayerid="3" nextobjectid="57">
+<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="left-up" width="100" height="100" tilewidth="8" tileheight="8" infinite="0" nextlayerid="3" nextobjectid="62">
  <editorsettings>
   <export target="test_island.lua" format="lua"/>
  </editorsettings>
@@ -1243,11 +1243,6 @@
 </data>
  </layer>
  <objectgroup id="2" name="object-layer">
-  <object id="4" type="enemy" x="296" y="232">
-   <properties>
-    <property name="count" type="int" value="1"/>
-   </properties>
-  </object>
   <object id="5" type="player" x="344" y="264"/>
   <object id="12" type="tree" x="314.364" y="308" width="8" height="8" visible="0"/>
   <object id="13" type="tree" x="320.545" y="309.636" width="8" height="8" visible="0"/>
@@ -1280,45 +1275,51 @@
   <object id="40" type="tree" x="369.273" y="300.909" width="8" height="8" visible="0"/>
   <object id="41" type="tree" x="372.364" y="311.818" width="8" height="8" visible="0"/>
   <object id="42" type="tree" x="376.364" y="300.727" width="8" height="8" visible="0"/>
-  <object id="43" type="gate" x="583.917" y="295.851" width="16.0056" height="32.2917">
+  <object id="43" type="gate" x="583.917" y="295.851" width="16.0056" height="32.2917" visible="0">
    <properties>
     <property name="name" value="gate1"/>
     <property name="rotation" type="int" value="90"/>
    </properties>
   </object>
-  <object id="44" type="boss" x="551.875" y="303.875" width="8.25" height="16.125">
+  <object id="44" type="boss" x="551.875" y="303.875" width="8.25" height="16.125" visible="0">
    <properties>
     <property name="gateName" value="gate1"/>
    </properties>
   </object>
-  <object id="51" type="enemy" x="270.5" y="244">
+  <object id="57" type="enemy" x="254.5" y="252.5">
    <properties>
+    <property name="arms" value="earth"/>
     <property name="count" type="int" value="1"/>
+    <property name="head" value="earth"/>
+    <property name="legs" value="earth"/>
+    <property name="torso" value="earth"/>
    </properties>
   </object>
-  <object id="52" type="enemy" x="259" y="268.25">
+  <object id="58" type="enemy" x="291" y="233">
    <properties>
+    <property name="arms" value="fire"/>
     <property name="count" type="int" value="1"/>
+    <property name="head" value="fire"/>
+    <property name="legs" value="fire"/>
+    <property name="torso" value="fire"/>
    </properties>
   </object>
-  <object id="53" type="enemy" x="255.5" y="302.25">
+  <object id="59" type="enemy" x="245" y="282.5">
    <properties>
+    <property name="arms" value="water"/>
     <property name="count" type="int" value="1"/>
+    <property name="head" value="water"/>
+    <property name="legs" value="water"/>
+    <property name="torso" value="water"/>
    </properties>
   </object>
-  <object id="54" type="enemy" x="264.75" y="324.75">
+  <object id="60" type="enemy" x="246.75" y="328.5">
    <properties>
+    <property name="arms" value="metal"/>
     <property name="count" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="55" type="enemy" x="289" y="347">
-   <properties>
-    <property name="count" type="int" value="1"/>
-   </properties>
-  </object>
-  <object id="56" type="enemy" x="323.5" y="358.5">
-   <properties>
-    <property name="count" type="int" value="1"/>
+    <property name="head" value="metal"/>
+    <property name="legs" value="metal"/>
+    <property name="torso" value="metal"/>
    </properties>
   </object>
  </objectgroup>

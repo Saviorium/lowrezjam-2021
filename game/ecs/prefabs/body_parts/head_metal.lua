@@ -23,7 +23,8 @@ return function(globalSystem, parent)
                                  input = 'action2',
                                  damage = 100,
                                  startFire = nil,
-                                 distanceBetweenBullets = 0
+                                 distanceBetweenBullets = 0,
+                                 element = 'metal',
                                 } )
 
     addAnimator(entity, 'head', 'metal')
