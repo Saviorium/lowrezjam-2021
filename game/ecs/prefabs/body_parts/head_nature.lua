@@ -23,6 +23,6 @@ return function(globalSystem, parent)
                                     end,
                                    } )
 
-    addAnimator(entity, 'head', 'temp')
+    addAnimator(entity, 'head', 'nature')
     return entity
 end

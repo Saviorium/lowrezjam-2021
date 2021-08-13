@@ -27,6 +27,6 @@ return function(globalSystem, parent)
                                  distanceBetweenBullets = 2,
                                  offsetDistance = 5,
                                 } )
-    addAnimator(entity, 'arms', 'temp')
+    addAnimator(entity, 'arms', 'nature')
     return entity
 end
