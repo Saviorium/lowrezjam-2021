@@ -31,7 +31,7 @@ return function(globalSystem, position)
     EventManager:send("changePart", { entity = ent.id, kind = "torso", element = "" })
     EventManager:send("changePart", { entity = ent.id, kind = "legs", element = "" })
 
-    local hpUi = HpUi(globalSystem, Vector(1,1), ent)
+    local hpUi = HpUi(globalSystem, Vector(7,60), ent)
 
     local onDeathTrigger = 
     function (self, parent)

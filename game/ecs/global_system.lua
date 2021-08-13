@@ -50,10 +50,10 @@ local GlobalSystem = Class {
             TriggerSystem(self),
 
             CameraSystem(self),
-            DrawUiSystem(self),
             self.systems.mapSystem,
             DrawSystem(self),
             ParticleSystem(self),
+            DrawUiSystem(self),
 
             DeathSystem(self),
             CheatSystem(self),

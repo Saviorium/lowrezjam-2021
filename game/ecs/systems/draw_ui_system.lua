@@ -12,11 +12,11 @@ function DrawUiSystem:draw()
 
     for entityId, entity in pairs(self.pool) do
         love.graphics.push()
+        love.graphics.origin()
         local pos = entity:getComponentByName("Position").position
         love.graphics.translate(math.floor(pos.x), math.floor(pos.y))
 
         for _, drawable in pairs(entity:getComponentByType("Drawable")) do
-        	print('Drawing at ',pos)
             drawable:draw(entity)
         end
         love.graphics.pop()

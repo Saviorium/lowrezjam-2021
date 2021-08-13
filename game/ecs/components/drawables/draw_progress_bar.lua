@@ -10,37 +10,31 @@ return {
 
     draw = function (self)
         local health = self.entity:getComponentByName('Health')
-        local cellWidth = self.width / (health.maxHp / 25)
-        love.graphics.setColor(self.bgColor)
-        love.graphics.rectangle('fill', 
-            0, 
-            0, 
-            self.width, 
-            self.height)
+        if health then
+            local calculatedMax = math.max(health.maxHp, health.currentHP)
+            local cellWidth = math.floor(self.width / (calculatedMax / 25))
 
-        love.graphics.setColor(0, 0, 0)
-        love.graphics.rectangle('fill', 
-            self.innerLine, 
-            self.innerLine, 
-            self.width - self.innerLine, 
-            self.height - self.innerLine*2)
+            for hpCell = 0, (calculatedMax / 25)-1 do
 
-        love.graphics.setColor(self.color)
-        love.graphics.rectangle('fill', 
-            self.innerLine, 
-            self.innerLine, 
-            math.floor((health.currentHP % health.maxHp)*48), 
-            self.height)
+                local x = cellWidth*hpCell+hpCell
 
-        love.graphics.setColor(self.bgColor)
-        for hpCell = 1, (health.maxHp / 25) do
-            local x = cellWidth*hpCell
-            love.graphics.rectangle('fill', 
-                x, 
-                0, 
-                self.innerLine, 
-                self.height)
+                love.graphics.setColor(0, 0, 0)
+                love.graphics.rectangle('fill', 
+                    x + self.innerLine, 
+                    self.innerLine, 
+                    cellWidth, 
+                    self.height - self.innerLine*2)
+
+                local hp = (health.currentHP-25*hpCell) / 25
+                love.graphics.setColor(self.color)
+                love.graphics.rectangle('fill', 
+                    x + self.innerLine, 
+                    self.innerLine, 
+                    math.clamp(0,hp,1) * cellWidth , 
+                    self.height-self.innerLine*2)
+
+            end
+            love.graphics.setColor(1, 1, 1)
         end
-        love.graphics.setColor(1, 1, 1)
     end
 }
