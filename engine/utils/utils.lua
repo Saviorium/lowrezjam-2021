@@ -27,7 +27,8 @@ local Utils = {}
 Utils.timed = function(msg, fn)
     local start = love.timer.getTime()
     fn()
-    print(string.format("%s took: %f ms", msg, (love.timer.getTime() - start)*1000))
+    local timeMs =  (love.timer.getTime() - start)*1000
+    print(string.format("%s took: %f%% of 16ms or %f ms", msg, timeMs/16.0*100, timeMs))
 end
 
 return Utils
