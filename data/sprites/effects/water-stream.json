@@ -76,7 +76,7 @@
   "app": "http://www.aseprite.org/",
   "version": "1.2.27",
   "image": "water-stream.png",
-  "format": "RGBA8888",
+  "format": "I8",
   "size": { "w": 88, "h": 18 },
   "scale": "1",
   "frameTags": [

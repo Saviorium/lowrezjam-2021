@@ -26,6 +26,6 @@ return function(globalSystem, parent)
                                  damage = 1,
                                  distanceBetweenBullets = 0
                                 } )
-    addAnimator(entity, 'arms', 'temp')
+    addAnimator(entity, 'arms', 'water')
     return entity
 end
