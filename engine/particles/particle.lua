@@ -46,6 +46,10 @@ function Particle:update(dt)
     self.velocity.y = self.velocity.y + self.type.gravity
     self.velocity.x = self.velocity.x * self.type.friction
     self.velocity.y = self.velocity.y * self.type.friction
+    self.color[1] = self.color[1] + self.type.colorStep[1]
+    self.color[2] = self.color[2] + self.type.colorStep[2]
+    self.color[3] = self.color[3] + self.type.colorStep[3]
+    self.color[4] = self.color[4] + self.type.colorStep[4]
 end
 
 function Particle:draw()

@@ -1,3 +1,5 @@
+local explosion = require "game.ecs.prefabs.ammunition.explosion"
+
 return function(globalSystem, position, rotation, damage, animator)
     local damagingCollider =  globalSystem.HC:circle(position.x, position.y, 3)
     damagingCollider.type = 'Damaging'
@@ -16,7 +18,12 @@ return function(globalSystem, position, rotation, damage, animator)
         :addComponent('Animator', { animator = animatorInst})
         :addComponent('ParticleEmitter', {particles = {spark = {intensity = 10}}})
         :addComponent("DeathByTimer", {timer = 5})
+        :addComponent('ParticleEmitter', {particles = {smoke = {intensity = 20}}})
         :addComponent("DeathByCollision", {collisionsCondition = {'Damage', 'Physics'}})
+        :addComponent("OnDeathTrigger", { onDeathTrigger = function (self, parent)
+            local currentPos = parent:getComponentByName('Position').position
+            explosion(globalSystem, currentPos)
+        end })
         :addComponent('RotateThisThing')
         :addComponent("TargetAtNearestEnemy")
         :addComponent('AiControlled', {inputManager = require "game.ai.follow_rotation_ai"})

@@ -3,6 +3,7 @@ return {
         spawnType = "world",
         drawType = "rectangle",
         color = { 0.9, 0.8, 0.1, 1 },
+        targetColor = { 0.9, 0.3, 0.0, 0.7 },
         size = 1,
         gravity = 0.001,
         friction = 0.999,
@@ -89,6 +90,30 @@ return {
             speed = 0.1,
             timeToLive = 0,
             intensity = 1,
+        }
+    },
+    smoke = {
+        spawnType = "world",
+        drawType = "circle",
+        color = { 0.6, 0.6, 0.6, .7 },
+        targetColor = { 0.6, 0.6, 0.6, .0 },
+        size = 3,
+        gravity = -0.01,
+        friction = 0.98,
+        translate = Vector(-10, 0),
+        angle = 180,
+        speed = 0.5,
+        timeToLive = 2,
+        maxIntensity = 50,
+        maxTotalNum = 200,
+        random = {
+            color = 0,
+            size = 1,
+            translate = 1,
+            angle = 45,
+            speed = 0.2,
+            timeToLive = 0.3,
+            intensity = 2,
         }
     },
 }

@@ -18,6 +18,17 @@ local ParticleManager = Class {
                 self.drawCache[particleParams.spawnType] = {}
             end
             self.drawCache[particleParams.spawnType][type] = self.particles[type].particles
+
+            if particleParams.targetColor then
+                particleParams.colorStep = {
+                    (particleParams.targetColor[1] - particleParams.color[1]) / (particleParams.timeToLive * 60),
+                    (particleParams.targetColor[2] - particleParams.color[2]) / (particleParams.timeToLive * 60),
+                    (particleParams.targetColor[3] - particleParams.color[3]) / (particleParams.timeToLive * 60),
+                    (particleParams.targetColor[4] - particleParams.color[4]) / (particleParams.timeToLive * 60)
+                }
+            else
+                particleParams.colorStep = {0,0,0,0}
+            end
         end
     end
 }
