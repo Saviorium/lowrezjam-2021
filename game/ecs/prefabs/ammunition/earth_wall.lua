@@ -8,5 +8,7 @@ return function(globalSystem, position, component, entity)
         :addComponent('Image', { image = AssetManager:getImage('rock1'), center = Vector( 7, 7 )})
         :addComponent("DeathByTimer", {timer = component.timeToLive})
 
+    physicsCollider.parent = entity
+
     return entity
 end

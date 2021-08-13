@@ -15,6 +15,7 @@ return function(globalSystem, position, component, entity)
         :addComponent("Health", {maxHP = 50, currentHP = 50})
         :addComponent("DeathByHealth")
         :addComponent("DeathByTimer", {timer = 5})
+    physicsCollider.parent = entity
 
     return entity
 end
