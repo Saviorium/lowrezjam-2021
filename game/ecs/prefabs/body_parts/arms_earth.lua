@@ -21,6 +21,6 @@ return function(globalSystem, parent)
                                         offsetDistance = 10,
                                         timeToLive = 0.4,
                                      } )
-    addAnimator(entity, 'arms', 'temp')
+    addAnimator(entity, 'arms', 'earth')
     return entity
 end

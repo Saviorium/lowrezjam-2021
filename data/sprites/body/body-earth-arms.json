@@ -1,0 +1,313 @@
+{ "frames": [
+   {
+    "filename": "body-earth (arms) 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 100
+   },
+   {
+    "filename": "body-earth (arms) 1.aseprite",
+    "frame": { "x": 15, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 200
+   },
+   {
+    "filename": "body-earth (arms) 2.aseprite",
+    "frame": { "x": 30, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 200
+   },
+   {
+    "filename": "body-earth (arms) 3.aseprite",
+    "frame": { "x": 45, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 200
+   },
+   {
+    "filename": "body-earth (arms) 4.aseprite",
+    "frame": { "x": 60, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 200
+   },
+   {
+    "filename": "body-earth (arms) 5.aseprite",
+    "frame": { "x": 75, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 200
+   },
+   {
+    "filename": "body-earth (arms) 6.aseprite",
+    "frame": { "x": 90, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 200
+   },
+   {
+    "filename": "body-earth (arms) 7.aseprite",
+    "frame": { "x": 105, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 200
+   },
+   {
+    "filename": "body-earth (arms) 8.aseprite",
+    "frame": { "x": 120, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 200
+   },
+   {
+    "filename": "body-earth (arms) 9.aseprite",
+    "frame": { "x": 135, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 200
+   },
+   {
+    "filename": "body-earth (arms) 10.aseprite",
+    "frame": { "x": 150, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 200
+   },
+   {
+    "filename": "body-earth (arms) 11.aseprite",
+    "frame": { "x": 165, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 83
+   },
+   {
+    "filename": "body-earth (arms) 12.aseprite",
+    "frame": { "x": 180, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 83
+   },
+   {
+    "filename": "body-earth (arms) 13.aseprite",
+    "frame": { "x": 195, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 83
+   },
+   {
+    "filename": "body-earth (arms) 14.aseprite",
+    "frame": { "x": 210, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 83
+   },
+   {
+    "filename": "body-earth (arms) 15.aseprite",
+    "frame": { "x": 225, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 83
+   },
+   {
+    "filename": "body-earth (arms) 16.aseprite",
+    "frame": { "x": 240, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 83
+   },
+   {
+    "filename": "body-earth (arms) 17.aseprite",
+    "frame": { "x": 255, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 83
+   },
+   {
+    "filename": "body-earth (arms) 18.aseprite",
+    "frame": { "x": 270, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 83
+   },
+   {
+    "filename": "body-earth (arms) 19.aseprite",
+    "frame": { "x": 285, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 83
+   },
+   {
+    "filename": "body-earth (arms) 20.aseprite",
+    "frame": { "x": 300, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 83
+   },
+   {
+    "filename": "body-earth (arms) 21.aseprite",
+    "frame": { "x": 315, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 150
+   },
+   {
+    "filename": "body-earth (arms) 22.aseprite",
+    "frame": { "x": 330, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 150
+   },
+   {
+    "filename": "body-earth (arms) 23.aseprite",
+    "frame": { "x": 345, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 150
+   },
+   {
+    "filename": "body-earth (arms) 24.aseprite",
+    "frame": { "x": 360, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 150
+   },
+   {
+    "filename": "body-earth (arms) 25.aseprite",
+    "frame": { "x": 375, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 150
+   },
+   {
+    "filename": "body-earth (arms) 26.aseprite",
+    "frame": { "x": 390, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 150
+   },
+   {
+    "filename": "body-earth (arms) 27.aseprite",
+    "frame": { "x": 405, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 150
+   },
+   {
+    "filename": "body-earth (arms) 28.aseprite",
+    "frame": { "x": 420, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 150
+   },
+   {
+    "filename": "body-earth (arms) 29.aseprite",
+    "frame": { "x": 435, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 150
+   },
+   {
+    "filename": "body-earth (arms) 30.aseprite",
+    "frame": { "x": 450, "y": 0, "w": 15, "h": 17 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 13, "h": 15 },
+    "sourceSize": { "w": 13, "h": 15 },
+    "duration": 150
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.27",
+  "image": "body-earth-arms.png",
+  "format": "RGBA8888",
+  "size": { "w": 465, "h": 17 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle-down", "from": 0, "to": 0, "direction": "forward" },
+   { "name": "run-down", "from": 1, "to": 4, "direction": "forward" },
+   { "name": "idle-up", "from": 5, "to": 5, "direction": "forward" },
+   { "name": "run-up", "from": 6, "to": 9, "direction": "forward" },
+   { "name": "idle-right", "from": 10, "to": 10, "direction": "forward" },
+   { "name": "run-right", "from": 11, "to": 20, "direction": "forward" },
+   { "name": "shoot-down", "from": 21, "to": 22, "direction": "forward" },
+   { "name": "aim-down", "from": 21, "to": 21, "direction": "forward" },
+   { "name": "shoot-down-right", "from": 23, "to": 24, "direction": "forward" },
+   { "name": "aim-down-right", "from": 23, "to": 23, "direction": "forward" },
+   { "name": "shoot-right", "from": 25, "to": 26, "direction": "forward" },
+   { "name": "aim-right", "from": 25, "to": 25, "direction": "forward" },
+   { "name": "shoot-up-right", "from": 27, "to": 28, "direction": "forward" },
+   { "name": "aim-up-right", "from": 27, "to": 27, "direction": "forward" },
+   { "name": "shoot-up", "from": 29, "to": 30, "direction": "forward" },
+   { "name": "aim-up", "from": 29, "to": 29, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "arms", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
