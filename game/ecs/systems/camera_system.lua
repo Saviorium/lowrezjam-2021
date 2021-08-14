@@ -40,7 +40,10 @@ function CameraSystem:draw()
             local cameraDensity = config.cameraDensity
             if entity:getComponentByName('MouseControlled') then
                 local mousePos = entity:getComponentByName('MouseControlled').mouseScreenPosition
-                pos = (pos + (mousePos-Vector(32,32))/cameraDensity)
+                local toMouseTuning = (mousePos-Vector(32,32))/cameraDensity
+                toMouseTuning.x = math.floor(toMouseTuning.x)
+                toMouseTuning.y = math.floor(toMouseTuning.y)
+                pos = pos + toMouseTuning
             end
             love.graphics.translate(math.floor(-pos.x), math.floor(-pos.y))
             local screenWidth, screenHeight = love.graphics.getCanvas():getWidth(), love.graphics.getCanvas():getHeight()

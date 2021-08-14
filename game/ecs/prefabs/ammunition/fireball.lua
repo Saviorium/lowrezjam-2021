@@ -18,7 +18,7 @@ return function(globalSystem, position, rotation, damage, animator)
         :addComponent('DrawAnimation', {center = Vector(5,4)})
         :addComponent('Animator', { animator = animatorInst})
         :addComponent('ParticleEmitter', {particles = {spark = {intensity = 10}, shootFire = {spawn = 20}}})
-        :addComponent("DeathByTimer", {timer = 0.6})
+        :addComponent("DeathByTimer", {timer = 0.8})
         :addComponent("DeathByCollision", {collisionsCondition = {'Damage', 'Physics'}})
         :addComponent("OnDeathTrigger", { onDeathTrigger = function (self, parent)
             local currentPos = parent:getComponentByName('Position').position

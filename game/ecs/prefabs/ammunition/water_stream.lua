@@ -35,7 +35,7 @@ return function(globalSystem, position, rotation, damage, animator)
         :addComponent('DrawAnimation', {center = Vector(6,4)})
         :addComponent('Animator', { animator = animatorInst1})
         :addComponent('ParticleEmitter', {particles = {waterDrop = {intensity = 30}}})
-        :addComponent("DeathByTimer", {timer = 0.4, onDeathTrigger = onDeathTrigger})
+        :addComponent("DeathByTimer", {timer = 0.45, onDeathTrigger = onDeathTrigger})
         :addComponent("DeathByCollision", {collisionsCondition = {'Damage', 'Physics'},
          onDeathTrigger = onDeathTrigger})
         :addComponent('RotateThisThing')

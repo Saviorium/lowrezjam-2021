@@ -8,7 +8,7 @@ return function(globalSystem, position, rotation, damage, animator)
 	local animatorInst = animator:newInstance(AssetManager:getAnimation("nature-leaf"))
 
     local entity = globalSystem:newEntity()
-        :addComponent('Flying'  , {maxSpeed = 40, friction = 1.02})
+        :addComponent('Flying'  , {maxSpeed = 80, friction = 1.018})
         :addComponent('Position', {position = position})
         :addComponent('Rotation', {rotation = rotation})
         :addComponent('Damaging', {collider = damagingCollider})
