@@ -14,9 +14,11 @@ function MouseSystem:update(dt)
     for _, event in pairs(events) do
         screenPosition = event.position
     end
+
     local dimensions = getScreenDimensions()
     self.mouseScreenPosition = Vector(love.mouse.getPosition()) / getScale()
     self.mouseWorldPosition = screenPosition - dimensions/2 + self.mouseScreenPosition
+
     for entityId, entity in pairs(self.pool) do
         local component = entity:getComponentByName("MouseControlled")
         local entityPosition = entity:getComponentByName("Position").position

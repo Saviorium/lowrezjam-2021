@@ -37,6 +37,10 @@ function CameraSystem:draw()
         if entity:getComponentByName("CameraTarget").isMain then
             love.graphics.push()
             local pos = entity:getComponentByName("Position").position
+            if entity:getComponentByName('MouseControlled') then
+                local mousePos = entity:getComponentByName('MouseControlled').mouseScreenPosition
+                pos = (pos + (mousePos-Vector(32,32))/2)
+            end
             love.graphics.translate(math.floor(-pos.x), math.floor(-pos.y))
             local screenWidth, screenHeight = love.graphics.getCanvas():getWidth(), love.graphics.getCanvas():getHeight()
             love.graphics.translate(screenWidth/2, screenHeight/2)
