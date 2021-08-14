@@ -34,7 +34,7 @@ return function(globalSystem, position)
 
     local hpUi = HpUi(globalSystem, Vector(7,60), ent)
 
-    local onDeathTrigger = 
+    local onDeathTrigger =
     function (self, parent)
         hpUi:delete()
     end
