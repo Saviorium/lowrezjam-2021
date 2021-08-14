@@ -1,5 +1,10 @@
+local SmallFire = require "game.ecs.prefabs.ammunition.small_fire"
+
 return function(globalSystem, position, component, entity)
-    local damagingCollider =  globalSystem.HC:circle(position.x, position.y, 15)
+
+    local radius = 20
+
+    local damagingCollider =  globalSystem.HC:circle(position.x, position.y, radius)
     damagingCollider.type = 'Damaging'
 
     damagingCollider.damage = damage or 0.1
@@ -9,9 +14,7 @@ return function(globalSystem, position, component, entity)
     local entity = globalSystem:newEntity()
         :addComponent('Position', {position = position})
         :addComponent('Damaging', {collider = damagingCollider})
-        :addComponent('DrawCircle', {radius = 15})
-        -- :addComponent('DrawAnimation', {center = Vector(6,4)})
-        -- :addComponent('Animator', { animator = animatorInst})
+        :addComponent('DrawAreaOfObjectsCircle', {prefab = SmallFire, count = 120, radius = radius, objects = {}})
         :addComponent("DeathByTimer", {timer = component.timeToLive})
 
     damagingCollider.parent = entity

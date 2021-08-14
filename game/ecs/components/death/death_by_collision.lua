@@ -9,8 +9,8 @@ return {
             for shape, delta in pairs(entity.globalSystem.HC:collisions(collider.collider)) do
                 for _, condition in pairs(self.collisionsCondition) do
                     if shape.type == condition
-                        and shape.parent
-                        and entity:getComponentByName('Team').team ~= shape.parent:getComponentByName('Team').team
+                    and shape.parent
+                    and entity:getComponentByName('Team').team ~= shape.parent:getComponentByName('Team').team
                     then
                         return entity
                     end
