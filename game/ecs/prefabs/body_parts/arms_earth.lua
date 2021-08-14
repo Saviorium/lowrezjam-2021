@@ -19,7 +19,7 @@ return function(globalSystem, parent)
                                         input = 'action1',
                                         animator = bulletAnimator,
                                         offsetDistance = 10,
-                                        timeToLive = 0.4,
+                                        timeToLive = 0.5,
                                         element = 'earth',
                                      } )
     addAnimator(entity, 'arms', 'earth')

@@ -1,11 +1,11 @@
 return function(globalSystem, position, component, parent, count)
     if not count or count > 0 then
-        local damagingCollider =  globalSystem.HC:circle(position.x-2, position.y+4, 6)
-        local physicsCollider  = globalSystem.HC:circle(position.x-2, position.y+4, 6)
+        local damagingCollider =  globalSystem.HC:circle(position.x-2, position.y+4, 4)
+        local physicsCollider  = globalSystem.HC:circle(position.x-2, position.y+4, 4)
         damagingCollider.type = 'Damaging'
         physicsCollider.type = 'Physics'
 
-        damagingCollider.damage = 40
+        damagingCollider.damage = 20
 
         local animatorInst = component.animator:newInstance(AssetManager:getAnimation("rock-attack"))
         local rotation = parent:getComponentByName('Rotation') and parent:getComponentByName('Rotation').rotation or 0
@@ -16,7 +16,7 @@ return function(globalSystem, position, component, parent, count)
             -- :addComponent('Rotation', {rotation = rotation})
             :addComponent('Damaging', {collider = damagingCollider})
             :addComponent('PhysicsCollider',  {collider = physicsCollider, center = {x = -8, y = 8}})
-            :addComponent('DrawAnimation', {center = Vector(8,4)})
+            :addComponent('DrawAnimation', {center = Vector(9,7)})
             :addComponent('Animator', { animator = animatorInst})
             :addComponent("DeathByTimer", {timer = component.timeToLive})
             :addComponent("SpawnObjectByTimer",

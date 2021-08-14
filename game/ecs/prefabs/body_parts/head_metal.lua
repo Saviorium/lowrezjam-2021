@@ -21,7 +21,7 @@ return function(globalSystem, parent)
                                  prefab = Rocket,
                                  animator = bulletAnimator,
                                  input = 'action2',
-                                 damage = 100,
+                                 damage = 40,
                                  startFire = nil,
                                  distanceBetweenBullets = 0,
                                  element = 'metal',

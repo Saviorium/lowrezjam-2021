@@ -1,57 +1,111 @@
 { "frames": [
    {
     "filename": "rock-attack 0.aseprite",
-    "frame": { "x": 1, "y": 1, "w": 13, "h": 15 },
+    "frame": { "x": 0, "y": 0, "w": 18, "h": 18 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 1, "y": 1, "w": 13, "h": 15 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
     "sourceSize": { "w": 16, "h": 16 },
     "duration": 33
    },
    {
     "filename": "rock-attack 1.aseprite",
-    "frame": { "x": 14, "y": 1, "w": 13, "h": 15 },
+    "frame": { "x": 18, "y": 0, "w": 18, "h": 18 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 1, "y": 1, "w": 13, "h": 15 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
     "sourceSize": { "w": 16, "h": 16 },
     "duration": 33
    },
    {
     "filename": "rock-attack 2.aseprite",
-    "frame": { "x": 27, "y": 1, "w": 13, "h": 15 },
+    "frame": { "x": 36, "y": 0, "w": 18, "h": 18 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 1, "y": 1, "w": 13, "h": 15 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
     "sourceSize": { "w": 16, "h": 16 },
     "duration": 33
    },
    {
     "filename": "rock-attack 3.aseprite",
-    "frame": { "x": 40, "y": 1, "w": 13, "h": 15 },
+    "frame": { "x": 54, "y": 0, "w": 18, "h": 18 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 1, "y": 1, "w": 13, "h": 15 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
     "sourceSize": { "w": 16, "h": 16 },
     "duration": 33
    },
    {
     "filename": "rock-attack 4.aseprite",
-    "frame": { "x": 53, "y": 1, "w": 13, "h": 15 },
+    "frame": { "x": 72, "y": 0, "w": 18, "h": 18 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 1, "y": 1, "w": 13, "h": 15 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
     "sourceSize": { "w": 16, "h": 16 },
     "duration": 33
    },
    {
     "filename": "rock-attack 5.aseprite",
-    "frame": { "x": 53, "y": 1, "w": 13, "h": 15 },
+    "frame": { "x": 72, "y": 0, "w": 18, "h": 18 },
     "rotated": false,
-    "trimmed": true,
-    "spriteSourceSize": { "x": 1, "y": 1, "w": 13, "h": 15 },
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
     "sourceSize": { "w": 16, "h": 16 },
-    "duration": 200
+    "duration": 100
+   },
+   {
+    "filename": "rock-attack 6.aseprite",
+    "frame": { "x": 72, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 33
+   },
+   {
+    "filename": "rock-attack 7.aseprite",
+    "frame": { "x": 54, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 33
+   },
+   {
+    "filename": "rock-attack 8.aseprite",
+    "frame": { "x": 36, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 33
+   },
+   {
+    "filename": "rock-attack 9.aseprite",
+    "frame": { "x": 18, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 33
+   },
+   {
+    "filename": "rock-attack 10.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 33
+   },
+   {
+    "filename": "rock-attack 11.aseprite",
+    "frame": { "x": 90, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 16, "h": 16 },
+    "sourceSize": { "w": 16, "h": 16 },
+    "duration": 800
    }
  ],
  "meta": {
@@ -59,11 +113,12 @@
   "version": "1.2.27",
   "image": "rock-attack.png",
   "format": "RGBA8888",
-  "size": { "w": 66, "h": 16 },
+  "size": { "w": 108, "h": 18 },
   "scale": "1",
   "frameTags": [
-   { "name": "active", "from": 0, "to": 5, "direction": "forward" },
+   { "name": "active", "from": 0, "to": 11, "direction": "forward" },
    { "name": "back", "from": 0, "to": 4, "direction": "reverse" },
+   { "name": "forward", "from": 0, "to": 4, "direction": "forward" },
    { "name": "up", "from": 5, "to": 5, "direction": "forward" }
   ],
   "layers": [
