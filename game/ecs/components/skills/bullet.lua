@@ -4,7 +4,7 @@ return {
     angle = 0,
     count = 1,
     cooldown = 1,
-    currentTimer = 0,
+    currentTimer = 99,
     prefab = nil,
     animator = nil,
     input = 'action1',
@@ -51,7 +51,7 @@ return {
                 local angle = rotation +  ((bullet % 2 == 0) and 1 or -1 ) * ((self.count % 2 ~= 0 and bullet == 1) and 0 or 1) * (math.floor(bullet / 2 )) * self.angle
 
                 local firedBullet = self.prefab(entity.globalSystem, Vector(x, y) + direction*self.offsetDistance, angle, self.damage, self.animator, entity)
-                
+
                 firedBullet:getComponentByName('Damaging').collider.element = self.element
                 if team then
                     firedBullet:addComponent("Team", { team = team.team })

@@ -47,8 +47,8 @@ local GlobalSystem = Class {
             MovingSystem(self),
 
             AnimationSystem(self),
-            PhysicsSystem(self),
             DamageSystem(self),
+            PhysicsSystem(self),
             TriggerSystem(self),
 
             CameraSystem(self),

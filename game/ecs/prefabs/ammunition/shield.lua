@@ -8,13 +8,12 @@ return function(globalSystem, position, component, entity)
         :addComponent('Position')
         :addComponent('AttachedToEntity', {entity = entity})
         :addComponent('TakingDamage', {collider = TakingDamageCollider})
-        :addComponent('DrawCircle', {radius = 10, center = {x = -3, y = -4}})
+        :addComponent('DrawCircle', {radius = 11, center = {x = -1, y = -2}, color = {1,1,1,1}, style = "rough", fillMode = "line"})
         :addComponent("DrawDebug")
-        -- :addComponent('DrawAnimation', {center = Vector(6,4)})
-        -- :addComponent('Animator', { animator = animatorInst})
-        :addComponent("Health", {maxHP = 50, currentHP = 50})
+        :addComponent('ParticleEmitter', {particles = {lightningSpark = {intensity = 50}}})
+        :addComponent("Health", {maxHP = 100, currentHP = 100})
         :addComponent("DeathByHealth")
-        :addComponent("DeathByTimer", {timer = 5})
+        :addComponent("DeathByTimer", {timer = 10})
     TakingDamageCollider.parent = entity
 
     return entity

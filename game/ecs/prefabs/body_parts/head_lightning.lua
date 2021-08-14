@@ -12,12 +12,12 @@ return function(globalSystem, parent)
         :addComponent('BodyPart', { kind = 'head', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
         :addComponent('SpawnObject', {
-                                        cooldown = 1,
+                                        cooldown = 12,
                                         prefab = Shield,
                                         -- animator = nil,
                                         input = 'action2',
                                         offsetDistance = 0,
-                                        timeToLive = 5,
+                                        timeToLive = 10,
                                         element = 'lightning',
                                      } )
 

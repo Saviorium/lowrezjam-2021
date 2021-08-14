@@ -36,11 +36,11 @@ settings = {
 
 Debug = {
     showFps = 1,
-    mousePos = 1,
+    mousePos = 0,
     strictComponentCheck = 1,
     dragCharacterDebug = false,
     PrintAnimationEvents = false,
-    drawCollidersDebug = true,
+    drawCollidersDebug = false,
     generateMap = false,
     cheatsOn = true
 }

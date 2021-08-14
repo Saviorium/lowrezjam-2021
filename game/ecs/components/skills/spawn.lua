@@ -2,7 +2,7 @@ return {
     name = "SpawnObject",
     type = "Skill",
     cooldown = 1,
-    cooldownTimer = 0,
+    cooldownTimer = 99, -- for first shot
     prefab = nil,
     animator = nil,
     input = 'action1',
