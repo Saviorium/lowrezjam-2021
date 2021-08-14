@@ -40,7 +40,7 @@ function MapSystem:loadMap(mapName)
 
     for ind, obj in pairs(self.map.objects) do
         if obj.type == "player" then
-            Spawner(self.globalSystem, Vector(obj.x, obj.y), {spawned = {}, prefab = PlayerPrefab, timeToSpawn = 1})
+            Spawner(self.globalSystem, Vector(obj.x, obj.y), {spawned = {}, prefab = PlayerPrefab, timeToSpawn = 4})
         end
         if obj.type == "enemy" then
             Spawner(self.globalSystem, Vector(obj.x, obj.y),
