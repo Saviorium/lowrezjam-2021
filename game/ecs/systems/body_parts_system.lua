@@ -36,6 +36,9 @@ function BodyPartsSystem:handleChangePart(event)
     local body = entity:getComponentByName("Body")
     local newPart = self:getPart(event.kind, event.element, entity)
 
+    for _, buff in pairs(entity:getComponentByType('Buff')) do
+        buff:revert(entity)
+    end
     if body.parts[event.kind] then
         for _, buff in pairs(body.parts[event.kind]:getComponentByType('Buff')) do
             buff:revert(entity)
@@ -47,6 +50,9 @@ function BodyPartsSystem:handleChangePart(event)
     newPart:getComponentByName("BodyPart").parent = entity
 
     for _, buff in pairs(newPart:getComponentByType('Buff')) do
+        buff:apply(entity)
+    end
+    for _, buff in pairs(entity:getComponentByType('Buff')) do
         buff:apply(entity)
     end
 

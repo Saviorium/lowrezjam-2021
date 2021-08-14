@@ -21,29 +21,29 @@ return function(globalSystem, position, bodyParts)
 
                             globalSystem:newEntity()
                             :addComponent('Position', {position = position})
-                            :addComponent('InteractionCollider',{collider = interactionCollider, ui = eatUi, interactionCallback = 
-                            function(self, entity, player)
+                            :addComponent('InteractionCollider',{collider = interactionCollider, ui = eatUi, 
+                            interactionCallback = 
+                                function(self, entity, player)
 
-                                local healAmount = 50
-                                eatUi:getComponentByName('DrawAnimation').hidden = false
-                                eatUi:getComponentByName('Image').hidden = false
+                                    local healAmount = 50
+                                    eatUi:getComponentByName('DrawAnimation').hidden = false
+                                    eatUi:getComponentByName('Image').hidden = false
 
-                                local snapshot = entity:getComponentByName("UserControlled").inputManager.inputSnapshot
+                                    local snapshot = entity:getComponentByName("UserControlled").inputManager.inputSnapshot
 
-                                if snapshot.action2 == 1 then
-                                    -- print(bodyPart, bodyPart.element)
-                                    EventManager:send("changePart", { entity = player.id, kind = randomPart, element = bodyPart.element})
-                                    entity:delete()
-                                    eatUi:delete()
-                                    return
-                                else if snapshot.action1 == 1  then
-                                    player:getComponentByName('Health'):addHealth(healAmount)
-                                    entity:delete()
-                                    eatUi:delete()
-                                    return
-                                end
-                                end
-                            end, 
+                                    if snapshot.action2 == 1 then
+                                        EventManager:send("changePart", { entity = player.id, kind = randomPart, element = bodyPart.element})
+                                        entity:delete()
+                                        eatUi:delete()
+                                        return
+                                    else if snapshot.action1 == 1  then
+                                        player:getComponentByName('Health'):addHealth(healAmount)
+                                        entity:delete()
+                                        eatUi:delete()
+                                        return
+                                    end
+                                    end
+                                end, 
                             
                             uninteractionCallback = 
                                 function(self, entity)
@@ -67,7 +67,7 @@ return function(globalSystem, position, bodyParts)
         :addComponent("DrawDebug")
         :addComponent("TargetAtNearestEnemy", {enemy = 'Player'})
         :addComponent('Controlled')
-        :addComponent('AiControlled', {inputManager = require "game.ai.normal_ai"})
+        :addComponent('AiControlled', {inputManager = require "game.ai.normal_ai"()})
         :addComponent("DeathByHealth", {onDeathTrigger = onDeathTrigger})
         :addComponent("Team", {team = 'Enemy', main = true})
 

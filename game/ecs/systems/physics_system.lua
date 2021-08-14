@@ -30,6 +30,7 @@ function PhysicsSystem:update(dt)
                 vel = vel + delta
             end
         end
+        entity:getComponentByName("Velocity").velocity = vel
     end
 end
 

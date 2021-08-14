@@ -10,19 +10,19 @@ local DeathSystem = Class {
 }
 
 function DeathSystem:update(dt)
-    self:handleDestroyedEntities()
+    --self:handleDestroyedEntities()
     local killedEntities = {}
     for entityId, entity in pairs(self.pool) do
         for _, trigger in pairs(entity:getComponentByType('DeathTrigger')) do
             local result = trigger:update( dt, entity )
             if result then
-                table.insert(killedEntities, result)
+                entity:delete()
+                if trigger.onDeathTrigger then
+                    trigger:onDeathTrigger(entity)
+                end
                 break
             end
         end
-    end
-    for _, entity in pairs(killedEntities) do
-        entity:delete()
     end
 end
 
@@ -30,11 +30,9 @@ function DeathSystem:handleDestroyedEntities()
     local events = EventManager:getEvents("DeathSystem")
     for _, event in pairs(events) do
         local entity = self.globalSystem.objects[event.entityId]
-        local deathTriggers = entity:getComponentByType("DeathTrigger")
-        for _, trigger in pairs(deathTriggers) do
-            if trigger.onDeathTrigger then
-                trigger:onDeathTrigger(entity)
-            end
+        local deathTrigger = entity:getComponentByName("OnDeathTrigger")
+        if deathTrigger and deathTrigger.onDeathTrigger then
+            deathTrigger:onDeathTrigger(entity)
         end
     end
 end

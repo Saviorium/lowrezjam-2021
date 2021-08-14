@@ -1419,7 +1419,15 @@
   </object>
   <object id="44" type="boss" x="551.875" y="303.875" width="8.25" height="16.125" visible="0">
    <properties>
+    <property name="arms" value="fire"/>
+    <property name="cooldown" type="float" value="0.75"/>
+    <property name="damage" type="float" value="2"/>
     <property name="gateName" value="gate1"/>
+    <property name="head" value="fire"/>
+    <property name="health" type="float" value="1"/>
+    <property name="legs" value="fire"/>
+    <property name="speed" type="float" value="1"/>
+    <property name="torso" value="fire"/>
    </properties>
   </object>
   <object id="57" type="enemy" x="254.5" y="252.5">

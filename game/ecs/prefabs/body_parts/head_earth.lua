@@ -16,7 +16,7 @@ return function(globalSystem, parent)
                                         prefab = Wall,
                                         -- animator = nil,
                                         input = 'action2',
-                                        offsetDistance = 10,
+                                        offsetDistance = 15,
                                         timeToLive = 5,
                                      } )
 

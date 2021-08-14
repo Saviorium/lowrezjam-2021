@@ -54,8 +54,21 @@ function MapSystem:loadMap(mapName)
                 })
         end
         if obj.type == "boss" then
-            BossPrefab(self.globalSystem, Vector(obj.x, obj.y), obj.properties.gateName)
-        end
+            BossPrefab(self.globalSystem, Vector(obj.x, obj.y), 
+                       obj.properties.gateName,
+                       {
+                        head = obj.properties.head, 
+                        legs = obj.properties.legs,
+                        torso = obj.properties.torso,
+                        arms = obj.properties.arms
+                       },
+                       {
+                        speed = obj.properties.speed,
+                        damage = obj.properties.damage,
+                        cooldown = obj.properties.cooldown,
+                        health = obj.properties.health
+                       }  )
+        end 
         if obj.type == "tree" then
             Tree(self.globalSystem, Vector(obj.x, obj.y))
         end

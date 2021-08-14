@@ -66,6 +66,9 @@ function DrawSystem:draw()
                 if drawable.center then
                     love.graphics.translate(-drawable.center.x, -drawable.center.y)
                 end
+                if entity:getComponentByName("Scale") then
+                    love.graphics.scale( entity:getComponentByName("Scale").scale, entity:getComponentByName("Scale").scale )
+                end
 
                 if not drawable.hidden then
                     drawable:draw(entity)

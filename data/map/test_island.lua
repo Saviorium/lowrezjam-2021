@@ -6162,7 +6162,15 @@ return {
           rotation = 0,
           visible = false,
           properties = {
-            ["gateName"] = "gate1"
+            ["arms"] = "fire",
+            ["cooldown"] = 0.75,
+            ["damage"] = 2,
+            ["gateName"] = "gate1",
+            ["head"] = "fire",
+            ["health"] = 1,
+            ["legs"] = "fire",
+            ["speed"] = 1,
+            ["torso"] = "fire"
           }
         },
         {

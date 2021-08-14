@@ -15,8 +15,17 @@ function EntityDeleteSystem:update(dt)
     -- and wait full pass over all the systems to ensure they are done with cleanup
 
     local events = EventManager:getEvents("EntityDeleteSystem")
+
     for _, event in pairs(events) do
+
         local entityId = event.entityId
+        
+        local entity = self.globalSystem.objects[entityId]
+        local deathTrigger = entity:getComponentByName("OnDeathTrigger")
+        if deathTrigger and deathTrigger.onDeathTrigger then
+            deathTrigger:onDeathTrigger(entity)
+        end
+
         local entity = self.globalSystem.objects[entityId]
         self.globalSystem.objects[entityId] = nil
         entity.components = {}
