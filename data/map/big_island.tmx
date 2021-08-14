@@ -1491,7 +1491,7 @@
 </data>
  </layer>
  <objectgroup id="2" name="object-layer">
-  <object id="2" type="player" x="590" y="591"/>
+  <object id="2" type="player" x="615" y="1169.33"/>
   <object id="7" type="enemy" x="706.167" y="1037.92">
    <properties>
     <property name="arms" value="earth"/>
