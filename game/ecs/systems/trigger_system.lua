@@ -30,7 +30,7 @@ function InteractionSystem:handleInteractionColliderTrigger(entity, ic)
     local collider = ic.collider
     local player = nil
     for other, delta in pairs(self.globalSystem.HC:collisions(collider)) do
-        if self:getTeam(other.parent) == 'Player' then
+        if self:getTeam(other.parent) == 'Player' and other.type == 'Damage' then
             player = other.parent
         end
     end
