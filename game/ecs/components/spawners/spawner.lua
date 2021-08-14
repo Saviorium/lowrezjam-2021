@@ -16,6 +16,11 @@ return {
 
             local prefabEntity = self.prefab(entity.globalSystem, self.spawnPosition or pos, self.bodyParts)
             prefabEntity:addComponent('Spawned', {spawner = self})
+                        :addComponent('OnDeathTrigger', { 
+                        onDeathTrigger = 
+                        function(self, parent)
+                            parent:getComponentByName('Spawned').spawner.spawned[parent.id] = nil
+                        end } )
             self.spawned[prefabEntity.id] = prefabEntity
             self.currentTimer = 0
             self.countLeft = self.countLeft and self.countLeft - 1 or self.countLeft

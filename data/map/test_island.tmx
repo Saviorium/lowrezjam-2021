@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.5.0" orientation="orthogonal" renderorder="left-up" width="100" height="100" tilewidth="8" tileheight="8" infinite="0" nextlayerid="3" nextobjectid="62">
+<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="left-up" width="100" height="100" tilewidth="8" tileheight="8" infinite="0" nextlayerid="3" nextobjectid="62">
  <editorsettings>
   <export target="test_island.lua" format="lua"/>
  </editorsettings>
@@ -1433,7 +1433,7 @@
   <object id="57" type="enemy" x="254.5" y="252.5">
    <properties>
     <property name="arms" value="earth"/>
-    <property name="count" type="int" value="1"/>
+    <property name="count" type="int" value="5"/>
     <property name="head" value="earth"/>
     <property name="legs" value="earth"/>
     <property name="torso" value="earth"/>
@@ -1442,7 +1442,7 @@
   <object id="58" type="enemy" x="291" y="233">
    <properties>
     <property name="arms" value="fire"/>
-    <property name="count" type="int" value="1"/>
+    <property name="count" type="int" value="5"/>
     <property name="head" value="fire"/>
     <property name="legs" value="fire"/>
     <property name="torso" value="fire"/>
@@ -1451,7 +1451,7 @@
   <object id="59" type="enemy" x="245" y="282.5">
    <properties>
     <property name="arms" value="water"/>
-    <property name="count" type="int" value="1"/>
+    <property name="count" type="int" value="5"/>
     <property name="head" value="water"/>
     <property name="legs" value="water"/>
     <property name="torso" value="water"/>
@@ -1460,7 +1460,7 @@
   <object id="60" type="enemy" x="246.75" y="328.5">
    <properties>
     <property name="arms" value="metal"/>
-    <property name="count" type="int" value="1"/>
+    <property name="count" type="int" value="5"/>
     <property name="head" value="metal"/>
     <property name="legs" value="metal"/>
     <property name="torso" value="metal"/>

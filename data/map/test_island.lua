@@ -1,7 +1,7 @@
 return {
   version = "1.5",
   luaversion = "5.1",
-  tiledversion = "1.5.0",
+  tiledversion = "1.7.1",
   orientation = "orthogonal",
   renderorder = "left-up",
   width = 100,
@@ -6186,7 +6186,7 @@ return {
           visible = true,
           properties = {
             ["arms"] = "earth",
-            ["count"] = 1,
+            ["count"] = 5,
             ["head"] = "earth",
             ["legs"] = "earth",
             ["torso"] = "earth"
@@ -6205,7 +6205,7 @@ return {
           visible = true,
           properties = {
             ["arms"] = "fire",
-            ["count"] = 1,
+            ["count"] = 5,
             ["head"] = "fire",
             ["legs"] = "fire",
             ["torso"] = "fire"
@@ -6224,7 +6224,7 @@ return {
           visible = true,
           properties = {
             ["arms"] = "water",
-            ["count"] = 1,
+            ["count"] = 5,
             ["head"] = "water",
             ["legs"] = "water",
             ["torso"] = "water"
@@ -6243,7 +6243,7 @@ return {
           visible = true,
           properties = {
             ["arms"] = "metal",
-            ["count"] = 1,
+            ["count"] = 5,
             ["head"] = "metal",
             ["legs"] = "metal",
             ["torso"] = "metal"

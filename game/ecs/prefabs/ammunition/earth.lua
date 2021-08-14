@@ -8,7 +8,7 @@ return function(globalSystem, position, component, parent, count)
         damagingCollider.damage = 40
 
         local animatorInst = component.animator:newInstance(AssetManager:getAnimation("rock-attack"))
-        local rotation = parent:getComponentByName('Rotation').rotation
+        local rotation = parent:getComponentByName('Rotation') and parent:getComponentByName('Rotation').rotation or 0
         local direction = Vector (math.cos(rotation*math.pi/180), math.sin(rotation*math.pi/180))
 
         local entity = globalSystem:newEntity()
