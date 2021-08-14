@@ -16,7 +16,7 @@ return function(globalSystem, parent)
         :addComponent('Bullet', {
                                  angle = 25,
                                  count = 30,
-                                 cooldown = 1,
+                                 cooldown = 10,
                                  prefab = Water,
                                  animator = bulletAnimator,
                                  input = 'action2',

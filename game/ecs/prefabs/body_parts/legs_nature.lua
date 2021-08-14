@@ -4,10 +4,10 @@ return function(globalSystem, parent)
     local entity = globalSystem:newEntity()
         :addComponent('BodyPart', { kind = 'legs', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
-        :addComponent('SpeedBuff', {value = 1})
+        :addComponent('SpeedBuff', {value = 1.1})
         :addComponent('DamageBuff', {value = 1})
-        :addComponent('CooldownBuff', {value = 1.25})
-        :addComponent('HealthBuff', {value = 0.75})
+        :addComponent('CooldownBuff', {value = 1.1})
+        :addComponent('HealthBuff', {value = 1})
         :addComponent('ApplyBuff', {
                                     cooldown = 1,
                                     input = 'moveAction',

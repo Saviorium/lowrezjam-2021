@@ -3,7 +3,7 @@ local NormalAi = Class{
         self.position = Vector(0, 0)
         self.fieldsOfView = {
                 {range = 0, func = self.attackPlayer},
-                {range = 64, func = self.keepCalmOrBlowSomething},
+                {range = 40, func = self.keepCalmOrBlowSomething},
                 {range = 128, func = self.walkFromSideToSide},
                 {range = 256, func = self.stayIdle},
                 {range = 512, func = self.deleteYourself},

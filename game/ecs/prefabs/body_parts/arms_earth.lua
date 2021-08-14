@@ -14,7 +14,7 @@ return function(globalSystem, parent)
         :addComponent('BodyPart', { kind = 'arms', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
         :addComponent('SpawnObject', {
-                                        cooldown = 1,
+                                        cooldown = 2,
                                         prefab = Earth,
                                         input = 'action1',
                                         animator = bulletAnimator,

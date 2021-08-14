@@ -16,14 +16,14 @@ return function(globalSystem, parent)
         :addComponent('Bullet', {
                                  angle = 0,
                                  count = 1,
-                                 cooldown = 0.1,
+                                 cooldown = 0.2,
                                  currentTimer = 0,
                                  prefab = Water,
                                  animator = bulletAnimator,
                                  input = 'action1',
                                  startFire = nil,--startFireAnimatorInst,
                                  hiddenTimer = 0.1,
-                                 damage = 1,
+                                 damage = 2,
                                  distanceBetweenBullets = 0,
                                  element = 'water',
                                 } )

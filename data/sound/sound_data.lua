@@ -22,18 +22,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 10,
-            volumeVariation = 0.1,
-            pitchVariation = 0,
-        }
-    },
-    fire_circle_1 = {
-        files = {
-            { name = "fire_circle_1" },
-        },
-        options = {
-            volume = 0.3,
-            maxSources = 1,
+            maxSources = 3,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -45,7 +34,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 10,
+            maxSources = 5,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -58,7 +47,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 10,
+            maxSources = 5,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -70,7 +59,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 10,
+            maxSources = 3,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -86,7 +75,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 10,
+            maxSources = 3,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -98,7 +87,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 50,
+            maxSources = 15,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -111,7 +100,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 10,
+            maxSources = 3,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -122,7 +111,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 5,
+            maxSources = 2,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -133,7 +122,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 5,
+            maxSources = 2,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -144,7 +133,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 1,
+            maxSources = 2,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -157,7 +146,7 @@ return {
         },
         options = {
             volume = 0.1,
-            maxSources = 10,
+            maxSources = 5,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -168,7 +157,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 10,
+            maxSources = 5,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -192,7 +181,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 100,
+            maxSources = 10,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -204,7 +193,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 100,
+            maxSources = 10,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -215,7 +204,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 100,
+            maxSources = 2,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }
@@ -232,7 +221,7 @@ return {
         },
         options = {
             volume = 0.3,
-            maxSources = 100,
+            maxSources = 5,
             volumeVariation = 0.1,
             pitchVariation = 0,
         }

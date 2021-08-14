@@ -5892,7 +5892,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "earth",
-            ["count"] = 5,
             ["head"] = "earth",
             ["legs"] = "earth",
             ["torso"] = "earth"
@@ -5911,7 +5910,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "earth",
-            ["count"] = 5,
             ["head"] = "earth",
             ["legs"] = "earth",
             ["torso"] = "earth"
@@ -5930,7 +5928,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "earth",
-            ["count"] = 5,
             ["head"] = "earth",
             ["legs"] = "earth",
             ["torso"] = "earth"
@@ -5949,7 +5946,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "earth",
-            ["count"] = 5,
             ["head"] = "earth",
             ["legs"] = "earth",
             ["torso"] = "earth"
@@ -5968,7 +5964,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "earth",
-            ["count"] = 5,
             ["head"] = "earth",
             ["legs"] = "earth",
             ["torso"] = "earth"
@@ -5987,7 +5982,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "fire",
-            ["count"] = 5,
             ["head"] = "fire",
             ["legs"] = "fire",
             ["torso"] = "fire"
@@ -6006,7 +6000,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "fire",
-            ["count"] = 5,
             ["head"] = "fire",
             ["legs"] = "fire",
             ["torso"] = "fire"
@@ -6025,7 +6018,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "fire",
-            ["count"] = 5,
             ["head"] = "fire",
             ["legs"] = "fire",
             ["torso"] = "fire"
@@ -6044,7 +6036,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "fire",
-            ["count"] = 5,
             ["head"] = "fire",
             ["legs"] = "fire",
             ["torso"] = "fire"
@@ -6063,7 +6054,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "nature",
-            ["count"] = 2,
             ["head"] = "nature",
             ["legs"] = "nature",
             ["torso"] = "nature"
@@ -6082,7 +6072,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "nature",
-            ["count"] = 2,
             ["head"] = "nature",
             ["legs"] = "nature",
             ["torso"] = "nature"
@@ -6101,7 +6090,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "nature",
-            ["count"] = 2,
             ["head"] = "nature",
             ["legs"] = "nature",
             ["torso"] = "nature"
@@ -6120,7 +6108,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "water",
-            ["count"] = 2,
             ["head"] = "water",
             ["legs"] = "water",
             ["torso"] = "water"
@@ -6139,7 +6126,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "nature",
-            ["count"] = 2,
             ["head"] = "nature",
             ["legs"] = "nature",
             ["torso"] = "nature"
@@ -6158,7 +6144,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "nature",
-            ["count"] = 2,
             ["head"] = "nature",
             ["legs"] = "nature",
             ["torso"] = "nature"
@@ -6177,7 +6162,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "nature",
-            ["count"] = 2,
             ["head"] = "nature",
             ["legs"] = "nature",
             ["torso"] = "nature"
@@ -6196,7 +6180,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "nature",
-            ["count"] = 2,
             ["head"] = "nature",
             ["legs"] = "nature",
             ["torso"] = "nature"
@@ -6215,7 +6198,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "water",
-            ["count"] = 2,
             ["head"] = "water",
             ["legs"] = "water",
             ["torso"] = "water"
@@ -6234,7 +6216,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "water",
-            ["count"] = 2,
             ["head"] = "water",
             ["legs"] = "water",
             ["torso"] = "water"
@@ -6253,7 +6234,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "water",
-            ["count"] = 2,
             ["head"] = "water",
             ["legs"] = "water",
             ["torso"] = "water"
@@ -6272,7 +6252,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "water",
-            ["count"] = 2,
             ["head"] = "water",
             ["legs"] = "water",
             ["torso"] = "water"
@@ -6291,7 +6270,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "water",
-            ["count"] = 2,
             ["head"] = "water",
             ["legs"] = "water",
             ["torso"] = "water"
@@ -6310,7 +6288,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "water",
-            ["count"] = 2,
             ["head"] = "water",
             ["legs"] = "water",
             ["torso"] = "water"
@@ -6329,7 +6306,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "water",
-            ["count"] = 2,
             ["head"] = "water",
             ["legs"] = "water",
             ["torso"] = "water"
@@ -6348,7 +6324,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "water",
-            ["count"] = 2,
             ["head"] = "water",
             ["legs"] = "water",
             ["torso"] = "water"
@@ -6367,7 +6342,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "nature",
-            ["count"] = 2,
             ["head"] = "nature",
             ["legs"] = "nature",
             ["torso"] = "nature"
@@ -6386,7 +6360,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "nature",
-            ["count"] = 2,
             ["head"] = "nature",
             ["legs"] = "nature",
             ["torso"] = "nature"
@@ -6405,7 +6378,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "nature",
-            ["count"] = 2,
             ["head"] = "nature",
             ["legs"] = "nature",
             ["torso"] = "nature"
@@ -6424,7 +6396,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "nature",
-            ["count"] = 2,
             ["head"] = "nature",
             ["legs"] = "nature",
             ["torso"] = "nature"
@@ -6443,7 +6414,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "water",
-            ["count"] = 2,
             ["head"] = "water",
             ["legs"] = "water",
             ["torso"] = "water"
@@ -6462,7 +6432,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "nature",
-            ["count"] = 2,
             ["head"] = "nature",
             ["legs"] = "nature",
             ["torso"] = "nature"
@@ -6481,7 +6450,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "nature",
-            ["count"] = 2,
             ["head"] = "nature",
             ["legs"] = "nature",
             ["torso"] = "nature"
@@ -6500,7 +6468,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "lightning",
-            ["count"] = 2,
             ["head"] = "lightning",
             ["legs"] = "lightning",
             ["torso"] = "lightning"
@@ -6519,7 +6486,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "metal",
-            ["count"] = 2,
             ["head"] = "metal",
             ["legs"] = "metal",
             ["torso"] = "metal"
@@ -6538,7 +6504,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "lightning",
-            ["count"] = 2,
             ["head"] = "lightning",
             ["legs"] = "lightning",
             ["torso"] = "lightning"
@@ -6557,7 +6522,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "lightning",
-            ["count"] = 2,
             ["head"] = "lightning",
             ["legs"] = "lightning",
             ["torso"] = "lightning"
@@ -6576,7 +6540,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "metal",
-            ["count"] = 2,
             ["head"] = "metal",
             ["legs"] = "metal",
             ["torso"] = "metal"
@@ -6595,7 +6558,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "lightning",
-            ["count"] = 2,
             ["head"] = "lightning",
             ["legs"] = "lightning",
             ["torso"] = "lightning"
@@ -6614,7 +6576,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "metal",
-            ["count"] = 2,
             ["head"] = "metal",
             ["legs"] = "metal",
             ["torso"] = "metal"
@@ -6633,7 +6594,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "lightning",
-            ["count"] = 2,
             ["head"] = "lightning",
             ["legs"] = "lightning",
             ["torso"] = "lightning"
@@ -6652,7 +6612,6 @@ return {
           visible = true,
           properties = {
             ["arms"] = "lightning",
-            ["count"] = 2,
             ["head"] = "lightning",
             ["legs"] = "lightning",
             ["torso"] = "lightning"

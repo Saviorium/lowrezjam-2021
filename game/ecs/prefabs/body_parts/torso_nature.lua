@@ -6,7 +6,7 @@ return function(globalSystem, parent)
         :addComponent('DrawAnimation', { hidden = true })
         :addComponent('SpeedBuff', {value = 1})
         :addComponent('DamageBuff', {value = 1})
-        :addComponent('CooldownBuff', {value = 1.25})
+        :addComponent('CooldownBuff', {value = 1.1})
         :addComponent('HealthBuff', {value = 0.75})
     addAnimator(entity, 'torso', 'nature')
     return entity

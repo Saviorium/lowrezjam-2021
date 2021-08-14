@@ -17,11 +17,11 @@ return function(globalSystem, parent)
         :addComponent('Bullet', {
                                  angle = 0,
                                  count = 1,
-                                 cooldown = 1,
+                                 cooldown = 4,
                                  prefab = Rocket,
                                  animator = bulletAnimator,
                                  input = 'action2',
-                                 damage = 40,
+                                 damage = 15,
                                  startFire = nil,
                                  distanceBetweenBullets = 0,
                                  element = 'metal',
