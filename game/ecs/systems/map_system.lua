@@ -5,6 +5,8 @@ local EnemyPrefab = require "game.ecs.prefabs.enemy"
 local PlayerPrefab = require "game.ecs.prefabs.player"
 local BossPrefab = require "game.ecs.prefabs.boss"
 
+local ControlsHelp = require "game.ecs.prefabs.ui.controls-help"
+
 local Tree     = require "game.ecs.prefabs.environment.tree"
 local Rock     = require "game.ecs.prefabs.environment.rock"
 local Gate     = require "game.ecs.prefabs.environment.gate"
@@ -97,6 +99,7 @@ function MapSystem:loadMap(mapName)
                     :addComponent("DeathByTimer", {timer = 10})
             enemy:getComponentByName('Health').currentHP = -1
         end
+        ControlsHelp(self.globalSystem)
     end
 
     local colliderData = require("data.map.colliders."..mapName) -- see main.lua and Debug.generateMap
