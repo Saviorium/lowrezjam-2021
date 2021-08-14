@@ -14,7 +14,7 @@ return function(globalSystem, position, component, entity)
     local entity = globalSystem:newEntity()
         :addComponent('Position', {position = position})
         :addComponent('Damaging', {collider = damagingCollider})
-        :addComponent('DrawAreaOfObjectsCircle', {prefab = SmallFire, count = 120, radius = radius, objects = {}})
+        :addComponent('DrawAreaOfObjectsCircle', {prefab = SmallFire, count = 20, radius = radius, objects = {}})
         :addComponent("DeathByTimer", {timer = component.timeToLive})
 
     damagingCollider.parent = entity

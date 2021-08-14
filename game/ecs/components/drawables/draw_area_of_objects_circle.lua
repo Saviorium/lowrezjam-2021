@@ -2,9 +2,9 @@ return {
     name = "DrawAreaOfObjectsCircle",
     type = "Drawable",
     hidden = false,
-    prefab = SmallFire, 
-    count = 20, 
-    radius = 20, 
+    prefab = nil,
+    count = 20,
+    radius = 20,
     objects = {},
 
     draw = function (self, entity)

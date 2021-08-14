@@ -163,4 +163,28 @@ return {
             intensity = 0,
         }
     },
+    smokeUp = {
+        spawnType = "world",
+        drawType = "circle",
+        color = { 0.6, 0.6, 0.6, .0 },
+        targetColor = { 0.6, 0.6, 0.6, .7 },
+        size = 3,
+        gravity = -0.01,
+        friction = 0.98,
+        translate = Vector(-10, 0),
+        angle = 0,
+        speed = 0.5,
+        timeToLive = 2,
+        maxIntensity = 50,
+        maxTotalNum = 200,
+        random = {
+            color = 0,
+            size = 1,
+            translate = 1,
+            angle = 45,
+            speed = 0.2,
+            timeToLive = 0.3,
+            intensity = 2,
+        }
+    },
 }
