@@ -82,6 +82,21 @@ function MapSystem:loadMap(mapName)
         if obj.type == "gate" then
             Gate(self.globalSystem, Vector(obj.x, obj.y), obj.properties.rotation, {x = obj.width, y = obj.height}, obj.properties.name )
         end
+        if obj.type == "corpse" then
+            local enemy = EnemyPrefab( self.globalSystem, Vector(obj.x, obj.y),
+                       {
+                        head = obj.properties.head, 
+                        legs = obj.properties.legs,
+                        torso = obj.properties.torso,
+                        arms = obj.properties.arms
+                       })
+            local text = 
+            self.globalSystem:newEntity()
+                    :addComponent('Position',{position = Vector(obj.x-16, obj.y+8)})
+                    :addComponent('DrawText', {text = 'You can eat me'})
+                    :addComponent("DeathByTimer", {timer = 10})
+            enemy:getComponentByName('Health').currentHP = -1
+        end
     end
 
     local colliderData = require("data.map.colliders."..mapName) -- see main.lua and Debug.generateMap

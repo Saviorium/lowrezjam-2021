@@ -1,7 +1,7 @@
 return function(globalSystem, position, component, parent, count)
     if not count or count > 0 then
         local damagingCollider =  globalSystem.HC:circle(position.x-2, position.y+4, 4)
-        local physicsCollider  = globalSystem.HC:circle(position.x-2, position.y+4, 4)
+        local physicsCollider  = globalSystem.HC:circle(position.x-2, position.y+4, 6)
         damagingCollider.type = 'Damaging'
         physicsCollider.type = 'Physics'
 

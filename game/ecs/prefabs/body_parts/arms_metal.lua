@@ -23,8 +23,8 @@ return function(globalSystem, parent)
                                  input = 'action1',
                                  startFire = nil,
                                  hiddenTimer = 0.1,
-                                 damage = 2,
-                                 distanceBetweenBullets = 3,
+                                 damage = 1,
+                                 distanceBetweenBullets = 2,
                                  element = 'metal',
                                 } )
     addAnimator(entity, 'arms', 'metal')

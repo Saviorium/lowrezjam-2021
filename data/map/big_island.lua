@@ -1,7 +1,7 @@
 return {
   version = "1.5",
   luaversion = "5.1",
-  tiledversion = "1.5.0",
+  tiledversion = "1.7.1",
   orientation = "orthogonal",
   renderorder = "right-down",
   width = 200,
@@ -9,7 +9,7 @@ return {
   tilewidth = 8,
   tileheight = 8,
   nextlayerid = 4,
-  nextobjectid = 123,
+  nextobjectid = 124,
   properties = {},
   tilesets = {
     {
@@ -7517,6 +7517,24 @@ return {
             ["health"] = 1,
             ["legs"] = "fire",
             ["speed"] = 1,
+            ["torso"] = "fire"
+          }
+        },
+        {
+          id = 123,
+          name = "",
+          type = "corpse",
+          shape = "rectangle",
+          x = 614,
+          y = 1137.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "fire",
+            ["head"] = "fire",
+            ["legs"] = "fire",
             ["torso"] = "fire"
           }
         }
