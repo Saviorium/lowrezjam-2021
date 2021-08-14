@@ -6,8 +6,8 @@ Class = require "lib.hump.class"
 
 if Debug and Debug.generateMap == true then
     local mapGenerator = require "engine.map_generator"
-    local mapData = mapGenerator:generateColliders("test_island")
-    mapGenerator:saveColliders("test_island", mapData)
+    local mapData = mapGenerator:generateColliders("big_island")
+    mapGenerator:saveColliders("big_island", mapData)
 end
 
 StateManager = require "lib.hump.gamestate"

@@ -98,7 +98,7 @@ Debug = {
     strictComponentCheck = 1,
     dragCharacterDebug = false,
     PrintAnimationEvents = false,
-    drawCollidersDebug = false,
-    generateMap = false,
+    drawCollidersDebug = true,
+    generateMap = true,
     cheatsOn = true
 }

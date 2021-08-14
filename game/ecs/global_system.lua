@@ -64,7 +64,7 @@ local GlobalSystem = Class {
 
             EntityDeleteSystem(self),
         }
-        self.systems.mapSystem:loadMap('test_island')
+        self.systems.mapSystem:loadMap('big_island')
     end
 }
 
