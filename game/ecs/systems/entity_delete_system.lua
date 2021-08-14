@@ -26,6 +26,11 @@ function EntityDeleteSystem:update(dt)
             deathTrigger:onDeathTrigger(entity)
         end
 
+        local soundOnDeath = entity:getComponentByName("SoundOnDeath")
+        if soundOnDeath then
+            SoundManager:play(soundOnDeath.soundName)
+        end
+
         local entity = self.globalSystem.objects[entityId]
         self.globalSystem.objects[entityId] = nil
         entity.components = {}

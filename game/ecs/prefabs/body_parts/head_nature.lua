@@ -22,6 +22,7 @@ return function(globalSystem, parent)
                                     -- animator = nil,
                                     input = 'action2',
                                     buffFunction = function(entity)
+                                        SoundManager:play('healing_basic')
                                         local health = parent:getComponentByName('Health')
                                         health:addHealth(heal)
                                         local emitter = entity:getComponentByName('ParticleEmitter')

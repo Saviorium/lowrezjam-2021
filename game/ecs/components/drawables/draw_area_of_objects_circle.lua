@@ -14,6 +14,9 @@ return {
                 table.insert(self.objects, self.prefab(entity.globalSystem, pos + Vector.randomDirection(0,20)))
             end
         end
+        if entity:getComponentByName('PlaySound') then
+            SoundManager:play( entity:getComponentByName('PlaySound').soundName)
+        end
         -- for _, obj in pairs(self.objects) do
         --     obj:draw()
         -- end

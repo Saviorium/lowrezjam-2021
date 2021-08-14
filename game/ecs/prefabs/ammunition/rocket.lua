@@ -4,6 +4,7 @@ return function(globalSystem, position, rotation, damage, animator)
     local damagingCollider =  globalSystem.HC:circle(position.x, position.y, 3)
     damagingCollider.type = 'Damaging'
 
+    SoundManager:play('missle_launch')
     damagingCollider.damage = damage or 1
 
 	local animatorInst = animator:newInstance(AssetManager:getAnimation("missile"))
@@ -28,6 +29,7 @@ return function(globalSystem, position, rotation, damage, animator)
         :addComponent("TargetAtNearestEnemy")
         :addComponent('AiControlled', {inputManager = require "game.ai.follow_rotation_ai"})
         :addComponent('Controlled')
+        :addComponent('SoundOnDeath', {soundName = 'fire_blast'})
 
     damagingCollider.parent = entity
     damagingCollider.start = love.timer.getTime( )

@@ -9,6 +9,7 @@ return function(globalSystem, position, rotation, damage, animator)
     local damagingCollider =  globalSystem.HC:rectangle(0, 0, 4, 8)
     damagingCollider.type = 'Damaging'
 
+    SoundManager:play('water_start')
     damagingCollider.damage = damage or 1
 
 	local animatorInst1 = waterAnimator:newInstance(AssetManager:getAnimation("water-stream"))
@@ -38,6 +39,7 @@ return function(globalSystem, position, rotation, damage, animator)
         :addComponent("DeathByCollision", {collisionsCondition = {'Damage', 'Physics'},
          onDeathTrigger = onDeathTrigger})
         :addComponent('RotateThisThing')
+        :addComponent('SoundOnDeath', {soundName = 'water_splash'})
 
     damagingCollider.parent = entity
     damagingCollider.start = love.timer.getTime( )

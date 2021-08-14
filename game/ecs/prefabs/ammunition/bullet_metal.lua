@@ -2,6 +2,8 @@ return function(globalSystem, position, rotation, damage, animator)
     local damagingCollider =  globalSystem.HC:rectangle(0, 0, 1, 1)
     damagingCollider.type = 'Damaging'
 
+    SoundManager:play('gun')
+
 	local animatorInst = animator:newInstance(AssetManager:getAnimation("metal-bullet"))
     local hitAnimatorInst = animator:newInstance(AssetManager:getAnimation("armor-hit"))
 

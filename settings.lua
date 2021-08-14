@@ -78,7 +78,7 @@ config = {
                     action2 = {type = "active", range = 75, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
                 },
                 lightning = {
-                    action1 = {type = "active", range = 50, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
+                    action1 = {type = "active", range = 60, durationOfShooting = 5, cooldown = 1, timerShoot = 0, timerCooldown = 0},
                     action2 = {type = "support", range = 0, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
                 },
                 earth = {

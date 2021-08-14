@@ -4,6 +4,7 @@ return function(globalSystem, position, rotation, damage, animator)
     local damagingCollider =  globalSystem.HC:circle(position.x, position.y, 2)
     damagingCollider.type = 'Damaging'
 
+    SoundManager:play('fireball_start')
     damagingCollider.damage = damage or 1
 
 	local animatorInst = animator:newInstance(AssetManager:getAnimation("fireball"))
@@ -24,6 +25,7 @@ return function(globalSystem, position, rotation, damage, animator)
             explosion(globalSystem, currentPos)
         end })
         :addComponent('RotateThisThing')
+        :addComponent('SoundOnDeath', {soundName = 'fireball_blast'})
 
     damagingCollider.parent = entity
     damagingCollider.start = love.timer.getTime( )

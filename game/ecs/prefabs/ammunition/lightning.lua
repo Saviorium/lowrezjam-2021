@@ -13,6 +13,7 @@ return function(globalSystem, position, rotation, damage, animator, parent)
         :addComponent('ParticleEmitter', {particles = {lightningSpark = {intensity = 30}}})
         :addComponent("MouseControlled")
         :addComponent("TargetAtMouse")
+        -- :addComponent("TargetAtNearestEnemy")
         :addComponent('AiControlled', {inputManager = require "game.ai.follow_rotation_ai"})
         :addComponent("OnInputTrigger", { input = "action1", func = function(comp, entity)
             entity:getComponentByName('DrawLine').width = 5

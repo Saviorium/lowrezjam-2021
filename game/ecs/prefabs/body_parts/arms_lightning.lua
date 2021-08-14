@@ -24,6 +24,8 @@ return function(globalSystem, parent)
             distanceBetweenBullets = 0,
             useParentInertia = false,
             element = 'lightning',
+            chargeSound = 'electricity',
+            fireSound = 'thunder'
         } )
         :addComponent('OnDeathTrigger', { onDeathTrigger = function(self, parent)
             local chargeable = parent:getComponentByName('Chargeable')

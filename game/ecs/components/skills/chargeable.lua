@@ -10,10 +10,13 @@ return {
     charging = false,
     active = false,
     child = nil,
+    chargeSound = 'electricity',
+    fireSound = 'thunder',
     -- launch prefab on 'input' down and then send 'input' to that prefab on 'input' up
 
     update = function(self, dt)
         if self.cooldownTimer < self.cooldown and self.charging ~= true then
+            SoundManager:play('electricity')
             self.cooldownTimer = self.cooldownTimer + dt
         end
     end,
@@ -36,6 +39,10 @@ return {
             local spawnedEnt = self.prefab(entity.globalSystem, pos, rotation, self.damage, self, entity)
             if team then
                 spawnedEnt:addComponent("Team", { team = team.team })
+                if team.team == 'Enemy' then
+                    spawnedEnt:removeComponent('TargetAtMouse')
+                    spawnedEnt:addComponent("TargetAtNearestEnemy", {enemy = 'Player'})
+                end
             end
             spawnedEnt:addComponent("Controlled"):addComponent("ChargeableControlled", {parent = self})
             self.child = spawnedEnt

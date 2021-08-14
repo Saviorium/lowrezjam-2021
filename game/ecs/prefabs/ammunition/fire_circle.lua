@@ -11,11 +11,13 @@ return function(globalSystem, position, component, entity)
 
 	-- local animatorInst = animator:newInstance(AssetManager:getAnimation("fireball"))
 
+    SoundManager:play('forest_fire')
     local entity = globalSystem:newEntity()
         :addComponent('Position', {position = position})
         :addComponent('Damaging', {collider = damagingCollider})
         :addComponent('DrawAreaOfObjectsCircle', {prefab = SmallFire, count = 20, radius = radius, objects = {}})
         :addComponent("DeathByTimer", {timer = component.timeToLive})
+        :addComponent('PlaySound', {soundName = 'forest_fire'})
 
     damagingCollider.parent = entity
     damagingCollider.start = love.timer.getTime( )

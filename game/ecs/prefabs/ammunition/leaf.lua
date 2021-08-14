@@ -2,6 +2,7 @@ return function(globalSystem, position, rotation, damage, animator)
     local damagingCollider =  globalSystem.HC:circle(position.x, position.y, 2)
     damagingCollider.type = 'Damaging'
 
+    SoundManager:play('trees')
     damagingCollider.damage = damage or 1
 
 	local animatorInst = animator:newInstance(AssetManager:getAnimation("nature-leaf"))

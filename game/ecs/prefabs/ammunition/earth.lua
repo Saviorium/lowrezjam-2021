@@ -5,6 +5,7 @@ return function(globalSystem, position, component, parent, count)
         damagingCollider.type = 'Damaging'
         physicsCollider.type = 'Physics'
 
+        SoundManager:play('earth')
         damagingCollider.damage = 20
 
         local animatorInst = component.animator:newInstance(AssetManager:getAnimation("rock-attack"))

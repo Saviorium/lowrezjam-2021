@@ -4,6 +4,7 @@ return function(globalSystem, position, component, entity)
 
 	-- local animatorInst = entity.animator:newInstance(AssetManager:getAnimation("fireball"))
 
+    SoundManager:play('shield_up')
     local entity = globalSystem:newEntity()
         :addComponent('Position')
         :addComponent('AttachedToEntity', {entity = entity})
@@ -14,6 +15,7 @@ return function(globalSystem, position, component, entity)
         :addComponent("Health", {maxHP = 100, currentHP = 100})
         :addComponent("DeathByHealth")
         :addComponent("DeathByTimer", {timer = 10})
+        :addComponent("SoundOnDeath", {soundName = 'shield_down'})
     TakingDamageCollider.parent = entity
 
     return entity

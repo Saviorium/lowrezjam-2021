@@ -1432,38 +1432,38 @@
   </object>
   <object id="57" type="enemy" x="254.5" y="252.5">
    <properties>
-    <property name="arms" value="nature"/>
+    <property name="arms" value="lightning"/>
     <property name="count" type="int" value="5"/>
-    <property name="head" value="nature"/>
-    <property name="legs" value="nature"/>
-    <property name="torso" value="nature"/>
+    <property name="head" value="lightning"/>
+    <property name="legs" value="lightning"/>
+    <property name="torso" value="lightning"/>
    </properties>
   </object>
   <object id="58" type="enemy" x="291" y="233">
    <properties>
-    <property name="arms" value="nature"/>
+    <property name="arms" value="lightning"/>
     <property name="count" type="int" value="5"/>
-    <property name="head" value="nature"/>
-    <property name="legs" value="nature"/>
-    <property name="torso" value="nature"/>
+    <property name="head" value="lightning"/>
+    <property name="legs" value="lightning"/>
+    <property name="torso" value="lightning"/>
    </properties>
   </object>
   <object id="59" type="enemy" x="245" y="282.5">
    <properties>
-    <property name="arms" value="nature"/>
+    <property name="arms" value="lightning"/>
     <property name="count" type="int" value="5"/>
-    <property name="head" value="nature"/>
-    <property name="legs" value="nature"/>
-    <property name="torso" value="nature"/>
+    <property name="head" value="lightning"/>
+    <property name="legs" value="lightning"/>
+    <property name="torso" value="lightning"/>
    </properties>
   </object>
   <object id="60" type="enemy" x="246.75" y="328.5">
    <properties>
-    <property name="arms" value="nature"/>
+    <property name="arms" value="lightning"/>
     <property name="count" type="int" value="5"/>
-    <property name="head" value="nature"/>
-    <property name="legs" value="nature"/>
-    <property name="torso" value="nature"/>
+    <property name="head" value="lightning"/>
+    <property name="legs" value="lightning"/>
+    <property name="torso" value="lightning"/>
    </properties>
   </object>
  </objectgroup>
