@@ -17,6 +17,16 @@ config = {
         screenSize = { x = 64, y = 64 },
         initialResolution = 4,
         drawOrderGrid = 4
+    },
+    colors = {
+        element = {
+            fire = {0.98, 0.416, 0.039},
+            water = {0.204, 0.278, 0.863},
+            earth = {0.475, 0.404, 0.333},
+            nature = {0.243, 0.537, 0.282},
+            metal = {0.765, 0.776, 0.835},
+            lightning = {1, 0.988, 0.557},
+        }
     }
 }
 

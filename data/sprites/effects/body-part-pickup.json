@@ -1,0 +1,204 @@
+{ "frames": [
+   {
+    "filename": "body-part-pickup 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 100
+   },
+   {
+    "filename": "body-part-pickup 1.aseprite",
+    "frame": { "x": 16, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 100
+   },
+   {
+    "filename": "body-part-pickup 2.aseprite",
+    "frame": { "x": 32, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 100
+   },
+   {
+    "filename": "body-part-pickup 3.aseprite",
+    "frame": { "x": 48, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 100
+   },
+   {
+    "filename": "body-part-pickup 4.aseprite",
+    "frame": { "x": 64, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 100
+   },
+   {
+    "filename": "body-part-pickup 5.aseprite",
+    "frame": { "x": 80, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 150
+   },
+   {
+    "filename": "body-part-pickup 6.aseprite",
+    "frame": { "x": 96, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 150
+   },
+   {
+    "filename": "body-part-pickup 7.aseprite",
+    "frame": { "x": 112, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 150
+   },
+   {
+    "filename": "body-part-pickup 8.aseprite",
+    "frame": { "x": 128, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 150
+   },
+   {
+    "filename": "body-part-pickup 9.aseprite",
+    "frame": { "x": 144, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 150
+   },
+   {
+    "filename": "body-part-pickup 10.aseprite",
+    "frame": { "x": 160, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 66
+   },
+   {
+    "filename": "body-part-pickup 11.aseprite",
+    "frame": { "x": 176, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 66
+   },
+   {
+    "filename": "body-part-pickup 12.aseprite",
+    "frame": { "x": 192, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 66
+   },
+   {
+    "filename": "body-part-pickup 13.aseprite",
+    "frame": { "x": 208, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 66
+   },
+   {
+    "filename": "body-part-pickup 14.aseprite",
+    "frame": { "x": 224, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 66
+   },
+   {
+    "filename": "body-part-pickup 15.aseprite",
+    "frame": { "x": 240, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 66
+   },
+   {
+    "filename": "body-part-pickup 16.aseprite",
+    "frame": { "x": 256, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 66
+   },
+   {
+    "filename": "body-part-pickup 17.aseprite",
+    "frame": { "x": 272, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 2000
+   },
+   {
+    "filename": "body-part-pickup 18.aseprite",
+    "frame": { "x": 288, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 2000
+   },
+   {
+    "filename": "body-part-pickup 19.aseprite",
+    "frame": { "x": 304, "y": 0, "w": 16, "h": 13 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 14, "h": 11 },
+    "sourceSize": { "w": 14, "h": 11 },
+    "duration": 2000
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.2.27",
+  "image": "body-part-pickup.png",
+  "format": "RGBA8888",
+  "size": { "w": 320, "h": 13 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "fire", "from": 0, "to": 4, "direction": "forward" },
+   { "name": "water", "from": 5, "to": 9, "direction": "forward" },
+   { "name": "lightning", "from": 10, "to": 16, "direction": "forward" },
+   { "name": "metal", "from": 17, "to": 17, "direction": "forward" },
+   { "name": "nature", "from": 18, "to": 18, "direction": "forward" },
+   { "name": "earth", "from": 19, "to": 19, "direction": "forward" }
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

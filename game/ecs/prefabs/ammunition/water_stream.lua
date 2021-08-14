@@ -26,7 +26,7 @@ return function(globalSystem, position, rotation, damage, animator)
                             :addComponent('RotateThisThing')
                            end
     local entity = globalSystem:newEntity()
-        :addComponent('Flying'  , {maxSpeed = 80})
+        :addComponent('Flying'  , {maxSpeed = 160})
         :addComponent('Position', {position = position})
         :addComponent('Rotation', {rotation = rotation})
         :addComponent('Damaging', {collider = damagingCollider})
