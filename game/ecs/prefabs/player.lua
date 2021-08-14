@@ -27,10 +27,10 @@ return function(globalSystem, position)
     damageCollider.parent = ent
     -- physicsCollider.parent = ent
 
-    EventManager:send("changePart", { entity = ent.id, kind = "head", element = ""})
-    EventManager:send("changePart", { entity = ent.id, kind = "arms", element = ""})
-    EventManager:send("changePart", { entity = ent.id, kind = "torso", element = "" })
-    EventManager:send("changePart", { entity = ent.id, kind = "legs", element = "" })
+    EventManager:send("changePart", { entity = ent.id, kind = "head", element = "water"})
+    EventManager:send("changePart", { entity = ent.id, kind = "arms", element = "water"})
+    EventManager:send("changePart", { entity = ent.id, kind = "torso", element = "water" })
+    EventManager:send("changePart", { entity = ent.id, kind = "legs", element = "water" })
 
     local hpUi = HpUi(globalSystem, Vector(7,60), ent)
 
