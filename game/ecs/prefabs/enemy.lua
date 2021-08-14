@@ -34,6 +34,7 @@ return function(globalSystem, position, bodyParts)
         :addComponent('AiControlled', {inputManager = require "game.ai.normal_ai"()})
         :addComponent("DeathByHealth", {onDeathTrigger = onDeathTrigger})
         :addComponent("Team", {team = 'Enemy', main = true})
+        :addComponent("ParticleEmitter", { particles = {} })
 
     damageCollider.parent = ent
     -- physicsCollider.parent = ent
