@@ -1432,38 +1432,38 @@
   </object>
   <object id="57" type="enemy" x="254.5" y="252.5">
    <properties>
-    <property name="arms" value="earth"/>
+    <property name="arms" value="nature"/>
     <property name="count" type="int" value="5"/>
-    <property name="head" value="earth"/>
-    <property name="legs" value="earth"/>
-    <property name="torso" value="earth"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
    </properties>
   </object>
   <object id="58" type="enemy" x="291" y="233">
    <properties>
-    <property name="arms" value="fire"/>
+    <property name="arms" value="nature"/>
     <property name="count" type="int" value="5"/>
-    <property name="head" value="fire"/>
-    <property name="legs" value="fire"/>
-    <property name="torso" value="fire"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
    </properties>
   </object>
   <object id="59" type="enemy" x="245" y="282.5">
    <properties>
-    <property name="arms" value="water"/>
+    <property name="arms" value="nature"/>
     <property name="count" type="int" value="5"/>
-    <property name="head" value="water"/>
-    <property name="legs" value="water"/>
-    <property name="torso" value="water"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
    </properties>
   </object>
   <object id="60" type="enemy" x="246.75" y="328.5">
    <properties>
-    <property name="arms" value="metal"/>
+    <property name="arms" value="nature"/>
     <property name="count" type="int" value="5"/>
-    <property name="head" value="metal"/>
-    <property name="legs" value="metal"/>
-    <property name="torso" value="metal"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
    </properties>
   </object>
  </objectgroup>

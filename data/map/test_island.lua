@@ -6185,11 +6185,11 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["arms"] = "earth",
+            ["arms"] = "nature",
             ["count"] = 5,
-            ["head"] = "earth",
-            ["legs"] = "earth",
-            ["torso"] = "earth"
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
           }
         },
         {
@@ -6204,11 +6204,11 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["arms"] = "fire",
+            ["arms"] = "nature",
             ["count"] = 5,
-            ["head"] = "fire",
-            ["legs"] = "fire",
-            ["torso"] = "fire"
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
           }
         },
         {
@@ -6223,11 +6223,11 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["arms"] = "water",
+            ["arms"] = "nature",
             ["count"] = 5,
-            ["head"] = "water",
-            ["legs"] = "water",
-            ["torso"] = "water"
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
           }
         },
         {
@@ -6242,11 +6242,11 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["arms"] = "metal",
+            ["arms"] = "nature",
             ["count"] = 5,
-            ["head"] = "metal",
-            ["legs"] = "metal",
-            ["torso"] = "metal"
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
           }
         }
       }

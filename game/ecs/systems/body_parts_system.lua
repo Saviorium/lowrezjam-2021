@@ -13,7 +13,6 @@ local BodyPartsSystem = Class {
         System.init(self, {"Body"})
         self.globalSystem = globalSystem
         EventManager:subscribe("BodyPartsSystem", "changePart")
-        -- usage: EventManager:send("changePart", { entity = id, kind = "arms", element = "fire" })
         EventManager:subscribe("BodyPartsSystem", "entityDestroyed")
     end
 }
@@ -78,8 +77,6 @@ function BodyPartsSystem:getPart(kind, element, parent)
     local part = require(path)
     local resultPart = part(self.globalSystem, parent)
     resultPart:getComponentByName('BodyPart').element = element
-
-    -- print('Creating part with ', resultPart:getComponentByName('BodyPart').element)
     return resultPart
 end
 
