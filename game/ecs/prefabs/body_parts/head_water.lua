@@ -15,12 +15,12 @@ return function(globalSystem, parent)
         :addComponent('DrawAnimation', { hidden = true })
         :addComponent('Bullet', {
                                  angle = 25,
-                                 count = 30,
+                                 count = 25,
                                  cooldown = 10,
                                  prefab = Water,
                                  animator = bulletAnimator,
                                  input = 'action2',
-                                 damage = 5,
+                                 damage = 3,
                                  startFire = nil, --startFireAnimatorInst,
                                  distanceBetweenBullets = 0,
                                  element = 'water',

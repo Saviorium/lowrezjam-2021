@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="8" tileheight="8" infinite="0" nextlayerid="4" nextobjectid="51">
+<map version="1.5" tiledversion="1.5.0" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="8" tileheight="8" infinite="0" nextlayerid="4" nextobjectid="123">
  <editorsettings>
   <export target="big_island.lua" format="lua"/>
  </editorsettings>
@@ -1491,7 +1491,7 @@
 </data>
  </layer>
  <objectgroup id="2" name="object-layer">
-  <object id="2" type="player" x="613" y="1169"/>
+  <object id="2" type="player" x="615" y="1166"/>
   <object id="7" type="enemy" x="706.167" y="1037.92">
    <properties>
     <property name="arms" value="earth"/>
@@ -1818,6 +1818,101 @@
     <property name="head" value="lightning"/>
     <property name="legs" value="lightning"/>
     <property name="torso" value="lightning"/>
+   </properties>
+  </object>
+  <object id="53" type="tree" x="747" y="1122"/>
+  <object id="56" type="tree" x="763" y="1161"/>
+  <object id="57" type="tree" x="732" y="1136"/>
+  <object id="58" type="tree" x="737" y="1181"/>
+  <object id="59" type="tree" x="769" y="1142"/>
+  <object id="60" type="tree" x="769" y="1179"/>
+  <object id="61" type="gate" x="1056" y="878" width="16" height="8" visible="0">
+   <properties>
+    <property name="name" value="gate1"/>
+    <property name="rotation" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="62" type="gate" x="640" y="665" width="16" height="9" visible="0">
+   <properties>
+    <property name="name" value="gate2"/>
+    <property name="rotation" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="63" type="gate" x="640" y="675" width="16" height="9" visible="0">
+   <properties>
+    <property name="name" value="gate2"/>
+    <property name="rotation" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="64" type="tree" x="769" y="1123"/>
+  <object id="65" type="tree" x="749" y="1142"/>
+  <object id="66" type="tree" x="742" y="1154"/>
+  <object id="67" type="tree" x="728" y="1150"/>
+  <object id="68" type="tree" x="754" y="1176"/>
+  <object id="69" type="tree" x="763" y="1206"/>
+  <object id="70" type="tree" x="773" y="1196"/>
+  <object id="71" type="tree" x="743" y="1201"/>
+  <object id="72" type="tree" x="755" y="1191"/>
+  <object id="73" type="tree" x="736" y="1169"/>
+  <object id="74" type="tree" x="752" y="1162"/>
+  <object id="75" type="tree" x="573" y="1046"/>
+  <object id="76" type="tree" x="593" y="1045"/>
+  <object id="77" type="tree" x="582" y="1045"/>
+  <object id="78" type="tree" x="574" y="1060"/>
+  <object id="79" type="tree" x="574" y="1075"/>
+  <object id="80" type="tree" x="584" y="1070"/>
+  <object id="81" type="tree" x="591" y="1059"/>
+  <object id="82" type="tree" x="609" y="1074"/>
+  <object id="83" type="tree" x="596" y="1072"/>
+  <object id="84" type="tree" x="605" y="1059"/>
+  <object id="85" type="tree" x="606" y="1046"/>
+  <object id="86" type="tree" x="617" y="1048"/>
+  <object id="87" type="tree" x="640" y="1047"/>
+  <object id="88" type="tree" x="622" y="1056"/>
+  <object id="89" type="tree" x="635" y="1060"/>
+  <object id="90" type="tree" x="626" y="1070"/>
+  <object id="91" type="tree" x="656" y="1064"/>
+  <object id="92" type="tree" x="644" y="1077"/>
+  <object id="93" type="tree" x="646" y="1062"/>
+  <object id="94" type="tree" x="660" y="1050"/>
+  <object id="95" type="tree" x="769" y="1104"/>
+  <object id="96" type="tree" x="751" y="1109"/>
+  <object id="97" type="tree" x="734" y="1111"/>
+  <object id="98" type="tree" x="753" y="1095"/>
+  <object id="99" type="tree" x="736" y="1096"/>
+  <object id="100" type="tree" x="733" y="1126"/>
+  <object id="101" type="rock" x="830" y="1118"/>
+  <object id="102" type="rock" x="881" y="1106"/>
+  <object id="103" type="rock" x="873" y="1151"/>
+  <object id="104" type="rock" x="813" y="1164"/>
+  <object id="105" type="rock" x="859" y="1200"/>
+  <object id="106" type="rock" x="914" y="1181"/>
+  <object id="107" type="rock" x="924" y="1050"/>
+  <object id="108" type="rock" x="947" y="1287"/>
+  <object id="109" type="rock" x="1104" y="1266"/>
+  <object id="110" type="rock" x="732" y="1069"/>
+  <object id="111" type="rock" x="680" y="1031"/>
+  <object id="112" type="tree" x="655" y="1076"/>
+  <object id="113" type="tree" x="668" y="1062"/>
+  <object id="114" type="tree" x="759" y="1121"/>
+  <object id="115" type="rock-black" x="1132" y="1110"/>
+  <object id="116" type="rock-black" x="1050" y="1121"/>
+  <object id="117" type="rock-black" x="1182" y="1058"/>
+  <object id="118" type="rock-black" x="1033" y="911"/>
+  <object id="119" type="rock-black" x="1108" y="909"/>
+  <object id="120" type="rock-black" x="959" y="1141"/>
+  <object id="121" type="rock-black" x="1260" y="1089"/>
+  <object id="122" type="boss" x="1069.88" y="943.875">
+   <properties>
+    <property name="arms" value="fire"/>
+    <property name="cooldown" type="float" value="0.75"/>
+    <property name="damage" type="float" value="2"/>
+    <property name="gateName" value="gate1"/>
+    <property name="head" value="fire"/>
+    <property name="health" type="float" value="1"/>
+    <property name="legs" value="fire"/>
+    <property name="speed" type="float" value="1"/>
+    <property name="torso" value="fire"/>
    </properties>
   </object>
  </objectgroup>

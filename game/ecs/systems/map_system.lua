@@ -6,6 +6,7 @@ local PlayerPrefab = require "game.ecs.prefabs.player"
 local BossPrefab = require "game.ecs.prefabs.boss"
 
 local Tree     = require "game.ecs.prefabs.environment.tree"
+local Rock     = require "game.ecs.prefabs.environment.rock"
 local Gate     = require "game.ecs.prefabs.environment.gate"
 
 local MapSystem = Class {
@@ -40,24 +41,24 @@ function MapSystem:loadMap(mapName)
             Spawner(self.globalSystem, Vector(obj.x, obj.y), {spawned = {}, prefab = PlayerPrefab, timeToSpawn = 1})
         end
         if obj.type == "enemy" then
-            Spawner(self.globalSystem, Vector(obj.x, obj.y), 
-                { spawned = {}, 
-                  prefab = EnemyPrefab, 
-                  maxCount = 1 , 
-                  countLeft = obj.properties.count, 
+            Spawner(self.globalSystem, Vector(obj.x, obj.y),
+                { spawned = {},
+                  prefab = EnemyPrefab,
+                  maxCount = 1 ,
+                  countLeft = obj.properties.count,
                   bodyParts = {
-                               head = obj.properties.head, 
+                               head = obj.properties.head,
                                legs = obj.properties.legs,
                                torso = obj.properties.torso,
                                arms = obj.properties.arms
-                              }  
+                              }
                 })
         end
         if obj.type == "boss" then
-            BossPrefab(self.globalSystem, Vector(obj.x, obj.y), 
+            BossPrefab(self.globalSystem, Vector(obj.x, obj.y),
                        obj.properties.gateName,
                        {
-                        head = obj.properties.head, 
+                        head = obj.properties.head,
                         legs = obj.properties.legs,
                         torso = obj.properties.torso,
                         arms = obj.properties.arms
@@ -68,9 +69,15 @@ function MapSystem:loadMap(mapName)
                         cooldown = obj.properties.cooldown,
                         health = obj.properties.health
                        }  )
-        end 
+        end
         if obj.type == "tree" then
             Tree(self.globalSystem, Vector(obj.x, obj.y))
+        end
+        if obj.type == "rock" then
+            Rock(self.globalSystem, Vector(obj.x, obj.y))
+        end
+        if obj.type == "rock-black" then
+            Rock(self.globalSystem, Vector(obj.x, obj.y), true)
         end
         if obj.type == "gate" then
             Gate(self.globalSystem, Vector(obj.x, obj.y), obj.properties.rotation, {x = obj.width, y = obj.height}, obj.properties.name )

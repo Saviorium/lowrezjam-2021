@@ -118,7 +118,11 @@ local variablesUpdater = function(component, entity)
     local velocity = parent:getComponentByName("Velocity").velocity
     local moveDirection = velocity:angleTo() * 180 / math.pi
     local speed = velocity:len()
-    local shoot = love.mouse.isDown(1) -- TODO: entity.getComponentByName("Active").active
+    local controlled = parent:getComponentByName("Controlled")
+    local shoot = false
+    if controlled and controlled.inputSnapshot and controlled.inputSnapshot.action1 == 1 then
+        shoot = true
+    end
     component.animator:setVariable("lookDirection", lookDirection)
     component.animator:setVariable("moveDirection", moveDirection)
     component.animator:setVariable("speed", speed)
