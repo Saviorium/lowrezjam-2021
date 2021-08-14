@@ -9,7 +9,7 @@ return {
   tilewidth = 8,
   tileheight = 8,
   nextlayerid = 4,
-  nextobjectid = 124,
+  nextobjectid = 128,
   properties = {},
   tilesets = {
     {
@@ -5872,7 +5872,7 @@ return {
           type = "player",
           shape = "rectangle",
           x = 615,
-          y = 1166,
+          y = 1169.33,
           width = 0,
           height = 0,
           rotation = 0,
@@ -6042,48 +6042,12 @@ return {
           }
         },
         {
-          id = 17,
-          name = "",
-          type = "enemy",
-          shape = "rectangle",
-          x = 1006.33,
-          y = 659.333,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["arms"] = "nature",
-            ["head"] = "nature",
-            ["legs"] = "nature",
-            ["torso"] = "nature"
-          }
-        },
-        {
           id = 18,
           name = "",
           type = "enemy",
           shape = "rectangle",
-          x = 1083,
-          y = 662,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["arms"] = "nature",
-            ["head"] = "nature",
-            ["legs"] = "nature",
-            ["torso"] = "nature"
-          }
-        },
-        {
-          id = 19,
-          name = "",
-          type = "enemy",
-          shape = "rectangle",
-          x = 1159,
-          y = 710.333,
+          x = 1046.33,
+          y = 666,
           width = 0,
           height = 0,
           rotation = 0,
@@ -6111,24 +6075,6 @@ return {
             ["head"] = "water",
             ["legs"] = "water",
             ["torso"] = "water"
-          }
-        },
-        {
-          id = 21,
-          name = "",
-          type = "enemy",
-          shape = "rectangle",
-          x = 1179,
-          y = 617.5,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["arms"] = "nature",
-            ["head"] = "nature",
-            ["legs"] = "nature",
-            ["torso"] = "nature"
           }
         },
         {
@@ -6168,48 +6114,12 @@ return {
           }
         },
         {
-          id = 24,
-          name = "",
-          type = "enemy",
-          shape = "rectangle",
-          x = 935.5,
-          y = 619.5,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["arms"] = "nature",
-            ["head"] = "nature",
-            ["legs"] = "nature",
-            ["torso"] = "nature"
-          }
-        },
-        {
           id = 25,
           name = "",
           type = "enemy",
           shape = "rectangle",
           x = 1181.5,
           y = 577.5,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["arms"] = "water",
-            ["head"] = "water",
-            ["legs"] = "water",
-            ["torso"] = "water"
-          }
-        },
-        {
-          id = 26,
-          name = "",
-          type = "enemy",
-          shape = "rectangle",
-          x = 1090,
-          y = 562.5,
           width = 0,
           height = 0,
           rotation = 0,
@@ -6276,48 +6186,12 @@ return {
           }
         },
         {
-          id = 30,
-          name = "",
-          type = "enemy",
-          shape = "rectangle",
-          x = 1161,
-          y = 470,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["arms"] = "water",
-            ["head"] = "water",
-            ["legs"] = "water",
-            ["torso"] = "water"
-          }
-        },
-        {
           id = 31,
           name = "",
           type = "enemy",
           shape = "rectangle",
-          x = 1021.5,
-          y = 438.5,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["arms"] = "water",
-            ["head"] = "water",
-            ["legs"] = "water",
-            ["torso"] = "water"
-          }
-        },
-        {
-          id = 32,
-          name = "",
-          type = "enemy",
-          shape = "rectangle",
-          x = 976,
-          y = 395.5,
+          x = 986.833,
+          y = 420.5,
           width = 0,
           height = 0,
           rotation = 0,
@@ -6336,24 +6210,6 @@ return {
           shape = "rectangle",
           x = 905,
           y = 386,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["arms"] = "nature",
-            ["head"] = "nature",
-            ["legs"] = "nature",
-            ["torso"] = "nature"
-          }
-        },
-        {
-          id = 34,
-          name = "",
-          type = "enemy",
-          shape = "rectangle",
-          x = 891,
-          y = 459.5,
           width = 0,
           height = 0,
           rotation = 0,
@@ -6417,24 +6273,6 @@ return {
             ["head"] = "water",
             ["legs"] = "water",
             ["torso"] = "water"
-          }
-        },
-        {
-          id = 38,
-          name = "",
-          type = "enemy",
-          shape = "rectangle",
-          x = 884,
-          y = 521.5,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["arms"] = "nature",
-            ["head"] = "nature",
-            ["legs"] = "nature",
-            ["torso"] = "nature"
           }
         },
         {
@@ -7502,22 +7340,22 @@ return {
           name = "",
           type = "boss",
           shape = "rectangle",
-          x = 1069.88,
-          y = 943.875,
+          x = 1069.21,
+          y = 940.542,
           width = 0,
           height = 0,
           rotation = 0,
           visible = true,
           properties = {
-            ["arms"] = "fire",
-            ["cooldown"] = 0.75,
+            ["arms"] = "earth",
+            ["cooldown"] = 1.25,
             ["damage"] = 2,
             ["gateName"] = "gate1",
             ["head"] = "fire",
-            ["health"] = 1,
+            ["health"] = 2,
             ["legs"] = "fire",
             ["speed"] = 1,
-            ["torso"] = "fire"
+            ["torso"] = "earth"
           }
         },
         {
@@ -7536,6 +7374,52 @@ return {
             ["head"] = "fire",
             ["legs"] = "fire",
             ["torso"] = "fire"
+          }
+        },
+        {
+          id = 126,
+          name = "",
+          type = "boss",
+          shape = "rectangle",
+          x = 539.333,
+          y = 331,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "metal",
+            ["cooldown"] = 1,
+            ["damage"] = 2,
+            ["gateName"] = "gate3",
+            ["head"] = "lightning",
+            ["health"] = 2,
+            ["legs"] = "lightning",
+            ["speed"] = 1,
+            ["torso"] = "metal"
+          }
+        },
+        {
+          id = 127,
+          name = "",
+          type = "boss",
+          shape = "rectangle",
+          x = 756.333,
+          y = 675,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "water",
+            ["cooldown"] = 1.25,
+            ["damage"] = 2,
+            ["gateName"] = "gate2",
+            ["head"] = "nature",
+            ["health"] = 2,
+            ["legs"] = "nature",
+            ["speed"] = 1,
+            ["torso"] = "water"
           }
         }
       }

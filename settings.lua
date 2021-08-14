@@ -65,16 +65,16 @@ config = {
     },
     normalAiTableOfRanges = {
                 fire = {
-                    action1 = {type = "active", range = 40, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
-                    action2 = {type = "active", range = 15, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
+                    action1 = {type = "active", range = 50, durationOfShooting = 3, cooldown = 3, timerShoot = 0, timerCooldown = 0},
+                    action2 = {type = "active", range = 15, durationOfShooting = 3, cooldown = 10, timerShoot = 0, timerCooldown = 0}
                 },
                 water = {
-                    action1 = {type = "active", range = 25, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
-                    action2 = {type = "active", range = 25, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
+                    action1 = {type = "active", range = 35, durationOfShooting = 3, cooldown = 3, timerShoot = 0, timerCooldown = 0},
+                    action2 = {type = "active", range = 35, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
                 },
                 nature = {
-                    action1 = {type = "active", range = 35, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
-                    action2 = {type = "support", range = 0, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
+                    action1 = {type = "active", range = 35, durationOfShooting = 3, cooldown = 3, timerShoot = 0, timerCooldown = 0},
+                    action2 = {type = "support", range = 0, durationOfShooting = 3, cooldown = 10, timerShoot = 0, timerCooldown = 0}
                 },
                 metal = {
                     action1 = {type = "active", range = 75, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},

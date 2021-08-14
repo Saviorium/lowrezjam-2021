@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="8" tileheight="8" infinite="0" nextlayerid="4" nextobjectid="124">
+<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="8" tileheight="8" infinite="0" nextlayerid="4" nextobjectid="128">
  <editorsettings>
   <export target="big_island.lua" format="lua"/>
  </editorsettings>
@@ -1491,7 +1491,7 @@
 </data>
  </layer>
  <objectgroup id="2" name="object-layer">
-  <object id="2" type="player" x="615" y="1166"/>
+  <object id="2" type="player" x="615" y="1169.33"/>
   <object id="7" type="enemy" x="706.167" y="1037.92">
    <properties>
     <property name="arms" value="earth"/>
@@ -1564,23 +1564,7 @@
     <property name="torso" value="fire"/>
    </properties>
   </object>
-  <object id="17" type="enemy" x="1006.33" y="659.333">
-   <properties>
-    <property name="arms" value="nature"/>
-    <property name="head" value="nature"/>
-    <property name="legs" value="nature"/>
-    <property name="torso" value="nature"/>
-   </properties>
-  </object>
-  <object id="18" type="enemy" x="1083" y="662">
-   <properties>
-    <property name="arms" value="nature"/>
-    <property name="head" value="nature"/>
-    <property name="legs" value="nature"/>
-    <property name="torso" value="nature"/>
-   </properties>
-  </object>
-  <object id="19" type="enemy" x="1159" y="710.333">
+  <object id="18" type="enemy" x="1046.33" y="666">
    <properties>
     <property name="arms" value="nature"/>
     <property name="head" value="nature"/>
@@ -1594,14 +1578,6 @@
     <property name="head" value="water"/>
     <property name="legs" value="water"/>
     <property name="torso" value="water"/>
-   </properties>
-  </object>
-  <object id="21" type="enemy" x="1179" y="617.5">
-   <properties>
-    <property name="arms" value="nature"/>
-    <property name="head" value="nature"/>
-    <property name="legs" value="nature"/>
-    <property name="torso" value="nature"/>
    </properties>
   </object>
   <object id="22" type="enemy" x="899" y="689.5">
@@ -1620,23 +1596,7 @@
     <property name="torso" value="nature"/>
    </properties>
   </object>
-  <object id="24" type="enemy" x="935.5" y="619.5">
-   <properties>
-    <property name="arms" value="nature"/>
-    <property name="head" value="nature"/>
-    <property name="legs" value="nature"/>
-    <property name="torso" value="nature"/>
-   </properties>
-  </object>
   <object id="25" type="enemy" x="1181.5" y="577.5">
-   <properties>
-    <property name="arms" value="water"/>
-    <property name="head" value="water"/>
-    <property name="legs" value="water"/>
-    <property name="torso" value="water"/>
-   </properties>
-  </object>
-  <object id="26" type="enemy" x="1090" y="562.5">
    <properties>
     <property name="arms" value="water"/>
     <property name="head" value="water"/>
@@ -1668,23 +1628,7 @@
     <property name="torso" value="water"/>
    </properties>
   </object>
-  <object id="30" type="enemy" x="1161" y="470">
-   <properties>
-    <property name="arms" value="water"/>
-    <property name="head" value="water"/>
-    <property name="legs" value="water"/>
-    <property name="torso" value="water"/>
-   </properties>
-  </object>
-  <object id="31" type="enemy" x="1021.5" y="438.5">
-   <properties>
-    <property name="arms" value="water"/>
-    <property name="head" value="water"/>
-    <property name="legs" value="water"/>
-    <property name="torso" value="water"/>
-   </properties>
-  </object>
-  <object id="32" type="enemy" x="976" y="395.5">
+  <object id="31" type="enemy" x="986.833" y="420.5">
    <properties>
     <property name="arms" value="water"/>
     <property name="head" value="water"/>
@@ -1693,14 +1637,6 @@
    </properties>
   </object>
   <object id="33" type="enemy" x="905" y="386">
-   <properties>
-    <property name="arms" value="nature"/>
-    <property name="head" value="nature"/>
-    <property name="legs" value="nature"/>
-    <property name="torso" value="nature"/>
-   </properties>
-  </object>
-  <object id="34" type="enemy" x="891" y="459.5">
    <properties>
     <property name="arms" value="nature"/>
     <property name="head" value="nature"/>
@@ -1730,14 +1666,6 @@
     <property name="head" value="water"/>
     <property name="legs" value="water"/>
     <property name="torso" value="water"/>
-   </properties>
-  </object>
-  <object id="38" type="enemy" x="884" y="521.5">
-   <properties>
-    <property name="arms" value="nature"/>
-    <property name="head" value="nature"/>
-    <property name="legs" value="nature"/>
-    <property name="torso" value="nature"/>
    </properties>
   </object>
   <object id="39" type="enemy" x="815.5" y="535.5">
@@ -1902,17 +1830,17 @@
   <object id="119" type="rock-black" x="1108" y="909"/>
   <object id="120" type="rock-black" x="959" y="1141"/>
   <object id="121" type="rock-black" x="1260" y="1089"/>
-  <object id="122" type="boss" x="1069.88" y="943.875">
+  <object id="122" type="boss" x="1069.21" y="940.542">
    <properties>
-    <property name="arms" value="fire"/>
-    <property name="cooldown" type="float" value="0.75"/>
+    <property name="arms" value="earth"/>
+    <property name="cooldown" type="float" value="1.25"/>
     <property name="damage" type="float" value="2"/>
     <property name="gateName" value="gate1"/>
     <property name="head" value="fire"/>
-    <property name="health" type="float" value="1"/>
+    <property name="health" type="float" value="2"/>
     <property name="legs" value="fire"/>
     <property name="speed" type="float" value="1"/>
-    <property name="torso" value="fire"/>
+    <property name="torso" value="earth"/>
    </properties>
   </object>
   <object id="123" type="corpse" x="614" y="1137.5">
@@ -1921,6 +1849,32 @@
     <property name="head" value="fire"/>
     <property name="legs" value="fire"/>
     <property name="torso" value="fire"/>
+   </properties>
+  </object>
+  <object id="126" type="boss" x="539.333" y="331">
+   <properties>
+    <property name="arms" value="metal"/>
+    <property name="cooldown" type="float" value="1"/>
+    <property name="damage" type="float" value="2"/>
+    <property name="gateName" value="gate3"/>
+    <property name="head" value="lightning"/>
+    <property name="health" type="float" value="2"/>
+    <property name="legs" value="lightning"/>
+    <property name="speed" type="float" value="1"/>
+    <property name="torso" value="metal"/>
+   </properties>
+  </object>
+  <object id="127" type="boss" x="756.333" y="675">
+   <properties>
+    <property name="arms" value="water"/>
+    <property name="cooldown" type="float" value="1.25"/>
+    <property name="damage" type="float" value="2"/>
+    <property name="gateName" value="gate2"/>
+    <property name="head" value="nature"/>
+    <property name="health" type="float" value="2"/>
+    <property name="legs" value="nature"/>
+    <property name="speed" type="float" value="1"/>
+    <property name="torso" value="water"/>
    </properties>
   </object>
  </objectgroup>

@@ -63,12 +63,12 @@ function DrawSystem:draw()
                     local rotation = entity:getComponentByName("Rotation").rotation
                     love.graphics.rotate( rotation*math.pi/180 + math.pi/2)
                 end
+                local scale = entity:getComponentByName("Scale")
                 if drawable.center then
-                    love.graphics.translate(-drawable.center.x, -drawable.center.y)
+                    love.graphics.translate(-drawable.center.x*(scale and scale.scale or 1), -drawable.center.y*(scale and scale.scale or 1))
                 end
-
-                if entity:getComponentByName("Scale") then
-                    love.graphics.scale( entity:getComponentByName("Scale").scale, entity:getComponentByName("Scale").scale )
+                if scale then
+                    love.graphics.scale( scale.scale, scale.scale )
                 end
 
                 if drawable.color then
