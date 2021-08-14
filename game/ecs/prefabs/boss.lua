@@ -36,6 +36,7 @@ return function(globalSystem, position, gateName, bodyParts, buffs)
         :addComponent('DamageBuff', {value = buffs.damage or 2})
         :addComponent('CooldownBuff', {value = buffs.cooldown or 0.75})
         :addComponent('HealthBuff', {value = buffs.health or 1})
+        :addComponent("ParticleEmitter", { particles = {} })
 
     damageCollider.parent = ent
 
