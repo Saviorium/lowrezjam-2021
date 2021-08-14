@@ -3,12 +3,15 @@ local NormalAi = Class{
         self.position = Vector(0, 0)
         self.fieldsOfView = {
                 {range = 0, func = self.attackPlayer},
+                {range = 64, func = self.keepCalmOrBlowSomething},
                 {range = 128, func = self.walkFromSideToSide},
                 {range = 256, func = self.stayIdle},
                 {range = 512, func = self.deleteYourself},
             }
         self.enemy = 'Player'
         self.target = nil
+
+        self.triggered = false
 
         self.wanderTime = 5
         self.wanderTimer = 0
@@ -17,32 +20,7 @@ local NormalAi = Class{
 
         self.triggerAction1Timer = 0
 
-        self.tableOfRanges = {
-                fire = {
-                    action1 = {type = "active", range = 40, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
-                    action2 = {type = "active", range = 15, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
-                },
-                water = {
-                    action1 = {type = "active", range = 25, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
-                    action2 = {type = "active", range = 25, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
-                },
-                nature = {
-                    action1 = {type = "active", range = 35, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
-                    action2 = {type = "support", range = 0, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
-                },
-                metal = {
-                    action1 = {type = "active", range = 75, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
-                    action2 = {type = "active", range = 75, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
-                },
-                lightning = {
-                    action1 = {type = "active", range = 50, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
-                    action2 = {type = "support", range = 0, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
-                },
-                earth = {
-                    action1 = {type = "active", range = 50, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
-                    action2 = {type = "active", range = 10, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
-                }
-            }
+        self.tableOfRanges = config.normalAiTableOfRanges
     end
 }
 function NormalAi:update(dt, entity)
@@ -118,6 +96,17 @@ function NormalAi:attackPlayer(dt, inputs, entity)
     local perp = (pos - selfPos):perpendicular()
     inputs.move.x = perp.x
     inputs.move.y = perp.y
+    self.triggered = true
+    return inputs
+end
+
+
+function NormalAi:keepCalmOrBlowSomething(dt, inputs, entity)
+    if self.triggered then
+        inputs = self:attackPlayer(dt, inputs, entity)
+    else
+        inputs = self:walkFromSideToSide(dt, inputs, entity)
+    end
     return inputs
 end
 
@@ -134,6 +123,7 @@ function NormalAi:walkFromSideToSide(dt, inputs, entity)
         inputs.move.y = self.inputSnapshot.move.y
         self.wanderTimer = self.wanderTimer + dt
     end
+    self.triggered = false
     return inputs
 end
 

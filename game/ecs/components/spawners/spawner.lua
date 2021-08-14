@@ -10,9 +10,24 @@ return {
     bodyParts = nil,
 
     update = function (self, dt, entity )
-        local pos     = entity:getComponentByName('Position').position
 
-        if self.currentTimer > self.timeToSpawn and (self.countLeft or 1) > 0 then
+        local fieldOfSpawn = 90
+        local pos     = entity:getComponentByName('Position').position
+        local minPosition = nil
+
+        for _, obj in pairs(entity.globalSystem.systems.teamSystem.pool) do
+            local objTeam = obj:getComponentByName('Team')
+            if objTeam.team == 'Player' and objTeam.main and obj:getComponentByName('Position') then
+                local pos2 = obj:getComponentByName('Position').position
+
+                if not minPosition or ((pos2 - pos):len() > (minPosition-pos):len()) then
+                    minPosition = pos2
+                end
+
+            end
+        end
+
+        if self.currentTimer > self.timeToSpawn and (self.countLeft or 1) > 0 and (not minPosition or (minPosition-pos):len() > fieldOfSpawn) then
 
             local prefabEntity = self.prefab(entity.globalSystem, self.spawnPosition or pos, self.bodyParts)
             prefabEntity:addComponent('Spawned', {spawner = self})

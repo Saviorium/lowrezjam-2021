@@ -27,7 +27,65 @@ config = {
             metal = {0.765, 0.776, 0.835},
             lightning = {1, 0.988, 0.557},
         }
-    }
+    },
+    cameraDensity = 4,
+    damageTable = {
+        water = {
+            fire = 0.90,
+            lightning = 1.1,
+            nature = 0.90,
+        },
+        fire = {
+            water = 1.1,
+            nature = 0.90,
+        },
+        lightning = {
+            water = 0.90,
+            earth = 1.1,
+        },
+        metal = {
+            fire = 1.05,
+            water = 1.05,
+            nature = 0.90,
+        },
+        earth = {
+            fire = 0.90,
+            lightning = 0.90,
+            water = 1.05,
+        },
+        nature = {
+            fire = 1.1,
+            water = 0.90,
+            metal = 1.05,
+            earth = 1.05,
+        },
+    },
+    normalAiTableOfRanges = {
+                fire = {
+                    action1 = {type = "active", range = 40, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
+                    action2 = {type = "active", range = 15, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
+                },
+                water = {
+                    action1 = {type = "active", range = 25, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
+                    action2 = {type = "active", range = 25, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
+                },
+                nature = {
+                    action1 = {type = "active", range = 35, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
+                    action2 = {type = "support", range = 0, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
+                },
+                metal = {
+                    action1 = {type = "active", range = 75, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
+                    action2 = {type = "active", range = 75, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
+                },
+                lightning = {
+                    action1 = {type = "active", range = 50, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
+                    action2 = {type = "support", range = 0, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
+                },
+                earth = {
+                    action1 = {type = "active", range = 50, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0},
+                    action2 = {type = "active", range = 10, durationOfShooting = 3, cooldown = 5, timerShoot = 0, timerCooldown = 0}
+                }
+            }
 }
 
 settings = {

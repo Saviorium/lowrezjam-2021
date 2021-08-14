@@ -6,40 +6,8 @@ local DamageSystem = Class {
         System.init(self, {'TakingDamage', 'Health'})
         self.globalSystem = globalSystem
     end,
-    damageTable = {
-        water = {
-            fire = 0.90,
-            lightning = 1.1,
-            nature = 0.90,
-        },
-        fire = {
-            water = 1.1,
-            nature = 0.90,
-        },
-        lightning = {
-            water = 0.90,
-            earth = 1.1,
-        },
-        metal = {
-            fire = 1.05,
-            water = 1.05,
-            nature = 0.90,
-        },
-        earth = {
-            fire = 0.90,
-            lightning = 0.90,
-            water = 1.05,
-        },
-        nature = {
-            fire = 1.1,
-            water = 0.90,
-            metal = 1.05,
-            earth = 1.05,
-        },
-    }
+    damageTable = config.damageTable
 }
-
-
 
 function DamageSystem:update(dt)
     for entityId, entity in pairs(self.pool) do

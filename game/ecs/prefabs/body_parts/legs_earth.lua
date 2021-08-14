@@ -8,6 +8,18 @@ return function(globalSystem, parent)
         :addComponent('DamageBuff', {value = 1})
         :addComponent('CooldownBuff', {value = 1})
         :addComponent('HealthBuff', {value = 1.5})
+        :addComponent('ApplyBuff', {
+                                    cooldown = 1,
+                                    input = 'moveAction',
+                                    buffFunction = function(entity)
+                                        local movingManager = parent:getComponentByType('MovingManager')[1]
+                                        local velocity = parent:getComponentByName('Velocity')
+
+                                        movingManager.dashing = true
+                                        velocity.velocity = velocity.velocity * 3
+
+                                    end,
+                                   } )
     addAnimator(entity, 'legs', 'earth')
     return entity
 end

@@ -4,10 +4,22 @@ return function(globalSystem, parent)
     local entity = globalSystem:newEntity()
         :addComponent('BodyPart', { kind = 'legs', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
-        :addComponent('SpeedBuff', {value = 0.75})
+        :addComponent('SpeedBuff', {value = 1})
         :addComponent('DamageBuff', {value = 1})
-        :addComponent('CooldownBuff', {value = 0.75})
+        :addComponent('CooldownBuff', {value = 1.25})
         :addComponent('HealthBuff', {value = 0.75})
+        :addComponent('ApplyBuff', {
+                                    cooldown = 1,
+                                    input = 'moveAction',
+                                    buffFunction = function(entity)
+                                        local movingManager = parent:getComponentByType('MovingManager')[1]
+                                        local velocity = parent:getComponentByName('Velocity')
+
+                                        movingManager.dashing = true
+                                        velocity.velocity = velocity.velocity * 3
+
+                                    end,
+                                   } )
     addAnimator(entity, 'legs', 'nature')
     return entity
 end
