@@ -1,5 +1,4 @@
 local addAnimator = require "game.ecs.prefabs.body_parts.animators"
-local Shield = require "game.ecs.prefabs.ammunition.shield"
 local Animator = require "engine.animation.animator"
 
 return function(globalSystem, parent)
@@ -9,6 +8,11 @@ return function(globalSystem, parent)
     bulletAnimator:addInstantTransition("_start", "active")
 
     local heal = 10
+
+    local particles = parent:getComponentByName('ParticleEmitter')
+    if not particles.particles.heal then
+        particles.particles.heal = {}
+    end
 
     local entity = globalSystem:newEntity()
         :addComponent('BodyPart', { kind = 'head', parent = parent })
@@ -20,6 +24,10 @@ return function(globalSystem, parent)
                                     buffFunction = function(entity)
                                         local health = parent:getComponentByName('Health')
                                         health:addHealth(heal)
+                                        local emitter = entity:getComponentByName('ParticleEmitter')
+                                        if emitter and emitter.particles.heal then
+                                            emitter.particles.heal.spawn = 50
+                                        end
                                     end,
                                    } )
 

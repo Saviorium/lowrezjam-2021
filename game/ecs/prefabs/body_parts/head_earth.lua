@@ -17,7 +17,7 @@ return function(globalSystem, parent)
                                         -- animator = nil,
                                         input = 'action2',
                                         offsetDistance = 15,
-                                        timeToLive = 5,
+                                        timeToLive = 0.8,
                                      } )
 
     addAnimator(entity, 'head', 'earth')

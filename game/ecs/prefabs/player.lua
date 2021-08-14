@@ -22,6 +22,7 @@ return function(globalSystem, position)
         :addComponent("TargetAtMouse")
         :addComponent("MouseControlled")
         :addComponent("Team", {team = 'Player', main = true})
+        :addComponent("ParticleEmitter", { particles = {} })
 
     damageCollider.parent = ent
     -- physicsCollider.parent = ent

@@ -20,11 +20,10 @@ function ParticleSystem:update(dt)
 
     for entityId, entity in pairs(self.pool) do
         local component = entity:getComponentByName('ParticleEmitter')
-        if not component.initialized then
-            self:addEmitters(entity, component)
-            component.initialized = true
-        end
         for particleName, emitterData in pairs(component.particles) do
+            if emitterData.initialized ~= true then
+                self:addEmitter(entity, component, particleName)
+            end
             self.particleManager:setIntensity(entityId, particleName, emitterData.intensity)
             if emitterData.spawn > 0 then
                 self.particleManager:spawn(entityId, particleName, emitterData.spawn)
@@ -39,7 +38,7 @@ local getRotationDefaultFunc = function()
     return 0
 end
 
-function ParticleSystem:addEmitters(entity, particleEmitterComponent)
+function ParticleSystem:addEmitter(entity, particleEmitterComponent, particleName)
     local rotationComp = entity:getComponentByName('Rotation')
     local getRotationFunc
     if rotationComp then
@@ -53,15 +52,19 @@ function ParticleSystem:addEmitters(entity, particleEmitterComponent)
     local getPositionFunc = function()
         return posComp.position
     end
-    for particleName, emitterData in pairs(particleEmitterComponent.particles) do
+    if particleEmitterComponent.particles[particleName] then
+        local emitterData = particleEmitterComponent.particles[particleName]
         if not emitterData.spawn then
             emitterData.spawn = 0
         end
         if not emitterData.intensity then
             emitterData.intensity = 0
         end
-        self.particleManager:addEmitter(entity.id, particleName, getPositionFunc, getRotationFunc)
+    else
+        particleEmitterComponent.particles[particleName] = { spawn = 0, intensity = 0 }
     end
+    self.particleManager:addEmitter(entity.id, particleName, getPositionFunc, getRotationFunc)
+    particleEmitterComponent.particles[particleName].initialized = true
 end
 
 function ParticleSystem:removeEmitter(entityId)
