@@ -30,7 +30,7 @@ function DamageSystem:update(dt)
                             end
                         end
                     end
-                    print(currentHP)
+                    SoundManager:play('hit')
                     currentHP = currentHP - damage
                 end
                 entity:getComponentByName("Health").currentHP = currentHP

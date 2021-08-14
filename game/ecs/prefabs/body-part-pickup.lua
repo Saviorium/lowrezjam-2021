@@ -37,11 +37,13 @@ return function(globalSystem, parent)
                 player:getComponentByName('Health'):addHealth(healAmount)
                 entity:delete()
                 eatUi:delete()
+                SoundManager:play('eat')
                 return
             elseif snapshot.action1 == 1  then
                 player:getComponentByName('Health'):addHealth(healAmount)
                 entity:delete()
                 eatUi:delete()
+                SoundManager:play('eat')
                 return
             end
         end,

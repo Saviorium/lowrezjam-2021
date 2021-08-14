@@ -16,7 +16,6 @@ return {
 
     update = function(self, dt)
         if self.cooldownTimer < self.cooldown and self.charging ~= true then
-            SoundManager:play('electricity')
             self.cooldownTimer = self.cooldownTimer + dt
         end
     end,

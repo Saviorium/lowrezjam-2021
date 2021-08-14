@@ -1,7 +1,7 @@
 return {
   version = "1.5",
   luaversion = "5.1",
-  tiledversion = "1.5.0",
+  tiledversion = "1.7.1",
   orientation = "orthogonal",
   renderorder = "right-down",
   width = 200,
@@ -9,7 +9,7 @@ return {
   tilewidth = 8,
   tileheight = 8,
   nextlayerid = 4,
-  nextobjectid = 3,
+  nextobjectid = 51,
   properties = {},
   tilesets = {
     {
@@ -5878,6 +5878,785 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 7,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 706.167,
+          y = 1037.92,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "earth",
+            ["count"] = 5,
+            ["head"] = "earth",
+            ["legs"] = "earth",
+            ["torso"] = "earth"
+          }
+        },
+        {
+          id = 9,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 860,
+          y = 1048.33,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "earth",
+            ["count"] = 5,
+            ["head"] = "earth",
+            ["legs"] = "earth",
+            ["torso"] = "earth"
+          }
+        },
+        {
+          id = 10,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 894.333,
+          y = 1269.67,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "earth",
+            ["count"] = 5,
+            ["head"] = "earth",
+            ["legs"] = "earth",
+            ["torso"] = "earth"
+          }
+        },
+        {
+          id = 11,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1015.67,
+          y = 1295.67,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "earth",
+            ["count"] = 5,
+            ["head"] = "earth",
+            ["legs"] = "earth",
+            ["torso"] = "earth"
+          }
+        },
+        {
+          id = 12,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1191.33,
+          y = 1245.33,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "earth",
+            ["count"] = 5,
+            ["head"] = "earth",
+            ["legs"] = "earth",
+            ["torso"] = "earth"
+          }
+        },
+        {
+          id = 13,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1012.33,
+          y = 1094.67,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "fire",
+            ["count"] = 5,
+            ["head"] = "fire",
+            ["legs"] = "fire",
+            ["torso"] = "fire"
+          }
+        },
+        {
+          id = 14,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1076,
+          y = 1162,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "fire",
+            ["count"] = 5,
+            ["head"] = "fire",
+            ["legs"] = "fire",
+            ["torso"] = "fire"
+          }
+        },
+        {
+          id = 15,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1179.33,
+          y = 1124.33,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "fire",
+            ["count"] = 5,
+            ["head"] = "fire",
+            ["legs"] = "fire",
+            ["torso"] = "fire"
+          }
+        },
+        {
+          id = 16,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1152.67,
+          y = 1034.33,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "fire",
+            ["count"] = 5,
+            ["head"] = "fire",
+            ["legs"] = "fire",
+            ["torso"] = "fire"
+          }
+        },
+        {
+          id = 17,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1006.33,
+          y = 659.333,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "nature",
+            ["count"] = 2,
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
+          }
+        },
+        {
+          id = 18,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1083,
+          y = 662,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "nature",
+            ["count"] = 2,
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
+          }
+        },
+        {
+          id = 19,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1159,
+          y = 710.333,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "nature",
+            ["count"] = 2,
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
+          }
+        },
+        {
+          id = 20,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1203.33,
+          y = 770.333,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "water",
+            ["count"] = 2,
+            ["head"] = "water",
+            ["legs"] = "water",
+            ["torso"] = "water"
+          }
+        },
+        {
+          id = 21,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1179,
+          y = 617.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "nature",
+            ["count"] = 2,
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
+          }
+        },
+        {
+          id = 22,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 899,
+          y = 689.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "nature",
+            ["count"] = 2,
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
+          }
+        },
+        {
+          id = 23,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 890.5,
+          y = 596.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "nature",
+            ["count"] = 2,
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
+          }
+        },
+        {
+          id = 24,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 935.5,
+          y = 619.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "nature",
+            ["count"] = 2,
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
+          }
+        },
+        {
+          id = 25,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1181.5,
+          y = 577.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "water",
+            ["count"] = 2,
+            ["head"] = "water",
+            ["legs"] = "water",
+            ["torso"] = "water"
+          }
+        },
+        {
+          id = 26,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1090,
+          y = 562.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "water",
+            ["count"] = 2,
+            ["head"] = "water",
+            ["legs"] = "water",
+            ["torso"] = "water"
+          }
+        },
+        {
+          id = 27,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1039.5,
+          y = 580.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "water",
+            ["count"] = 2,
+            ["head"] = "water",
+            ["legs"] = "water",
+            ["torso"] = "water"
+          }
+        },
+        {
+          id = 28,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 854,
+          y = 680,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "water",
+            ["count"] = 2,
+            ["head"] = "water",
+            ["legs"] = "water",
+            ["torso"] = "water"
+          }
+        },
+        {
+          id = 29,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1109,
+          y = 441.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "water",
+            ["count"] = 2,
+            ["head"] = "water",
+            ["legs"] = "water",
+            ["torso"] = "water"
+          }
+        },
+        {
+          id = 30,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1161,
+          y = 470,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "water",
+            ["count"] = 2,
+            ["head"] = "water",
+            ["legs"] = "water",
+            ["torso"] = "water"
+          }
+        },
+        {
+          id = 31,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 1021.5,
+          y = 438.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "water",
+            ["count"] = 2,
+            ["head"] = "water",
+            ["legs"] = "water",
+            ["torso"] = "water"
+          }
+        },
+        {
+          id = 32,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 976,
+          y = 395.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "water",
+            ["count"] = 2,
+            ["head"] = "water",
+            ["legs"] = "water",
+            ["torso"] = "water"
+          }
+        },
+        {
+          id = 33,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 905,
+          y = 386,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "nature",
+            ["count"] = 2,
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
+          }
+        },
+        {
+          id = 34,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 891,
+          y = 459.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "nature",
+            ["count"] = 2,
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
+          }
+        },
+        {
+          id = 35,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 909,
+          y = 303.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "nature",
+            ["count"] = 2,
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
+          }
+        },
+        {
+          id = 36,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 978.5,
+          y = 319,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "nature",
+            ["count"] = 2,
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
+          }
+        },
+        {
+          id = 37,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 946,
+          y = 272.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "water",
+            ["count"] = 2,
+            ["head"] = "water",
+            ["legs"] = "water",
+            ["torso"] = "water"
+          }
+        },
+        {
+          id = 38,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 884,
+          y = 521.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "nature",
+            ["count"] = 2,
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
+          }
+        },
+        {
+          id = 39,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 815.5,
+          y = 535.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "nature",
+            ["count"] = 2,
+            ["head"] = "nature",
+            ["legs"] = "nature",
+            ["torso"] = "nature"
+          }
+        },
+        {
+          id = 40,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 604.833,
+          y = 811,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "lightning",
+            ["count"] = 2,
+            ["head"] = "lightning",
+            ["legs"] = "lightning",
+            ["torso"] = "lightning"
+          }
+        },
+        {
+          id = 41,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 552.5,
+          y = 773.667,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "metal",
+            ["count"] = 2,
+            ["head"] = "metal",
+            ["legs"] = "metal",
+            ["torso"] = "metal"
+          }
+        },
+        {
+          id = 42,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 398.333,
+          y = 776,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "lightning",
+            ["count"] = 2,
+            ["head"] = "lightning",
+            ["legs"] = "lightning",
+            ["torso"] = "lightning"
+          }
+        },
+        {
+          id = 43,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 370.667,
+          y = 823.833,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "lightning",
+            ["count"] = 2,
+            ["head"] = "lightning",
+            ["legs"] = "lightning",
+            ["torso"] = "lightning"
+          }
+        },
+        {
+          id = 44,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 334,
+          y = 768.5,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "metal",
+            ["count"] = 2,
+            ["head"] = "metal",
+            ["legs"] = "metal",
+            ["torso"] = "metal"
+          }
+        },
+        {
+          id = 45,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 344,
+          y = 586.667,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "lightning",
+            ["count"] = 2,
+            ["head"] = "lightning",
+            ["legs"] = "lightning",
+            ["torso"] = "lightning"
+          }
+        },
+        {
+          id = 46,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 392,
+          y = 531.833,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "metal",
+            ["count"] = 2,
+            ["head"] = "metal",
+            ["legs"] = "metal",
+            ["torso"] = "metal"
+          }
+        },
+        {
+          id = 47,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 583.333,
+          y = 540.167,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "lightning",
+            ["count"] = 2,
+            ["head"] = "lightning",
+            ["legs"] = "lightning",
+            ["torso"] = "lightning"
+          }
+        },
+        {
+          id = 48,
+          name = "",
+          type = "enemy",
+          shape = "rectangle",
+          x = 646.333,
+          y = 574,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["arms"] = "lightning",
+            ["count"] = 2,
+            ["head"] = "lightning",
+            ["legs"] = "lightning",
+            ["torso"] = "lightning"
+          }
         }
       }
     }

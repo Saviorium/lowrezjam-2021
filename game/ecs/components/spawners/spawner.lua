@@ -11,7 +11,7 @@ return {
 
     update = function (self, dt, entity )
 
-        local fieldOfSpawn = 90
+        local fieldOfSpawn = 60
         local pos     = entity:getComponentByName('Position').position
         local minPosition = nil
 

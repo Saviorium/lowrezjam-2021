@@ -99,6 +99,6 @@ Debug = {
     dragCharacterDebug = false,
     PrintAnimationEvents = false,
     drawCollidersDebug = true,
-    generateMap = true,
+    generateMap = false,
     cheatsOn = true
 }

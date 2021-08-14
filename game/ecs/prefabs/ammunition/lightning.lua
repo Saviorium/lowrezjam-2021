@@ -4,6 +4,7 @@ return function(globalSystem, position, rotation, damage, animator, parent)
 
     damagingCollider.damage = damage or 1
 
+    SoundManager:play('electricity')
     local entity = globalSystem:newEntity()
         :addComponent('Flying'  , {maxSpeed = 20})
         :addComponent('Position', {position = position})
@@ -16,6 +17,7 @@ return function(globalSystem, position, rotation, damage, animator, parent)
         -- :addComponent("TargetAtNearestEnemy")
         :addComponent('AiControlled', {inputManager = require "game.ai.follow_rotation_ai"})
         :addComponent("OnInputTrigger", { input = "action1", func = function(comp, entity)
+            SoundManager:play('thunder')
             entity:getComponentByName('DrawLine').width = 5
             entity
                 :addComponent("DeathByTimer", {timer = 0.2})

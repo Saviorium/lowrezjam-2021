@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.5.0" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="8" tileheight="8" infinite="0" nextlayerid="4" nextobjectid="3">
+<map version="1.5" tiledversion="1.7.1" orientation="orthogonal" renderorder="right-down" width="200" height="200" tilewidth="8" tileheight="8" infinite="0" nextlayerid="4" nextobjectid="51">
  <editorsettings>
   <export target="big_island.lua" format="lua"/>
  </editorsettings>
@@ -1492,5 +1492,374 @@
  </layer>
  <objectgroup id="2" name="object-layer">
   <object id="2" type="player" x="613" y="1169"/>
+  <object id="7" type="enemy" x="706.167" y="1037.92">
+   <properties>
+    <property name="arms" value="earth"/>
+    <property name="count" type="int" value="5"/>
+    <property name="head" value="earth"/>
+    <property name="legs" value="earth"/>
+    <property name="torso" value="earth"/>
+   </properties>
+  </object>
+  <object id="9" type="enemy" x="860" y="1048.33">
+   <properties>
+    <property name="arms" value="earth"/>
+    <property name="count" type="int" value="5"/>
+    <property name="head" value="earth"/>
+    <property name="legs" value="earth"/>
+    <property name="torso" value="earth"/>
+   </properties>
+  </object>
+  <object id="10" type="enemy" x="894.333" y="1269.67">
+   <properties>
+    <property name="arms" value="earth"/>
+    <property name="count" type="int" value="5"/>
+    <property name="head" value="earth"/>
+    <property name="legs" value="earth"/>
+    <property name="torso" value="earth"/>
+   </properties>
+  </object>
+  <object id="11" type="enemy" x="1015.67" y="1295.67">
+   <properties>
+    <property name="arms" value="earth"/>
+    <property name="count" type="int" value="5"/>
+    <property name="head" value="earth"/>
+    <property name="legs" value="earth"/>
+    <property name="torso" value="earth"/>
+   </properties>
+  </object>
+  <object id="12" type="enemy" x="1191.33" y="1245.33">
+   <properties>
+    <property name="arms" value="earth"/>
+    <property name="count" type="int" value="5"/>
+    <property name="head" value="earth"/>
+    <property name="legs" value="earth"/>
+    <property name="torso" value="earth"/>
+   </properties>
+  </object>
+  <object id="13" type="enemy" x="1012.33" y="1094.67">
+   <properties>
+    <property name="arms" value="fire"/>
+    <property name="count" type="int" value="5"/>
+    <property name="head" value="fire"/>
+    <property name="legs" value="fire"/>
+    <property name="torso" value="fire"/>
+   </properties>
+  </object>
+  <object id="14" type="enemy" x="1076" y="1162">
+   <properties>
+    <property name="arms" value="fire"/>
+    <property name="count" type="int" value="5"/>
+    <property name="head" value="fire"/>
+    <property name="legs" value="fire"/>
+    <property name="torso" value="fire"/>
+   </properties>
+  </object>
+  <object id="15" type="enemy" x="1179.33" y="1124.33">
+   <properties>
+    <property name="arms" value="fire"/>
+    <property name="count" type="int" value="5"/>
+    <property name="head" value="fire"/>
+    <property name="legs" value="fire"/>
+    <property name="torso" value="fire"/>
+   </properties>
+  </object>
+  <object id="16" type="enemy" x="1152.67" y="1034.33">
+   <properties>
+    <property name="arms" value="fire"/>
+    <property name="count" type="int" value="5"/>
+    <property name="head" value="fire"/>
+    <property name="legs" value="fire"/>
+    <property name="torso" value="fire"/>
+   </properties>
+  </object>
+  <object id="17" type="enemy" x="1006.33" y="659.333">
+   <properties>
+    <property name="arms" value="nature"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
+   </properties>
+  </object>
+  <object id="18" type="enemy" x="1083" y="662">
+   <properties>
+    <property name="arms" value="nature"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
+   </properties>
+  </object>
+  <object id="19" type="enemy" x="1159" y="710.333">
+   <properties>
+    <property name="arms" value="nature"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
+   </properties>
+  </object>
+  <object id="20" type="enemy" x="1203.33" y="770.333">
+   <properties>
+    <property name="arms" value="water"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="water"/>
+    <property name="legs" value="water"/>
+    <property name="torso" value="water"/>
+   </properties>
+  </object>
+  <object id="21" type="enemy" x="1179" y="617.5">
+   <properties>
+    <property name="arms" value="nature"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
+   </properties>
+  </object>
+  <object id="22" type="enemy" x="899" y="689.5">
+   <properties>
+    <property name="arms" value="nature"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
+   </properties>
+  </object>
+  <object id="23" type="enemy" x="890.5" y="596.5">
+   <properties>
+    <property name="arms" value="nature"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
+   </properties>
+  </object>
+  <object id="24" type="enemy" x="935.5" y="619.5">
+   <properties>
+    <property name="arms" value="nature"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
+   </properties>
+  </object>
+  <object id="25" type="enemy" x="1181.5" y="577.5">
+   <properties>
+    <property name="arms" value="water"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="water"/>
+    <property name="legs" value="water"/>
+    <property name="torso" value="water"/>
+   </properties>
+  </object>
+  <object id="26" type="enemy" x="1090" y="562.5">
+   <properties>
+    <property name="arms" value="water"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="water"/>
+    <property name="legs" value="water"/>
+    <property name="torso" value="water"/>
+   </properties>
+  </object>
+  <object id="27" type="enemy" x="1039.5" y="580.5">
+   <properties>
+    <property name="arms" value="water"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="water"/>
+    <property name="legs" value="water"/>
+    <property name="torso" value="water"/>
+   </properties>
+  </object>
+  <object id="28" type="enemy" x="854" y="680">
+   <properties>
+    <property name="arms" value="water"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="water"/>
+    <property name="legs" value="water"/>
+    <property name="torso" value="water"/>
+   </properties>
+  </object>
+  <object id="29" type="enemy" x="1109" y="441.5">
+   <properties>
+    <property name="arms" value="water"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="water"/>
+    <property name="legs" value="water"/>
+    <property name="torso" value="water"/>
+   </properties>
+  </object>
+  <object id="30" type="enemy" x="1161" y="470">
+   <properties>
+    <property name="arms" value="water"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="water"/>
+    <property name="legs" value="water"/>
+    <property name="torso" value="water"/>
+   </properties>
+  </object>
+  <object id="31" type="enemy" x="1021.5" y="438.5">
+   <properties>
+    <property name="arms" value="water"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="water"/>
+    <property name="legs" value="water"/>
+    <property name="torso" value="water"/>
+   </properties>
+  </object>
+  <object id="32" type="enemy" x="976" y="395.5">
+   <properties>
+    <property name="arms" value="water"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="water"/>
+    <property name="legs" value="water"/>
+    <property name="torso" value="water"/>
+   </properties>
+  </object>
+  <object id="33" type="enemy" x="905" y="386">
+   <properties>
+    <property name="arms" value="nature"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
+   </properties>
+  </object>
+  <object id="34" type="enemy" x="891" y="459.5">
+   <properties>
+    <property name="arms" value="nature"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
+   </properties>
+  </object>
+  <object id="35" type="enemy" x="909" y="303.5">
+   <properties>
+    <property name="arms" value="nature"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
+   </properties>
+  </object>
+  <object id="36" type="enemy" x="978.5" y="319">
+   <properties>
+    <property name="arms" value="nature"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
+   </properties>
+  </object>
+  <object id="37" type="enemy" x="946" y="272.5">
+   <properties>
+    <property name="arms" value="water"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="water"/>
+    <property name="legs" value="water"/>
+    <property name="torso" value="water"/>
+   </properties>
+  </object>
+  <object id="38" type="enemy" x="884" y="521.5">
+   <properties>
+    <property name="arms" value="nature"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
+   </properties>
+  </object>
+  <object id="39" type="enemy" x="815.5" y="535.5">
+   <properties>
+    <property name="arms" value="nature"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="nature"/>
+    <property name="legs" value="nature"/>
+    <property name="torso" value="nature"/>
+   </properties>
+  </object>
+  <object id="40" type="enemy" x="604.833" y="811">
+   <properties>
+    <property name="arms" value="lightning"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="lightning"/>
+    <property name="legs" value="lightning"/>
+    <property name="torso" value="lightning"/>
+   </properties>
+  </object>
+  <object id="41" type="enemy" x="552.5" y="773.667">
+   <properties>
+    <property name="arms" value="metal"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="metal"/>
+    <property name="legs" value="metal"/>
+    <property name="torso" value="metal"/>
+   </properties>
+  </object>
+  <object id="42" type="enemy" x="398.333" y="776">
+   <properties>
+    <property name="arms" value="lightning"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="lightning"/>
+    <property name="legs" value="lightning"/>
+    <property name="torso" value="lightning"/>
+   </properties>
+  </object>
+  <object id="43" type="enemy" x="370.667" y="823.833">
+   <properties>
+    <property name="arms" value="lightning"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="lightning"/>
+    <property name="legs" value="lightning"/>
+    <property name="torso" value="lightning"/>
+   </properties>
+  </object>
+  <object id="44" type="enemy" x="334" y="768.5">
+   <properties>
+    <property name="arms" value="metal"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="metal"/>
+    <property name="legs" value="metal"/>
+    <property name="torso" value="metal"/>
+   </properties>
+  </object>
+  <object id="45" type="enemy" x="344" y="586.667">
+   <properties>
+    <property name="arms" value="lightning"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="lightning"/>
+    <property name="legs" value="lightning"/>
+    <property name="torso" value="lightning"/>
+   </properties>
+  </object>
+  <object id="46" type="enemy" x="392" y="531.833">
+   <properties>
+    <property name="arms" value="metal"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="metal"/>
+    <property name="legs" value="metal"/>
+    <property name="torso" value="metal"/>
+   </properties>
+  </object>
+  <object id="47" type="enemy" x="583.333" y="540.167">
+   <properties>
+    <property name="arms" value="lightning"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="lightning"/>
+    <property name="legs" value="lightning"/>
+    <property name="torso" value="lightning"/>
+   </properties>
+  </object>
+  <object id="48" type="enemy" x="646.333" y="574">
+   <properties>
+    <property name="arms" value="lightning"/>
+    <property name="count" type="int" value="2"/>
+    <property name="head" value="lightning"/>
+    <property name="legs" value="lightning"/>
+    <property name="torso" value="lightning"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

@@ -151,7 +151,6 @@ return {
     },
     trees = {
         files = {
-            -- { name = "trees_1" },
             { name = "trees_2" },
             { name = "trees_3" },
             { name = "trees_4" },
@@ -202,6 +201,34 @@ return {
         files = {
             { name = "water_start_1" },
             { name = "water_start_2" },
+        },
+        options = {
+            volume = 0.3,
+            maxSources = 100,
+            volumeVariation = 0.1,
+            pitchVariation = 0,
+        }
+    },
+    eat = {
+        files = {
+            { name = "eat_1" },
+        },
+        options = {
+            volume = 0.3,
+            maxSources = 100,
+            volumeVariation = 0.1,
+            pitchVariation = 0,
+        }
+    },
+    hit = {
+        files = {
+            { name = "hit_1" },
+            { name = "hit_2" },
+            { name = "hit_3" },
+            { name = "hit_4" },
+            { name = "hit_5" },
+            { name = "hit_6" },
+            { name = "hit_7" },
         },
         options = {
             volume = 0.3,
