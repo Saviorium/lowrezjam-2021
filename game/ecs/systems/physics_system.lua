@@ -27,7 +27,7 @@ function PhysicsSystem:update(dt)
             if shape.type == 'Physics' then
                 pos.x = pos.x + delta.x
                 pos.y = pos.y + delta.y
-                vel = vel + delta
+                vel = vel + Vector(delta.x, delta.y)*10
             end
         end
         entity:getComponentByName("Velocity").velocity = vel
