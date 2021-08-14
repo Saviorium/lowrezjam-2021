@@ -7,7 +7,7 @@ return function(globalSystem, parent)
     bulletAnimator:addSimpleTagState("active")
     bulletAnimator:addInstantTransition("_start", "active")
 
-    local heal = 10
+    local heal = 15
 
     local particles = parent:getComponentByName('ParticleEmitter')
     if not particles.particles.heal then
@@ -18,7 +18,7 @@ return function(globalSystem, parent)
         :addComponent('BodyPart', { kind = 'head', parent = parent })
         :addComponent('DrawAnimation', { hidden = true })
         :addComponent('ApplyBuff', {
-                                    cooldown = 1,
+                                    cooldown = 3,
                                     -- animator = nil,
                                     input = 'action2',
                                     buffFunction = function(entity)
