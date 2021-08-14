@@ -23,7 +23,7 @@ return function(globalSystem, position, component, parent, count)
                 {   timer = 0.3,
                     spawnFunction = function()
                         position = position + direction * 10
-                        component.prefab(globalSystem, position, component, parent, count and count - 1 or 4)
+                        component.prefab(globalSystem, position, component, parent, count and count - 1 or 3)
                     end})
             -- :addComponent('RotateThisThing')
 
