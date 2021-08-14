@@ -10,6 +10,7 @@ local ControlsHelp = require "game.ecs.prefabs.ui.controls-help"
 local Tree     = require "game.ecs.prefabs.environment.tree"
 local Rock     = require "game.ecs.prefabs.environment.rock"
 local Gate     = require "game.ecs.prefabs.environment.gate"
+local Machine   = require "game.ecs.prefabs.environment.machine"
 
 local MapSystem = Class {
     __includes = System,
@@ -81,13 +82,19 @@ function MapSystem:loadMap(mapName)
         if obj.type == "rock-black" then
             Rock(self.globalSystem, Vector(obj.x, obj.y), true)
         end
+        if obj.type == "machine" then
+            Machine(self.globalSystem, Vector(obj.x, obj.y))
+        end
+        if obj.type == "machine-dead" then
+            Machine(self.globalSystem, Vector(obj.x, obj.y), true)
+        end
         if obj.type == "gate" then
             Gate(self.globalSystem, Vector(obj.x, obj.y), obj.properties.rotation, {x = obj.width, y = obj.height}, obj.properties.name )
         end
         if obj.type == "corpse" then
             local enemy = EnemyPrefab( self.globalSystem, Vector(obj.x, obj.y),
                        {
-                        head = obj.properties.head, 
+                        head = obj.properties.head,
                         legs = obj.properties.legs,
                         torso = obj.properties.torso,
                         arms = obj.properties.arms

@@ -8,7 +8,7 @@ if(!(Test-Path -Path $build_dir )){
 }
 
 # Compress game
-$exclude = @(".*","pkg","*.exe","*.love","*.zip","*.ps1")
+$exclude = @(".*","pkg","*.exe","*.love","*.zip","*.ps1","*.dll","*.so",".dylib")
 $files = Get-ChildItem -Path $path -Exclude $exclude
 Compress-Archive -Force -Path $files -DestinationPath $build_dir\$appname -CompressionLevel Fastest
 
