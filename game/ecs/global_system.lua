@@ -38,7 +38,6 @@ local GlobalSystem = Class {
         self._systems = { -- order is important
             MouseSystem(self),
 
-            AttachedObjectsSystem(self),
             RotateSystem(self),
             ControlSystem(self),
             ActionSystem(self),
@@ -50,6 +49,7 @@ local GlobalSystem = Class {
             DamageSystem(self),
             PhysicsSystem(self),
             TriggerSystem(self),
+            AttachedObjectsSystem(self),
 
             CameraSystem(self),
             self.systems.mapSystem,
