@@ -1,13 +1,13 @@
 config = {
     inputs = {
-        controls = {
-            left = {'key:left', 'key:a', 'axis:leftx-', 'button:dpleft'},
-            right = {'key:right', 'key:d', 'axis:leftx+', 'button:dpright'},
-            up = {'key:up', 'key:w', 'axis:lefty-', 'button:dpup'},
-            down = {'key:down', 'key:s', 'axis:lefty+', 'button:dpdown'},
-            action1 = {'mouse:1', 'button:z'},
-            action2 = {'mouse:2', 'button:x'},
-            moveAction = {'key:space', 'button:c'}
+        controls = { -- TODO: add gamepad support
+            left = {'key:left', 'key:a'},
+            right = {'key:right', 'key:d'},
+            up = {'key:up', 'key:w'},
+            down = {'key:down', 'key:s'},
+            action1 = {'mouse:1'},
+            action2 = {'mouse:2'},
+            moveAction = {'key:space'}
         },
         pairs = {
             move = {'left', 'right', 'up', 'down'}

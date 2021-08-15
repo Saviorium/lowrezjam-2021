@@ -1,4 +1,4 @@
-$appname = "lowresjam-2021"
+$appname = "Mini-Chimeras"
 $love_dir = "C:\Program Files\LOVE"
 $build_dir = ".\pkg"
 
