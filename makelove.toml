@@ -1,8 +1,11 @@
-name = "lowrezjam-2021"
-default_targets = ["win32", "win64", "appimage", "macos"]
+name = "mini-chimeras"
+default_targets = ["win32", "win64", "appimage", "lovejs", "macos"]
 build_directory = "pkg"
 
 love_files = [
     "::git-ls-tree::",
     "-*/.*",
+    "-*.dll",
+    "-*.so",
+    "-*.dylib"
 ]
