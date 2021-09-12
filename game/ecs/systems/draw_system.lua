@@ -91,6 +91,7 @@ function DrawSystem:draw()
         for _, shape in pairs(shapes) do
             love.graphics.setColor(1, 0, 0, 0.3)
             shape:draw("fill")
+            shape:draw("line")
         end
     end
     love.graphics.setColor(1, 1, 1, 1)

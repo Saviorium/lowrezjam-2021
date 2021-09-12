@@ -3,6 +3,7 @@ local sti     = require "lib/sti"
 local serpent = require "lib.serpent.serpent"
 
 local MapGenerator = {}
+local splitToGrid = 64
 
 function MapGenerator:generateColliders(mapName)
     local map = sti("data/map/" .. mapName .. ".lua")
@@ -21,6 +22,22 @@ function MapGenerator:getGridSize(map)
     for _, tile in pairs(map.tiles) do
         return tile.width, tile.height
     end
+end
+
+function MapGenerator:getMapSize(map)
+    local size = Vector()
+    for _, layer in pairs(map.layers) do
+        if layer.type == "tilelayer" then
+            size.x, size.y = layer.width, layer.height
+            break
+        end
+    end
+    for _, tile in pairs(map.tiles) do
+        size.x = size.x * tile.width
+        size.y = size.y * tile.height
+        break
+    end
+    return size
 end
 
 function MapGenerator:mergePolygons(map, layer)
@@ -55,7 +72,11 @@ function MapGenerator:mergePolygons(map, layer)
 
     local merger = clipper.new()
     merger:add_subject(polyList)
-    local mergedPolys = merger:execute('union', 'positive')
+
+    local polyClippersList = self:getPolyGrid(Vector(splitToGrid, splitToGrid), self:getMapSize(map))
+    merger:add_clip(polyClippersList)
+
+    local mergedPolys = merger:execute('intersection', 'positive', 'positive'):clean()
     local result = {}
     for i = 1, mergedPolys:size(), 1 do
         local cPoly = mergedPolys:get(i)
@@ -65,9 +86,31 @@ function MapGenerator:mergePolygons(map, layer)
             table.insert(newPolygon, tonumber(point.x))
             table.insert(newPolygon, tonumber(point.y))
         end
-        table.insert(result, newPolygon)
+        if cPoly:size() > 0 then
+            table.insert(result, newPolygon)
+        end
     end
     return result
+end
+
+function MapGenerator:getPolyGrid(cell, size)
+    local pos = Vector()
+    local polyList = clipper.polygons()
+    while pos.x < size.x or pos.y < size.y do
+        local poly = clipper.polygon()
+        poly:add(pos.x, pos.y)
+        poly:add(pos.x+cell.x, pos.y)
+        poly:add(pos.x+cell.x, pos.y+cell.y)
+        poly:add(pos.x, pos.y+cell.y)
+        polyList:add(poly)
+        if pos.x > size.x then
+            pos.x = 0
+            pos.y = pos.y + cell.y
+        else
+            pos.x = pos.x + cell.x
+        end
+    end
+    return polyList
 end
 
 function MapGenerator:saveColliders(mapName, data)
