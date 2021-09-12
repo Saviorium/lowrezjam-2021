@@ -103,5 +103,5 @@ Debug = {
     PrintAnimationEvents = false,
     drawCollidersDebug = false,
     generateMap = false,
-    cheatsOn = false
+    cheatsOn = true
 }
