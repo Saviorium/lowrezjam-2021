@@ -9,9 +9,11 @@ local AnimationSystem = Class {
 
 function AnimationSystem:update(dt)
     for entityId, entity in pairs(self.pool) do
+        prof.push("AnimationSystem entityId = "..entityId)
         local animator = entity:getComponentByName('Animator')
         animator.variablesUpdater(animator, entity)
         animator.animator:update(dt)
+        prof.pop()
     end
 end
 

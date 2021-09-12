@@ -19,6 +19,7 @@ function ParticleSystem:update(dt)
     end
 
     for entityId, entity in pairs(self.pool) do
+        prof.push("ParticleSystem entityId = "..entityId)
         local component = entity:getComponentByName('ParticleEmitter')
         for particleName, emitterData in pairs(component.particles) do
             if emitterData.initialized ~= true then
@@ -30,6 +31,7 @@ function ParticleSystem:update(dt)
                 emitterData.spawn = 0
             end
         end
+        prof.pop()
     end
     self.particleManager:update(dt)
 end

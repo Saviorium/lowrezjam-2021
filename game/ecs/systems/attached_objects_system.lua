@@ -10,6 +10,7 @@ local AttachedObjectsSystem = Class {
 
 function AttachedObjectsSystem:update(dt)
     for entityId, entity in pairs(self.pool) do
+        prof.push("AttachedObjectsSystem entityId = "..entityId)
         local parentEntity = entity:getComponentByName("AttachedToEntity").entity
         if not parentEntity or not parentEntity:getComponentByName('Position') then
             entity:delete()
@@ -21,6 +22,7 @@ function AttachedObjectsSystem:update(dt)
             end
             entity:getComponentByName("Position").position = pos2
         end
+        prof.pop()
     end
 end
 

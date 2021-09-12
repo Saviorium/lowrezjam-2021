@@ -12,6 +12,7 @@ local DamageSystem = Class {
 function DamageSystem:update(dt)
     for entityId, entity in pairs(self.pool) do
 
+        prof.push("DamageSystem entityId = "..entityId)
         local collider = entity:getComponentByName("TakingDamage").collider
         local currentHP   = entity:getComponentByName("Health").currentHP
         for other, delta in pairs(self.globalSystem.HC:collisions(collider)) do
@@ -36,6 +37,7 @@ function DamageSystem:update(dt)
                 entity:getComponentByName("Health").currentHP = currentHP
             end
         end
+        prof.pop()
     end
 end
 

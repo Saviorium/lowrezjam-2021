@@ -10,6 +10,7 @@ local PhysicsSystem = Class {
 }
 
 function PhysicsSystem:update(dt)
+    prof.push("PhysicsSystem remove colliders")
     local events = EventManager:getEvents("PhysicsSystem")
     for _, event in pairs(events) do
         local entity = self.globalSystem.objects[event.entityId]
@@ -17,8 +18,10 @@ function PhysicsSystem:update(dt)
             self.globalSystem.HC:remove(collider.collider)
         end
     end
+    prof.pop()
 
     for entityId, entity in pairs(self.pool) do
+        prof.push("PhysicsSystem entityId = "..entityId)
         local collider = entity:getComponentByName("PhysicsCollider").collider
         local pos      = entity:getComponentByName("Position").position
         local vel      = entity:getComponentByName("Velocity").velocity
@@ -31,6 +34,7 @@ function PhysicsSystem:update(dt)
             end
         end
         entity:getComponentByName("Velocity").velocity = vel
+        prof.pop()
     end
 end
 

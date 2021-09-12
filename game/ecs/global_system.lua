@@ -85,19 +85,27 @@ function GlobalSystem:registerComponent(entity, componentName, args)
 end
 
 function GlobalSystem:update(dt)
+    prof.push("Global system update")
     for systemName, system in ipairs(self._systems) do
+        prof.push("Global system update: "..systemName)
         system:update(dt)
+        prof.pop()
     end
+    prof.pop()
 end
 
 function GlobalSystem:draw()
+    prof.push("Global system draw")
     local stackDepthBefore = love.graphics.getStackDepth()
     for systemName, system in ipairs(self._systems) do
+        prof.push("Global system draw: "..systemName)
         system:draw()
+        prof.pop()
     end
     while love.graphics.getStackDepth() > stackDepthBefore do
         love.graphics.pop()
     end
+    prof.pop()
 end
 
 return GlobalSystem

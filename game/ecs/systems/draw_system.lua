@@ -50,6 +50,7 @@ end
 function DrawSystem:draw()
     for pos, entities in ipairs(self.drawOrder) do
         for entityId, entity in pairs(entities) do
+            prof.push("DrawSystem entityId = "..entityId)
             love.graphics.push()
             local pos = entity:getComponentByName("Position").position
             local rotateEntity = entity:getComponentByName("RotateThisThing") ~= nil
@@ -82,6 +83,7 @@ function DrawSystem:draw()
                 end
             end
             love.graphics.pop()
+            prof.pop()
         end
     end
     if Debug.drawCollidersDebug then

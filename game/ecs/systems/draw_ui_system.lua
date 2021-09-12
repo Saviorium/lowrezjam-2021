@@ -11,6 +11,7 @@ local DrawUiSystem = Class {
 function DrawUiSystem:draw()
 
     for entityId, entity in pairs(self.pool) do
+        prof.push("DrawUiSystem entityId = "..entityId)
         love.graphics.push()
         love.graphics.origin()
         local pos = entity:getComponentByName("Position").position
@@ -25,6 +26,7 @@ function DrawUiSystem:draw()
             love.graphics.pop()
         end
         love.graphics.pop()
+        prof.pop()
     end
 end
 

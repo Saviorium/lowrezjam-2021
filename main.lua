@@ -4,6 +4,8 @@ Utils = require "engine.utils.utils"
 Vector = require "lib.hump.vector"
 Class = require "lib.hump.class"
 
+prof  = require "lib.jprof.jprof"
+
 if Debug and Debug.generateMap == true then
     local mapGenerator = require "engine.map_generator"
     local mapData = mapGenerator:generateColliders("big_island")
@@ -40,7 +42,11 @@ function getScreenDimensions()
 end
 
 function love.load()
+    prof.push("frame")
+    prof.push("init")
     StateManager.switch(states.game)
+    prof.pop()
+    prof.pop()
 end
 
 function love.draw()
@@ -53,9 +59,11 @@ function love.draw()
         end
     end )
     pixelCanvas:draw()
+    prof.pop("frame")
 end
 
 function love.fixedUpdate(dt)
+    prof.push("frame")
     UserInputManager:update(dt)
     StateManager.update(dt)
 end
@@ -83,4 +91,8 @@ function love.keypressed(key)
     if key == "escape" then
         StateManager.switch(states.game)
     end
+end
+
+function love.quit()
+    prof.write("prof.mpack")
 end

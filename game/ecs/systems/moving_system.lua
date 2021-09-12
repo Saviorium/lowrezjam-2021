@@ -9,6 +9,7 @@ local MovingSystem = Class {
 
 function MovingSystem:update(dt)
     for entityId, entity in pairs(self.pool) do
+        prof.push("MapSystem entityId = "..entityId)
         local managers = entity:getComponentByType("MovingManager")
         for _, manager in pairs(managers) do
             manager:update(dt, entity)
@@ -22,6 +23,7 @@ function MovingSystem:update(dt)
         end
         entity:getComponentByName("Position").position = pos
         entity:getComponentByName("Velocity").velocity = velocity
+        prof.pop()
     end
 end
 

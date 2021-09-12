@@ -10,6 +10,7 @@ local InteractionSystem = Class {
 
 function InteractionSystem:update(dt)
     for entityId, entity in pairs(self.pool) do
+        prof.push("ReloadSystem entityId = "..entityId)
         local onInputTrigger = entity:getComponentByName("OnInputTrigger")
         if onInputTrigger then
             self:handleOnInput(entity, dt, onInputTrigger)
@@ -19,6 +20,7 @@ function InteractionSystem:update(dt)
         if ic then
             self:handleInteractionColliderTrigger(entity, ic)
         end
+        prof.pop()
     end
 end
 

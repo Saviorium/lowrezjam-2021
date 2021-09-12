@@ -10,9 +10,10 @@ local DeathSystem = Class {
 }
 
 function DeathSystem:update(dt)
-    --self:handleDestroyedEntities()
+    self:handleDestroyedEntities()
     local killedEntities = {}
     for entityId, entity in pairs(self.pool) do
+        prof.push("DeathSystem entityId = "..entityId)
         for _, trigger in pairs(entity:getComponentByType('DeathTrigger')) do
             local result = trigger:update( dt, entity )
             if result then
@@ -23,6 +24,7 @@ function DeathSystem:update(dt)
                 break
             end
         end
+        prof.pop()
     end
 end
 
@@ -33,6 +35,11 @@ function DeathSystem:handleDestroyedEntities()
         local deathTrigger = entity:getComponentByName("OnDeathTrigger")
         if deathTrigger and deathTrigger.onDeathTrigger then
             deathTrigger:onDeathTrigger(entity)
+        end
+
+        local soundOnDeath = entity:getComponentByName("SoundOnDeath")
+        if soundOnDeath then
+            SoundManager:play(soundOnDeath.soundName)
         end
     end
 end

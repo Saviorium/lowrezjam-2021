@@ -26,9 +26,11 @@ function MapSystem:update(dt)
 
     self.map:update(dt)
     for entityId, entity in pairs(self.pool) do
+        prof.push("MapSystem entityId = "..entityId)
         for _, obj in pairs(entity:getComponentByType("Spawner")) do
             obj:update(dt, entity)
         end
+        prof.pop()
     end
 end
 
@@ -99,7 +101,7 @@ function MapSystem:loadMap(mapName)
                         torso = obj.properties.torso,
                         arms = obj.properties.arms
                        })
-            local text = 
+            local text =
             self.globalSystem:newEntity()
                     :addComponent('Position',{position = Vector(obj.x-16, obj.y+8)})
                     :addComponent('DrawText', {text = 'You can eat me'})

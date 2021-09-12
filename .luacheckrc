@@ -30,6 +30,7 @@ globals = {
       "clamp"
     }
   },
+  "prof",
 
   -- game
   "fonts",

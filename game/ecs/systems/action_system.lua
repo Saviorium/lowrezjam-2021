@@ -10,6 +10,7 @@ local ActionSystem = Class {
 
 function ActionSystem:update(dt)
     for entityId, entity in pairs(self.pool) do
+        prof.push("ActionSystem entityId = "..entityId)
         local body = entity:getComponentByName("Body")
 
         for _, part in pairs(body.parts) do
@@ -17,6 +18,7 @@ function ActionSystem:update(dt)
                 skill:activateSkill(entity)
             end
         end
+        prof.pop()
     end
 end
 

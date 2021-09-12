@@ -24,11 +24,13 @@ local Utils = {}
 -- Utils.timed("Slow function", function()
 -- %your tested code%
 -- end)
-Utils.timed = function(msg, fn)
+Utils.timed = function(msg, fn, threshold)
     local start = love.timer.getTime()
     fn()
     local timeMs =  (love.timer.getTime() - start)*1000
-    print(string.format("%s took: %f%% of 16ms or %f ms", msg, timeMs/16.0*100, timeMs))
+    if timeMs > threshold then
+        print(string.format("%s took: %f%% of 16ms or %f ms", msg, timeMs/16.0*100, timeMs))
+    end
 end
 
 return Utils

@@ -31,6 +31,7 @@ end
 function BodyPartsSystem:handleChangePart(event)
     local entity = self.pool[event.entity]
     if not entity then return end
+    prof.push("BodyPartsSystem changePart = "..entity.id)
 
     local body = entity:getComponentByName("Body")
     local newPart = self:getPart(event.kind, event.element, entity)
@@ -58,10 +59,12 @@ function BodyPartsSystem:handleChangePart(event)
     if entity:getComponentByName("Team") then
         newPart:addComponent("Team", { team = entity:getComponentByName("Team").team })
     end
+    prof.pop()
 end
 
 function BodyPartsSystem:handleEntityDestroyed(event)
     local entityId = event.entityId
+    prof.push("BodyPartsSystem EntityDestroyed = "..entityId)
     local entity = self.globalSystem.objects[entityId]
     local body = entity:getComponentByName("Body")
     if body then
@@ -69,6 +72,7 @@ function BodyPartsSystem:handleEntityDestroyed(event)
             part:delete()
         end
     end
+    prof.pop()
 end
 
 function BodyPartsSystem:getPart(kind, element, parent)

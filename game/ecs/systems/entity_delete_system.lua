@@ -17,20 +17,7 @@ function EntityDeleteSystem:update(dt)
     local events = EventManager:getEvents("EntityDeleteSystem")
 
     for _, event in pairs(events) do
-
         local entityId = event.entityId
-        
-        local entity = self.globalSystem.objects[entityId]
-        local deathTrigger = entity:getComponentByName("OnDeathTrigger")
-        if deathTrigger and deathTrigger.onDeathTrigger then
-            deathTrigger:onDeathTrigger(entity)
-        end
-
-        local soundOnDeath = entity:getComponentByName("SoundOnDeath")
-        if soundOnDeath then
-            SoundManager:play(soundOnDeath.soundName)
-        end
-
         local entity = self.globalSystem.objects[entityId]
         self.globalSystem.objects[entityId] = nil
         entity.components = {}

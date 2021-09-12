@@ -10,9 +10,11 @@ local ReloadSystem = Class {
 
 function ReloadSystem:update(dt)
     for _, entity in pairs(self.pool) do
+        prof.push("ReloadSystem entityId = "..entity.id)
         for _, skill in pairs(entity:getComponentByType('Skill')) do
             skill:update(dt)
         end
+        prof.pop()
     end
 end
 
