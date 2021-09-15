@@ -72,7 +72,7 @@ function NormalAi:attackPlayer(dt, inputs, entity)
     if body then
         for _, part in pairs(body.parts) do
             local element = part:getComponentByName('BodyPart').element
-            for _, skill in pairs(part:getComponentByType('Skill')) do
+            for _, skill in pairs(part:getComponentsByType('Skill')) do
                 arsenal[skill.input] = self.tableOfRanges[element][skill.input]
             end
         end

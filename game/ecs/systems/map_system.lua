@@ -27,7 +27,7 @@ function MapSystem:update(dt)
     self.map:update(dt)
     for entityId, entity in pairs(self.pool) do
         prof.push("MapSystem entityId = "..entityId)
-        for _, obj in pairs(entity:getComponentByType("Spawner")) do
+        for _, obj in pairs(entity:getComponentsByType("Spawner")) do
             obj:update(dt, entity)
         end
         prof.pop()

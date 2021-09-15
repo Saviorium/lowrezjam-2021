@@ -10,7 +10,7 @@ local MovingSystem = Class {
 function MovingSystem:update(dt)
     for entityId, entity in pairs(self.pool) do
         prof.push("MapSystem entityId = "..entityId)
-        local managers = entity:getComponentByType("MovingManager")
+        local managers = entity:getComponentsByType("MovingManager")
         for _, manager in pairs(managers) do
             manager:update(dt, entity)
         end
@@ -18,7 +18,7 @@ function MovingSystem:update(dt)
         local pos = entity:getComponentByName("Position").position
         local velocity = entity:getComponentByName("Velocity").velocity
         pos = pos + velocity * dt
-        for ind, component in pairs(entity:getComponentByType("Collider")) do
+        for ind, component in pairs(entity:getComponentsByType("Collider")) do
             component.collider:moveTo(pos.x + component.center.x, pos.y + component.center.y)
         end
         entity:getComponentByName("Position").position = pos

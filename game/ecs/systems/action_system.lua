@@ -14,7 +14,7 @@ function ActionSystem:update(dt)
         local body = entity:getComponentByName("Body")
 
         for _, part in pairs(body.parts) do
-            for _, skill in pairs(part:getComponentByType('Skill')) do
+            for _, skill in pairs(part:getComponentsByType('Skill')) do
                 skill:activateSkill(entity)
             end
         end

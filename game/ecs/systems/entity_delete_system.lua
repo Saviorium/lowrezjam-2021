@@ -21,6 +21,7 @@ function EntityDeleteSystem:update(dt)
         local entity = self.globalSystem.objects[entityId]
         self.globalSystem.objects[entityId] = nil
         entity.components = {}
+        entity.componentTypes = {}
         entity.globalSystem = nil
     end
 

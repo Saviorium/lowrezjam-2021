@@ -4,6 +4,7 @@ local Entity = Class {
         self.globalSystem = globalSystem
 
         self.components = {}
+        self.componentTypes = {}
     end
 }
 
@@ -13,22 +14,22 @@ function Entity:addComponent(componentName, args)
 end
 
 function Entity:__doAddComponent(component)
-    -- TODO: table.insert(self.components, component)
     self.components[component.name] = component
+    local type = component.type
+    if type then
+        if not self.componentTypes[type] then
+            self.componentTypes[type] = {}
+        end
+        table.insert(self.componentTypes[type], component)
+    end
 end
 
 function Entity:getComponentByName(componentName)
     return self.components[componentName]
 end
 
-function Entity:getComponentByType(componentType)
-    local result = {}
-    for  ind, comp in pairs(self.components) do
-        if (comp.type or ind) == componentType then
-            table.insert(result, comp)
-        end
-    end
-    return result
+function Entity:getComponentsByType(componentType)
+    return self.componentTypes[componentType] or {}
 end
 
 function Entity:setVariable(componentName, variable, value)
@@ -39,10 +40,15 @@ end
 function Entity:removeComponent(name)
     local component = self.components[name]
     self.components[name] = nil
+    if component.type then
+        for ind, _ in ipairs(self.componentTypes[component.type]) do
+            self.componentTypes[component.type][ind] = nil
+        end
+    end
     for systemName, system in ipairs(self.globalSystem._systems) do
         if system.pool[self.id] then
             for ind, condition in pairs(system.conditions) do
-                if not(table.getn(self:getComponentByType(condition)) == 0 and not self:getComponentByName(condition)) then
+                if not(table.getn(self:getComponentsByType(condition)) == 0 and not self:getComponentByName(condition)) then
                     system.pool[self.id] = nil
                 end
             end

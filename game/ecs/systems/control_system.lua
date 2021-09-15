@@ -12,7 +12,7 @@ function ControlSystem:update(dt)
         local controller = entity:getComponentByName("Controlled")
         controller:reset()
 
-        local inputSources = entity:getComponentByType("InputSource")
+        local inputSources = entity:getComponentsByType("InputSource")
         for k, inputSource in pairs(inputSources) do
             local inputs = inputSource:updateAndGetInputs(dt, entity)
             controller:setInputs(inputs)

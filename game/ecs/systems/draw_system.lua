@@ -59,7 +59,7 @@ function DrawSystem:draw()
             else
                 love.graphics.translate(math.floor(pos.x), math.floor(pos.y))
             end
-            for _, drawable in pairs(entity:getComponentByType("Drawable")) do
+            for _, drawable in pairs(entity:getComponentsByType("Drawable")) do
                 if rotateEntity then
                     local rotation = entity:getComponentByName("Rotation").rotation
                     love.graphics.rotate( rotation*math.pi/180 + math.pi/2)

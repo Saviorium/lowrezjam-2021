@@ -36,11 +36,11 @@ function BodyPartsSystem:handleChangePart(event)
     local body = entity:getComponentByName("Body")
     local newPart = self:getPart(event.kind, event.element, entity)
 
-    for _, buff in pairs(entity:getComponentByType('Buff')) do
+    for _, buff in pairs(entity:getComponentsByType('Buff')) do
         buff:revert(entity)
     end
     if body.parts[event.kind] then
-        for _, buff in pairs(body.parts[event.kind]:getComponentByType('Buff')) do
+        for _, buff in pairs(body.parts[event.kind]:getComponentsByType('Buff')) do
             buff:revert(entity)
         end
         body.parts[event.kind]:delete()
@@ -49,10 +49,10 @@ function BodyPartsSystem:handleChangePart(event)
     body.parts[event.kind] = newPart -- TODO: multiple parts of same kind?
     newPart:getComponentByName("BodyPart").parent = entity
 
-    for _, buff in pairs(newPart:getComponentByType('Buff')) do
+    for _, buff in pairs(newPart:getComponentsByType('Buff')) do
         buff:apply(entity)
     end
-    for _, buff in pairs(entity:getComponentByType('Buff')) do
+    for _, buff in pairs(entity:getComponentsByType('Buff')) do
         buff:apply(entity)
     end
 

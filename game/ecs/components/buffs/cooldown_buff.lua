@@ -5,7 +5,7 @@ return {
 
     apply = function(buff, entity)
         for _, part in pairs(entity:getComponentByName('Body').parts) do
-            for _, skill in pairs(part:getComponentByType('Skill')) do
+            for _, skill in pairs(part:getComponentsByType('Skill')) do
                 if skill.cooldown then
                     skill.cooldown = skill.cooldown * buff.value
                 end
@@ -14,7 +14,7 @@ return {
     end,
     revert = function(buff, entity)
         for _, part in pairs(entity:getComponentByName('Body').parts) do
-            for _, skill in pairs(part:getComponentByType('Skill')) do
+            for _, skill in pairs(part:getComponentsByType('Skill')) do
                 if skill.cooldown then
                     skill.cooldown = skill.cooldown / buff.value
                 end

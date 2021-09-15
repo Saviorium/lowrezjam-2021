@@ -14,7 +14,7 @@ function PhysicsSystem:update(dt)
     local events = EventManager:getEvents("PhysicsSystem")
     for _, event in pairs(events) do
         local entity = self.globalSystem.objects[event.entityId]
-        for _, collider in pairs(entity:getComponentByType("Collider")) do
+        for _, collider in pairs(entity:getComponentsByType("Collider")) do
             self.globalSystem.HC:remove(collider.collider)
         end
     end

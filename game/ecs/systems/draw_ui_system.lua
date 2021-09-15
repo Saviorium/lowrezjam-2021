@@ -17,7 +17,7 @@ function DrawUiSystem:draw()
         local pos = entity:getComponentByName("Position").position
         love.graphics.translate(math.floor(pos.x), math.floor(pos.y))
 
-        for _, drawable in pairs(entity:getComponentByType("Drawable")) do
+        for _, drawable in pairs(entity:getComponentsByType("Drawable")) do
             love.graphics.push()
             if drawable.center then
                 love.graphics.translate(-drawable.center.x, -drawable.center.y)

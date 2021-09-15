@@ -14,7 +14,7 @@ function DeathSystem:update(dt)
     local killedEntities = {}
     for entityId, entity in pairs(self.pool) do
         prof.push("DeathSystem entityId = "..entityId)
-        for _, trigger in pairs(entity:getComponentByType('DeathTrigger')) do
+        for _, trigger in pairs(entity:getComponentsByType('DeathTrigger')) do
             local result = trigger:update( dt, entity )
             if result then
                 entity:delete()

@@ -12,7 +12,7 @@ return function(globalSystem, parent)
                                     cooldown = 1,
                                     input = 'moveAction',
                                     buffFunction = function(entity)
-                                        local movingManager = parent:getComponentByType('MovingManager')[1]
+                                        local movingManager = parent:getComponentsByType('MovingManager')[1]
                                         local velocity = parent:getComponentByName('Velocity')
 
                                         movingManager.dashing = true

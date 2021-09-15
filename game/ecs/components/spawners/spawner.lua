@@ -1,5 +1,6 @@
 return {
     name = "Spawner",
+    type = "Spawner",
     timeToSpawn = 5,
     maxCount = 1,
     spawned = {},
