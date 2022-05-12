@@ -60,6 +60,7 @@ function DrawSystem:draw()
                 love.graphics.translate(math.floor(pos.x), math.floor(pos.y))
             end
             for _, drawable in pairs(entity:getComponentsByType("Drawable")) do
+                love.graphics.push()
                 if rotateEntity then
                     local rotation = entity:getComponentByName("Rotation").rotation
                     love.graphics.rotate( rotation*math.pi/180 + math.pi/2)
@@ -81,6 +82,7 @@ function DrawSystem:draw()
                 if not drawable.hidden then
                     drawable:draw(entity)
                 end
+                love.graphics.pop()
             end
             love.graphics.pop()
             prof.pop()
