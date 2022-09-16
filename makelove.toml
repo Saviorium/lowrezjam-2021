@@ -7,5 +7,10 @@ love_files = [
     "-*/.*",
     "-*.dll",
     "-*.so",
-    "-*.dylib"
+    "-*.dylib",
+    "-*.aseprite",
+    "-*.bat",
+    "-*.ps1",
+    "-*.toml",
+    "-*.sh"
 ]

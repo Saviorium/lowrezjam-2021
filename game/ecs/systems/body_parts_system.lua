@@ -7,6 +7,10 @@ local kinds = {
     legs = "game.ecs.prefabs.body_parts.legs",
 }
 
+local prefabCache = {
+
+}
+
 local BodyPartsSystem = Class {
     __includes = System,
     init = function(self, globalSystem)
@@ -78,8 +82,15 @@ end
 function BodyPartsSystem:getPart(kind, element, parent)
     local path = kinds[kind]..(element == '' and element or ('_'..element))
 
-    local part = require(path)
+    if not prefabCache[path] then
+        prof.push("BodyPartsSystem getting new part "..path)
+        prefabCache[path] = require(path)
+        prof.pop()
+    end
+    local part = prefabCache[path]
+    prof.push("BodyPartsSystem creating new part "..path)
     local resultPart = part(self.globalSystem, parent)
+    prof.pop()
     resultPart:getComponentByName('BodyPart').element = element
     return resultPart
 end

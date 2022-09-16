@@ -28,7 +28,14 @@ function AssetManager:getAnimation(name)
     if not imageData or not self.assets.images[name].animation then
         error("Cannot load an animation " .. name)
     end
-    return Peachy.new(imageData.animation, imageData.image)
+    local animation
+    if self.assets.images[name].animationJson then
+        animation = Peachy.new(self.assets.images[name].animationJson, imageData.image)
+    else
+        animation = Peachy.new(self.assets.images[name].animation, imageData.image)
+        self.assets.images[name].animationJson = animation._jsonData -- caching, takes 0.5 ms to load
+    end
+    return animation
 end
 
 function AssetManager:getSound(name)
